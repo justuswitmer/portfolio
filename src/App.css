@@ -1,3 +1,75 @@
 .App {
   text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.App.dark {
+  color: #c4c0c0;
+  background-color: #222;
+}
+
+.App.light {
+  color: #222;
+  background-color: #c4c0c0;
+}
+
+.light{
+  color: #222;
+}
+
+.dark {
+  color: #c4c0c0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li{
+  list-style-type: none;
+}
+
+.navBar{
+  width: 60px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 3;
+  min-height: 500px;
+}
+
+.navBar.light{
+  background: #969696;
+}
+
+.navBar.dark{
+  background: #181818;
+}
+
+#footer{
+  position: fixed;
+  bottom: 0;
+  left: 41%;
+}
+
+.about {
+  display: block;
+}
+.aboutProfile {
+  margin-left: 12%;
+  width: 80%;
+}
+
+.aboutPersonality{
+  margin-left: 12%;
+  width: 80%;
+}
+
+.personality {
+  box-shadow: 0 4px 15px 0 rgba(0,0,0,0.50);
 }
