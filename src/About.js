@@ -1,12 +1,11 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
-
+import goat from './images/goat.jpg';
 
 export default function About() {
 
   return (
     <div className='about'>
-      <div className='aboutProfile'>
+      <div className='pageDiv'>
         <h1>Here's a little about me!</h1>
         <p>
           I am a Full Stack Software Engineer student at Prime Digital Academy, with a background in analytics.
@@ -15,8 +14,8 @@ export default function About() {
         </p>
       </div>
       <div className='aboutPersonality'>
-        <div className='personality'>
-          <h2>Personality Profiles</h2>
+        <h2>Personality Profiles</h2>
+        <div className='box'>
           <h4>Strengths Finders</h4>
           <p>Responsibility</p>
           <p>Restoratvie</p>
@@ -24,19 +23,21 @@ export default function About() {
           <p>Intellection</p>
           <p>Consistency</p>
         </div>
-        <div className='personality'>
+        <div className='box'>
           <h4>Myers Briggs</h4>
           <p>ISTJ</p>
         </div>
-        <div className='personality'>
+        <div className='box'>
           <h4>Enneagram</h4>
           <p>Type 6</p>
         </div>
-        <div className='personality'>
+        <div className='box'>
           <h4>Superpowers</h4>
           <p>Experimentation</p>
           <p>Grit</p>
           <p>Vision</p>
+          <img src={goat}
+            alt='goat' />
         </div>
       </div>
     </div>

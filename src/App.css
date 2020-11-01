@@ -54,13 +54,14 @@ li{
 #footer{
   position: fixed;
   bottom: 0;
-  left: 41%;
+  justify-content: center;
+  width: 100%;
 }
 
 .about {
   display: block;
 }
-.aboutProfile {
+.pageDiv {
   margin-left: 12%;
   width: 80%;
 }
@@ -70,6 +71,22 @@ li{
   width: 80%;
 }
 
-.personality {
+.portfolio {
   box-shadow: 0 4px 15px 0 rgba(0,0,0,0.50);
+  padding: 50px;
+  margin: 30px;
+  border-radius: 4px;
+  width: 90px;
+  height: 90px;
+  border: solid 1px #222;
+  color: #c4c0c0;
+}
+
+.portfolio:hover {
+  opacity: 80%;
+}
+
+.portfolioItems{
+  display: flex;
+  flex-wrap: wrap;
 }

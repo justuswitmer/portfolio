@@ -73,6 +73,7 @@ class App extends Component {
             <Contact />
           </Route>
           <Footer />
+
         </div>
       </Router>
     );
