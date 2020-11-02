@@ -9,7 +9,9 @@ class Contact extends Component {
         <h3>Reach out to me via:</h3>
         <p className='secondary'>email: justus.witmer@gmail.com <span className='tertiary'>or</span>
           <a href="https://www.linkedin.com/in/justus-witmer" >
-            <img src={linkedin} className='image' />
+            <img src={linkedin} className='image'
+              alt='LinkedIn Logo'
+            />
           </a>
         </p>
       </div>

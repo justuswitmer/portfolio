@@ -1,5 +1,4 @@
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import Home from './Home';
+import { HashRouter as Router } from 'react-router-dom';
 import About from './About';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
@@ -8,11 +7,6 @@ import Footer from './Footer';
 import './App.css';
 import { connect } from 'react-redux';
 import { Component } from 'react';
-
-// Material UI
-import InfoIcon from '@material-ui/icons/Info';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import VisibilityIcon from '@material-ui/icons/Visibility';
 
 
 class App extends Component {

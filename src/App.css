@@ -167,6 +167,7 @@ h4 {
   grid-column-start: col-1;
   grid-column-end: col-12;
   grid-row-start: row-8;
+  margin-left: 8%;
 }
 
 .portfolioChild {

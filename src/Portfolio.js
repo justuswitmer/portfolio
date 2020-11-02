@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import PortfolioItem from './PortfolioItem';
 import { connect } from 'react-redux';
-import todoList from './images/todoList.png';
-
 
 class Portfolio extends Component {
-
-
   render() {
     return (
       <div className='portfolio'>
