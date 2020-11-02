@@ -9,6 +9,8 @@
   width: 100%;
   height: 100%;
   display: grid;
+  color: #c4c0c0;
+  background-color: #222;
 
   /* defining how many columns I want */
   grid-template-columns: [col-1]8.33% [col-2]8.33% [col-3]8.33% [col-4]8.33% [col-5]8.33% [col-6]8.33%
