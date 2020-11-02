@@ -226,6 +226,12 @@ h4 {
   margin: 0 -5% 15px 4%;
 }
 
+.image {
+  width: 70px;
+  margin-left: 4px;
+  margin-bottom: -3px;
+}
+
 .footer{
   position: fixed;
   bottom: 0;

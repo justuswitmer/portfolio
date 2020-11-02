@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import linkedin from './images/LI-Logo.png';
 
 class Contact extends Component {
 
@@ -6,7 +7,11 @@ class Contact extends Component {
     return (
       <div className='contact'>
         <h3>Reach out to me via:</h3>
-        <p className='secondary'>email: justus.witmer@gmail.com <span className='tertiary'>or</span> LinkedIn: </p>
+        <p className='secondary'>email: justus.witmer@gmail.com <span className='tertiary'>or</span>
+          <a href="https://www.linkedin.com/in/justus-witmer" >
+            <img src={linkedin} className='image' />
+          </a>
+        </p>
       </div>
     );
   }
