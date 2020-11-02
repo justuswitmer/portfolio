@@ -6,64 +6,42 @@ import todoList from './images/todoList.png';
 
 class Portfolio extends Component {
 
-  state = {
-    projects: [
-      {
-        href: "g",
-        name: "Lake Elmo Aero",
-        path: '',
-      },
-      {
-        href: "https://github.com/justuswitmer/prime-solo-project",
-        name: "financeIt",
-        path: '',
-      },
-      {
-        href: "https://github.com/justuswitmer/weekend-movie-sagas",
-        name: "Movie Library",
-        path: '',
-      },
-      {
-        href: "https://github.com/justuswitmer/witmer-redux-feedback-loop",
-        name: "Feedback Survey",
-        path: '',
-      },
-      {
-        href: "https://github.com/justuswitmer/weekend-sql-to-do-list",
-        name: "To Do List",
-        path: { todoList },
-      },
-      {
-        href: "https://github.com/justuswitmer/redux-pizza-parlor",
-        name: "Pizza Parlor",
-        path: '',
-      },
-    ],
-  }
-
-  project1 = () => {
-
-  }
-
 
   render() {
     return (
-      <>
-        <h1>See my Work</h1>
-        <div className='pageDiv'>
-
-          <div className='portfolioItems'>
-            {this.props.projects.map(project =>
-              <PortfolioItem
-                key={project.name}
-                project={project}
-              />
-            )}
-          </div>
-
-
-        </div>
-      </>
+      <div className='portfolio'>
+        <h2 className='portfolioHeader'>Here are some projects I have worked on!</h2>
+        <a
+          className='portfolioChild one secondary'
+          href="g">
+          Lake Elmo Aero
+        </a>
+        <a
+          className='portfolioChild two secondary'
+          href="https://github.com/justuswitmer/prime-solo-project">
+          financeIt
+        </a>
+        <a
+          className='portfolioChild three secondary'
+          href="https://github.com/justuswitmer/weekend-movie-sagas">
+          Movie Library
+        </a>
+        <a
+          className='portfolioChild four secondary'
+          href="https://github.com/justuswitmer/witmer-redux-feedback-loop">
+          Feedback Survey
+        </a>
+        <a
+          className='portfolioChild five secondary'
+          href="https://github.com/justuswitmer/weekend-sql-to-do-list">
+          To Do List
+        </a>
+        <a
+          className='portfolioChild six secondary'
+          href="https://github.com/justuswitmer/redux-pizza-parlor">
+          Pizza Parlor
+        </a>
+      </div>
     );
   }
 }

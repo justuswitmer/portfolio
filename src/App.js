@@ -1,5 +1,5 @@
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import Mode from './Mode';
+import Home from './Home';
 import About from './About';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
@@ -32,48 +32,30 @@ class App extends Component {
     return (
       <Router>
         <div className={`App ${this.state.mode}`}>
-          <nav className={`navBar ${this.state.mode}`}>
+          {/* <nav className={`navBar ${this.state.mode}`}>
             <main className='mainDiv'>
-              <li>
-                <Link
-                  className={this.state.mode}
-                  to="/about">
-                  <InfoIcon />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={this.state.mode}
-                  to="/portfolio">
-                  <VisibilityIcon />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={this.state.mode}
-                  to="/contact">
-                  <MailOutlineIcon />
-                </Link>
-              </li>
+              <label>
+                <input
+                  type='radio'
+                  name='mode'
+                  value='light'
+                  onClick={this.setMode}
+                />Light Mode
+                </label>
+              <label>
+                <input
+                  type='radio'
+                  name='mode'
+                  value='dark'
+                  onClick={this.setMode}
+                />Dark Mode
+                </label>
             </main>
-          </nav>
-          <Route exact path='/'>
-            <Mode
-              setMode={this.setMode}
-            />
-          </Route>
-
-          <Route path='/about'>
-            <About />
-          </Route >
-          <Route path='/portfolio'>
-            <Portfolio />
-          </Route>
-          <Route path='/contact'>
-            <Contact />
-          </Route>
+          </nav> */}
+          <About />
+          <Portfolio />
+          <Contact />
           <Footer />
-
         </div>
       </Router>
     );

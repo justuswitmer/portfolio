@@ -17,7 +17,7 @@ class PortfolioItem extends Component {
   render() {
     return (
       <a
-        className='portfolio'
+        className='portfolioChild'
         href={this.props.project.href}>
         <span>{this.props.project.name}</span>
       </a>
@@ -28,10 +28,10 @@ class PortfolioItem extends Component {
 
 export default connect()(PortfolioItem);
 
-{/* <a
+/* <a
 onMouseEnter={this.toggleHidden}
 onMouseLeave={this.toggleHidden}
-className='portfolio'
+className='portfolioChild'
 href={this.props.project.href}>
 {
   this.state.isHidden ?
@@ -40,4 +40,4 @@ href={this.props.project.href}>
     :
     <span>{this.props.project.name}</span>
 }
-</a> */}
+</a> */

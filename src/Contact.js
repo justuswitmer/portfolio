@@ -4,10 +4,9 @@ class Contact extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Contact Me</h1>
-        <p>email: justus.witmer@gmail.com</p>
-        <p>LinkedIn:</p>
+      <div className='contact'>
+        <h3>Reach out to me via:</h3>
+        <p className='secondary'>email: justus.witmer@gmail.com <span className='tertiary'>or</span> LinkedIn: </p>
       </div>
     );
   }
