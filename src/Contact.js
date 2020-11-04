@@ -7,7 +7,7 @@ class Contact extends Component {
     return (
       <div className='contact'>
         <h3>Reach out to me via:</h3>
-        <p className='secondary'>email: justus.witmer@gmail.com <span className='tertiary'>or</span>
+        <p className='secondary'>
           <a href="https://www.linkedin.com/in/justus-witmer" >
             <img src={linkedin} className='image'
               alt='LinkedIn Logo'

@@ -161,6 +161,7 @@ h4 {
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.50);
   margin: 10px -5% 0 4%;
   padding: 0 10px 30px 10px;
+  /* background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); */
 }
 
 .portfolioHeader{
