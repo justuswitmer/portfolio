@@ -8,7 +8,8 @@
 
   /* defining how many rows I want */
   grid-template-rows: 60px auto 500px 150px;
-
+  gap: 30px;
+  
   grid-template-areas: 
     "nav"
     "body"
@@ -39,14 +40,14 @@
 }
 /* -------------------- light and dark mode stuff end -------------------- */
 
-@media all and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .app {
     /* When on medium sized screens, we center it by evenly distributing empty space around items */
     justify-content: space-around;
   }
 }
 
-@media all and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .app {
     /* On small screens, we are no longer using row direction but column */
     flex-direction: column;

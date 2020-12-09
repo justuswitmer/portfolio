@@ -1,4 +1,6 @@
 import { Route, HashRouter as Router } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Component } from 'react';
 import Nav from './Nav/Nav';
 import About from './About/About';
 import Project from './Project/Project';
@@ -8,9 +10,6 @@ import Home from './Home/Home';
 
 import './App.css';
 import './Global.css';
-import { connect } from 'react-redux';
-import { Component } from 'react';
-
 
 class App extends Component {
   state = {

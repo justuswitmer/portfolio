@@ -36,17 +36,16 @@
 
 .home-container {
   grid-area: body;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: auto auto;
   grid-template-rows: auto;
   grid-template-areas: 
     "intro profile"
-    "viewProjects viewProjects"
-  ;
+    "viewProjects viewProjects";
+  padding-top: 160px;
+  padding-bottom: 90px;
+  border-radius: 4px;
+  background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
 }
 
 .home-intro{
@@ -58,12 +57,26 @@
 }
 
 .home-profile-img{
-  height: 340px;
+  width: 40%;
   border-radius: 50%;
 }
 
 .home-viewProjects{
   grid-area: viewProjects;
+}
+
+.home-viewProjects-button{
+  height: 60px;
+  width: 265px;
+  border-radius: 5px;
+  background-color: #3E833C;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.51px;
+  line-height: 29px;
+  color: #F0F0F0;
 }
 
 /* -------------------- HOME END -------------------- */
@@ -88,12 +101,98 @@
 
 .contact-container{
   grid-area: contact;
+  background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
+  border-radius: 4px;
+  align-items: center;
+  padding-bottom: 40px;
 }
 
-.image {
-  width: 70px;
+.contact-intro{
+  display: inline-flex;
+}
+
+.contact-linkedin-link{
+  height: 20px;
+  margin-top: 17px;
+}
+
+.contact-linkedin-image{
+  width: 5.6rem;
   margin-left: 4px;
   margin-bottom: -3px;
+}
+
+.contact-form-container{
+  width: 820px;
+  display: grid;
+  gap: 30px 10px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "name  email"
+    "message message"
+    "button .";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.contact-form-container-p{
+  text-align: start;
+  margin: 0 0 5px 0;
+  font-size: .875rem;
+}
+
+.contact-name{
+  grid-area: name;
+}
+
+.contact-name-input{
+  height: 50px;
+  width: 400px;
+  border-radius: 5px;
+  border: none;
+  background-color: #252525;
+}
+
+.contact-email{
+  grid-area: email;
+}
+
+.contact-email-input{
+  height: 50px;
+  width: 400px;
+  border-radius: 5px;
+  border: none;
+  background-color: #252525;
+}
+
+.contact-message{
+  grid-area: message;
+}
+
+.contact-message-input{
+  height: 150px;
+  width: 820px;
+  border-radius: 5px;
+  border: none;
+  background-color: #252525;
+}
+
+.contact-button{
+  grid-area: button;
+  text-align: start;
+}
+
+.contact-button-send{
+  height: 40px;
+  width: 97px;
+  border-radius: 5px;
+  background-color: #3E833C;
+  border: none;
+  cursor: pointer;
+  color: #F0F0F0;
+  font-size: ;
 }
 
 /* -------------------- CONTACT END -------------------- */

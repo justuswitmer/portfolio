@@ -13,13 +13,13 @@ class Home extends Component {
         <div className='home-profile'>
           <img
             src={profilePic}
-            alt='Image of Justus Witmer'
+            alt='Justus Witmer'
             className='home-profile-img'
           />
         </div>
         <div className='home-viewProjects'>
           <p>Here are some of the tools I have built</p>
-          <button>View my projects</button>
+          <button className='home-viewProjects-button'>View my projects</button>
         </div>
       </ div>
     );
