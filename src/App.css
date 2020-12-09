@@ -1,233 +1,93 @@
-@font-face {
-  font-family: 'QuickKiss';
-  src: local('QuickKiss', url(./fonts/QuickKissPersonalUse-PxlZ.ttf) format('truetype'))
-}
+/* -------------------- NAV BAR BEGIN -------------------- */
 
-.App {
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  color: #c4c0c0;
-  background-color: #222;
-
-  /* defining how many columns I want */
-  grid-template-columns: [col-1]8.33% [col-2]8.33% [col-3]8.33% [col-4]8.33% [col-5]8.33% [col-6]8.33%
-  [col-7]8.33% [col-8]8.33% [col-9]8.33% [col-10]8.33% [col-11]8.33% [col-12]8.33%;
-
-  /* defining how many rows I want */
-  grid-template-rows: [row-1]auto [row-2]auto [row-3]auto [row-4]auto [row-5]auto [row-6]auto
-  [row-7]auto [row-8]auto [row-9]auto [row-10]auto [row-11]auto [row-12]auto;
-}
-
-@media all and (max-width: 800px) {
-  .app {
-    /* When on medium sized screens, we center it by evenly distributing empty space around items */
-    justify-content: space-around;
-  }
-}
-
-@media all and (max-width: 500px) {
-  .app {
-    /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
-  }
-}
-
-/* light and dark mode stuff begin*/
-
-.App.dark {
-  color: #c4c0c0;
-  background-color: #222;
-}
-
-.App.light {
-  color: #222;
-  background-color: #c4c0c0;
-}
-
-.light{
-  color: #222;
-}
-
-.dark {
-  color: #c4c0c0;
-}
-/* light and dark mode stuff end*/
-
-
-a {
-  text-decoration: none;
-}
-
-li{
-  list-style-type: none;
-}
-
-.secondary{
-  color: #4aa54aab;
-}
-
-.navBar{
-  width: 100%;
-  position: fixed;
-  top: 0;
+.nav-container{
   justify-content: space-between;
-  z-index: 3;
-  grid-column-start: col-1;
-  grid-column-end: col-12;
-  grid-row-start: row-1;
+  grid-area: nav;
+  height: 60px;
+  background-color: #222222;
+  display: inline-flex;
+  margin-left: -50px;
+  margin-right: -50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
-/* .navBar.light{
-  background: #969696;
+.nav-routes{
+  display: inline-flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 60px;
+  cursor: pointer;
 }
 
-.navBar.dark{
-  background: #181818;
-} */
-
-/* About page begin */
-.about {
-  display: grid;
-  grid: inherit;
-  grid-column-start: col-1;
-  grid-column-end: col-12;
-  grid-row-start: row-2;
-  grid-row-end: row-7;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.50);
-  margin: 10px -5% 0 4%;
-  padding: 0 10px 0 10px;
+.nav-logo{
+ line-height: 60px;
 }
 
-.aboutIntro{
-  grid-column-start: col-1;
-  grid-column-end: col-12;
-  grid-row-start: row-2;
-  margin: 0 -3% 0 5%;
+.nav-theme{
+  line-height: 60px;
 }
 
-.aboutPersonality{
-  grid-column-start: col-1;
-  grid-column-end: col-12;
-  grid-row-start: row-6;
-}
 
-.personality1 {
-  grid-column-start: col-1;
-  grid-column-end: col-3;
-  grid-row-start: row-7;
-  margin: 0 -9% 0 29%;
-}
+/* -------------------- NAV BAR END -------------------- */
 
-.personality2 {
-  grid-column-start: col-4;
-  grid-column-end: col-6;
-  grid-row-start: row-7;
-  margin: 0 -5% 0 49%;
-}
+/* -------------------- HOME BEGIN -------------------- */
 
-.personality3 {
-  grid-column-start: col-7;
-  grid-column-end: col-9;
-  grid-row-start: row-7;
-  margin: 0 -12% 0 50%;
-}
-
-.personality4 {
-  grid-column-start: col-10;
-  grid-column-end: col-12;
-  grid-row-start: row-7;
-  margin: 0 -25% 0 42%;
-}
-h4 {
-  color: #804604;
-  font-weight: bolder;
-}
-
-.tertiary {
-  color: #804604;
-}
-
- /* portfolioo page begins */
-.portfolio {
-  display: grid;
-  grid: inherit;
-  grid-column-start: col-1;
-  grid-column-end: col-12;
-  grid-row-start: row-8;
-  grid-row-end: row-9;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.50);
-  margin: 10px -5% 0 4%;
-  padding: 0 10px 30px 10px;
-  /* background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); */
-}
-
-.portfolioHeader{
-  grid-column-start: col-1;
-  grid-column-end: col-12;
-  grid-row-start: row-8;
-  margin-left: 8%;
-}
-
-.portfolioChild {
-  box-shadow: 0 4px 15px 0 rgba(0,0,0,0.50);
-  padding-top: 10px;
-  margin: 0 20px 0 20px;
+.home-container {
+  grid-area: body;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 4px;
-  width: 140px;
-  height: 30px;
-  border: solid 1px #8046044f;
+  background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "intro profile"
+    "viewProjects viewProjects"
+  ;
 }
 
-.portfolioChild.one {
-  grid-column-start: col-1;
-  grid-column-end: col-2;
-  grid-row-start: row-9;
+.home-intro{
+  grid-area: intro;
 }
 
-.portfolioChild.two {
-  grid-column-start: col-3;
-  grid-column-end: col-4;
-  grid-row-start: row-9;
+.home-profile{
+  grid-area: profile;
 }
 
-.portfolioChild.three {
-  grid-column-start: col-5;
-  grid-column-end: col-6;
-  grid-row-start: row-9;
+.home-profile-img{
+  height: 340px;
+  border-radius: 50%;
 }
 
-.portfolioChild.four {
-  grid-column-start: col-7;
-  grid-column-end: col-8;
-  grid-row-start: row-9;
+.home-viewProjects{
+  grid-area: viewProjects;
 }
 
-.portfolioChild.five {
-  grid-column-start: col-9;
-  grid-column-end: col-10;
-  grid-row-start: row-9;
+/* -------------------- HOME END -------------------- */
+
+/* -------------------- PROJECT BEGIN -------------------- */
+
+.project-container{
+  grid-area: body;
 }
 
-.portfolioChild.six {
-  grid-column-start: col-11;
-  grid-column-end: col-12;
-  grid-row-start: row-9;
+/* -------------------- PROJECT END -------------------- */
+
+/* -------------------- ABOUT BEGIN -------------------- */
+
+.about-container{
+  grid-area: body;
 }
 
-.portfolioChild:hover {
-  opacity: 80%;
-}
+/* -------------------- ABOUT BEGIN -------------------- */
 
-/* contact page begins */
-.contact {
-  grid-column-start: col-1;
-  grid-column-end: col-12;
-  grid-row-start: row-10;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.50);
-  margin: 0 -5% 15px 4%;
+/* -------------------- CONTACT BEGIN -------------------- */
+
+.contact-container{
+  grid-area: contact;
 }
 
 .image {
@@ -236,37 +96,19 @@ h4 {
   margin-bottom: -3px;
 }
 
-.footer{
-  position: fixed;
-  bottom: 0;
-  justify-content: center;
-  width: 100%;
-  margin: auto;
+/* -------------------- CONTACT END -------------------- */
+
+
+/* -------------------- FOOTER BEGIN -------------------- */
+
+.footer-container{
+  grid-area: footer;
+  background-color: #222222;
+  margin-left: -50px;
+  margin-right: -50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
+/* -------------------- FOOTER END -------------------- */
 
-.aboutPersonality{
-  margin-left: 12%;
-  width: 80%;
-}
-
-
-
-
-
-
-
-
-
-
-/* .navBar{
-  width: 60px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 3;
-  min-height: 500px;
-} */

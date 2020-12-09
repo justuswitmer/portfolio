@@ -1,10 +1,13 @@
-import { HashRouter as Router } from 'react-router-dom';
-import About from './About';
-import Portfolio from './Portfolio';
-import Contact from './Contact';
-import Footer from './Footer';
+import { Route, HashRouter as Router } from 'react-router-dom';
+import Nav from './Nav/Nav';
+import About from './About/About';
+import Project from './Project/Project';
+import Contact from './Contact/Contact';
+import Footer from './Footer/Footer';
+import Home from './Home/Home';
 
 import './App.css';
+import './Global.css';
 import { connect } from 'react-redux';
 import { Component } from 'react';
 
@@ -26,28 +29,18 @@ class App extends Component {
     return (
       <Router>
         <div className={`App ${this.state.mode}`}>
-          {/* <nav className={`navBar ${this.state.mode}`}>
-            <main className='mainDiv'>
-              <label>
-                <input
-                  type='radio'
-                  name='mode'
-                  value='light'
-                  onClick={this.setMode}
-                />Light Mode
-                </label>
-              <label>
-                <input
-                  type='radio'
-                  name='mode'
-                  value='dark'
-                  onClick={this.setMode}
-                />Dark Mode
-                </label>
-            </main>
-          </nav> */}
-          <About />
-          <Portfolio />
+          <Nav
+            setMode={this.setMode}
+          />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/project">
+            <Project />
+          </Route>
           <Contact />
           <Footer />
         </div>
