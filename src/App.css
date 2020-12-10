@@ -19,6 +19,56 @@
   transform: translate(-50%);
   line-height: 60px;
   cursor: pointer;
+  gap: 100px;
+}
+
+.nav-routes-route{
+  background-color: inherit;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+}
+
+.nav-routes-route:focus{
+  font-weight: 600;
+  outline: none;
+}
+
+/* code taken from here: https://jaspreetchahal.org/pure-css-square-brackets/ */
+.squarebrackets 
+{
+  position: relative;
+}
+.squarebrackets:before {
+   content: " ";
+   position: absolute;
+   border-left: 2px solid #3E833C;
+   border-top: 2px solid #3E833C;
+   border-bottom: 2px solid #3E833C;
+   padding: 2px;
+   top: -6px;
+   bottom: -6px;
+   left: -6px;
+}
+.squarebrackets:after
+{
+   content: " ";
+   position: absolute;
+   border-right: 2px solid #3E833C;
+   border-top: 2px solid #3E833C;
+   border-bottom: 2px solid #3E833C;
+   padding: 2px;
+   top: -6px;
+   bottom: -6px;
+   right: -6px;
+}
+
+.nav-routes-divider{
+  background-color: white;
+  width: 1px;
+  height: 20px;
+  margin-top: 20px;
 }
 
 .nav-logo{
