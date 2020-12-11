@@ -109,8 +109,8 @@
   grid-template-areas: 
     "intro profile"
     "viewProjects viewProjects";
-  padding-top: 160px;
-  padding-bottom: 90px;
+  padding: 160px 0 90px 120px;
+  text-align: left;
   border-radius: 4px;
   background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
 }
@@ -220,6 +220,12 @@
   border-radius: 5px;
   border: none;
   background-color: #252525;
+  color: #F0F0F0;
+}
+
+.contact-name-input:focus{
+  border: 1px solid green;
+  outline: none;
 }
 
 .contact-email{
@@ -232,6 +238,12 @@
   border-radius: 5px;
   border: none;
   background-color: #252525;
+  color: #F0F0F0;
+}
+
+.contact-email-input:focus{
+  border: 1px solid green;
+  outline: none;
 }
 
 .contact-message{
@@ -244,6 +256,12 @@
   border-radius: 5px;
   border: none;
   background-color: #252525;
+  color: #F0F0F0;
+}
+
+.contact-message-input:focus{
+  border: 1px solid green;
+  outline: none;
 }
 
 .contact-button{
