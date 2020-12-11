@@ -2,24 +2,30 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-let squarebrackets = '';
 class NavItem extends Component {
 
-  onClick = (evt) => {
-    this.props.history.push(evt)
-    squarebrackets = 'squarebrackets';
-
+  componentDidMount = () => {
+    this.props.history.push(this.props.squarebrackets)
+    this.props.hasBracket(this.props.squarebrackets)
   }
 
   render() {
     return (
       <>
-        <button
-          className={`${squarebrackets} nav-routes-route`}
-          onClick={() => this.onClick(this.props.route.route)}>
-          {this.props.route.name}
-        </button>
-        <div className='nav-routes-divider' />
+        <div className='nav-routes-buttonWrapper'>
+          <div
+            className={this.props.squarebrackets === this.props.route.route ?
+              'squarebrackets nav-routes-focus'
+              : 'nav-routes-route'}
+            onClick={() => this.props.hasBracket(this.props.route.route)}>
+            {this.props.route.name}
+          </div>
+        </div>
+        {this.props.route.hasDivider == true ?
+          <div className='nav-routes-divider' />
+          :
+          ''}
+
       </>
     );
   }

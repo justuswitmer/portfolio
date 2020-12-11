@@ -3,21 +3,22 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import NavItem from './NavItem';
 
-let squarebrackets = '';
 const routes = [
-  { name: 'Home', route: '/' },
-  { name: 'Projects', route: '/project' },
-  { name: 'About', route: '/about' },
+  { name: 'Home', route: '/', hasDivider: true },
+  { name: 'Projects', route: '/project', hasDivider: true },
+  { name: 'About', route: '/about', hasDivider: false },
 ];
 class Nav extends Component {
-  componentDidMount = () => {
-    console.log(routes);
 
+  state = {
+    squarebrackets: ''
   }
 
-  onClick = (evt) => {
+  hasBracket = (evt) => {
     this.props.history.push(evt)
-    squarebrackets = 'squarebrackets';
+    this.setState({
+      squarebrackets: evt
+    })
   }
 
   render() {
@@ -27,12 +28,14 @@ class Nav extends Component {
           <div>&lt;JW/&gt;</div>
         </div>
         <div className='nav-routes'>
-          {/* {routes.map(route =>
+          {routes.map(route =>
             <NavItem
               route={route}
+              hasBracket={this.hasBracket}
+              squarebrackets={this.state.squarebrackets}
             />
-          )} */}
-          <button
+          )}
+          {/* <button
             className={`${squarebrackets} nav-routes-route`}
             onClick={() => this.onClick('/')}>
             Home
@@ -48,7 +51,7 @@ class Nav extends Component {
             className={`${squarebrackets} nav-routes-route`}
             onClick={() => this.onClick('/about')}>
             About
-          </button>
+          </button> */}
         </div>
         <div className='nav-theme'>
           <label>

@@ -17,9 +17,12 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  line-height: 60px;
-  cursor: pointer;
-  gap: 100px;
+}
+
+.nav-routes-buttonWrapper{
+  display: inline-flex;
+  width: 82px;
+  justify-content: center;
 }
 
 .nav-routes-route{
@@ -28,17 +31,29 @@
   color: white;
   font-size: 1rem;
   margin-top: 1.25rem;
+  cursor: pointer;
 }
 
 .nav-routes-route:focus{
+  outline: none;
+}
+
+.nav-routes-focus{
   font-weight: 600;
   outline: none;
+  background-color: inherit;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  cursor: pointer;
 }
 
 /* code taken from here: https://jaspreetchahal.org/pure-css-square-brackets/ */
 .squarebrackets 
 {
   position: relative;
+  z-index: 999;
 }
 .squarebrackets:before {
    content: " ";
@@ -47,9 +62,10 @@
    border-top: 2px solid #3E833C;
    border-bottom: 2px solid #3E833C;
    padding: 2px;
-   top: -6px;
-   bottom: -6px;
+   top: -5px;
+   bottom: -5px;
    left: -6px;
+   z-index: 999;
 }
 .squarebrackets:after
 {
@@ -59,16 +75,17 @@
    border-top: 2px solid #3E833C;
    border-bottom: 2px solid #3E833C;
    padding: 2px;
-   top: -6px;
-   bottom: -6px;
+   top: -5px;
+   bottom: -5px;
    right: -6px;
+   z-index: 999;
 }
 
 .nav-routes-divider{
   background-color: white;
   width: 1px;
   height: 20px;
-  margin-top: 20px;
+  margin: 20px 40px 0 40px;
 }
 
 .nav-logo{
@@ -242,7 +259,6 @@
   border: none;
   cursor: pointer;
   color: #F0F0F0;
-  font-size: ;
 }
 
 /* -------------------- CONTACT END -------------------- */
