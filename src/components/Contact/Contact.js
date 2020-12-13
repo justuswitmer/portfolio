@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { withRouter } from "react-router-dom";
 import linkedin from '../images/LI-Logo.png';
@@ -7,6 +7,13 @@ import { useSpring, animated } from "react-spring";
 function Contact(props) {
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
   const dispatch = useDispatch();
+
+  const getEmail = () => {
+    setEmail('');
+  }
+  useEffect(() => {
+    getEmail();
+  }, []);
 
   //Data fields
   const newMessage = useSelector((state) => state.newMessage);
