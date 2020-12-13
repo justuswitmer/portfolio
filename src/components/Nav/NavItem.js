@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 class NavItem extends Component {
 
   componentDidMount = () => {
-    this.props.history.push(this.props.squarebrackets)
     this.props.hasBracket(this.props.squarebrackets)
   }
 
@@ -25,7 +24,6 @@ class NavItem extends Component {
           <div className='nav-routes-divider' />
           :
           ''}
-
       </>
     );
   }

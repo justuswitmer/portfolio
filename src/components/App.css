@@ -279,6 +279,15 @@
   color: #F0F0F0;
 }
 
+/* Class for fields that are not valid */
+.is-invalid{
+  border: 1px solid red;
+}
+
+.invalid-feedback{
+  color: red;
+}
+
 /* -------------------- CONTACT END -------------------- */
 
 

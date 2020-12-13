@@ -1,91 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { put, takeLatest } from "redux-saga/effects";
-import './index.css';
-import App from './App';
-import createSagaMiddleware from 'redux-saga';
-import logger from 'redux-logger';
+import React from "react";
+import ReactDOM from "react-dom";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import createSagaMiddleware from "redux-saga";
+import logger from "redux-logger";
 
+// //Styling Imports
+// import "bootstrap/dist/css/bootstrap.min.css";
 
+import rootReducer from "./redux/reducers/_root.reducer"; // imports ./redux/reducers/index.js
+import rootSaga from "./redux/sagas/_root.saga"; // imports ./redux/sagas/index.js
 
-
-
-const projects = [
-  {
-    href: "g",
-    name: "Lake Elmo Aero",
-    path: '',
-  },
-  {
-    href: "https://github.com/justuswitmer/prime-solo-project",
-    name: "financeIt",
-    path: '',
-  },
-  {
-    href: "https://github.com/justuswitmer/weekend-movie-sagas",
-    name: "Movie Library",
-    path: '',
-  },
-  {
-    href: "https://github.com/justuswitmer/witmer-redux-feedback-loop",
-    name: "Feedback Survey",
-    path: '',
-  },
-  {
-    href: "https://github.com/justuswitmer/weekend-sql-to-do-list",
-    name: "To Do List",
-    path: '/Users/jman/Prime/secondTier/portfolio/src/images/todoList.png',
-  },
-  {
-    href: "https://github.com/justuswitmer/redux-pizza-parlor",
-    name: "Pizza Parlor",
-    path: '',
-  },
-]
-
-function* fetchImage(action) {
-  console.log('hit fetchImage', action);
-  yield put({
-    type: 'SET_IMAGE'
-  });
-}
-
-
-const imageReducer = (state = projects, action) => {
-  console.log('in imageReducer', action, state);
-  switch (action.type) {
-    case 'SET_IMAGE':
-      return state;
-    default:
-      return state;
-  }
-};
+import App from "./components/App";
 
 const sagaMiddleware = createSagaMiddleware();
 
-function* rootSaga() {
-  yield takeLatest('FETCH_IMAGE', fetchImage);
-}
-
-// const rootReducer = combineReducers({
-//   imageReducer,
-// });
-
+// this line creates an array of all of redux middleware you want to use
+// we don't want a whole ton of console logs in our production code
+// logger will only be added to your project if your in development mode
+const middlewareList =
+  process.env.NODE_ENV === "development"
+    ? [sagaMiddleware, logger]
+    : [sagaMiddleware];
 
 const store = createStore(
-  combineReducers({
-    imageReducer,
-  }),
-  applyMiddleware(sagaMiddleware, logger),
+  // tells the saga middleware to use the rootReducer
+  // rootSaga contains all of our other reducers
+  rootReducer,
+  // adds all middleware to our project including saga and logger
+  applyMiddleware(...middlewareList)
 );
 
+// tells the saga middleware to use the rootSaga
+// rootSaga contains all of our other sagas
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );
