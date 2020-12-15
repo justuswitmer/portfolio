@@ -12,24 +12,36 @@ import './App.css';
 import './Global.css';
 
 class App extends Component {
+  // state = {
+  //   mode: document.cookie.split('=')[1]
+  // }
   state = {
-    mode: document.cookie.split('=')[1]
+    inDarkTheme: true,
   }
 
-  setMode = (evt) => {
-    let mode = evt.target.value;
+  // setMode = (evt) => {
+  //   let mode = evt.target.value;
 
-    document.cookie = `mode=${mode}`
+  //   document.cookie = `mode=${mode}`
+  //   this.setState({
+  //     mode: mode
+  //   });
+  //   console.log(document.cookie.split('=')[1]);
+    
+  // }
+  setTheme = (property) => {
     this.setState({
-      mode: mode
-    })
+      inDarkTheme: property
+    });
+    console.log(this.state.inDarkTheme);
   }
   render() {
     return (
       <Router>
-        <div className={`App ${this.state.mode}`}>
+        <div className={this.state.inDarkTheme === true ? 'App dark': 'App light'}>
           <Nav
-            setMode={this.setMode}
+            setTheme={this.setTheme}
+            inDarkTheme={this.state.inDarkTheme}
           />
           <Route exact path="/">
             <Home />

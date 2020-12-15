@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import NavItem from './NavItem';
+import LogoLight from '../images/LogoLight.svg';
+import LogoDark from '../images/LogoDark.svg';
+import DarkActive from '../images/DarkActive.svg';
+import DarkInactive from '../images/DarkInactive.svg';
+import LightActive from '../images/LightActive.svg';
+import LightInactive from '../images/LightInactive.svg';
 
 const routes = [
   { name: 'Home', route: '/', hasDivider: true },
@@ -11,7 +17,7 @@ const routes = [
 class Nav extends Component {
 
   state = {
-    squarebrackets: ''
+    squarebrackets: '',
   }
 
   hasBracket = (evt) => {
@@ -25,7 +31,7 @@ class Nav extends Component {
     return (
       <div className='nav-container'>
         <div className='nav-logo'>
-          <div>&lt;JW/&gt;</div>
+          <div><img src={LogoLight}/></div>
         </div>
         <div className='nav-routes'>
           {routes.map(route =>
@@ -36,42 +42,26 @@ class Nav extends Component {
               squarebrackets={this.state.squarebrackets}
             />
           )}
-          {/* <button
-            className={`${squarebrackets} nav-routes-route`}
-            onClick={() => this.onClick('/')}>
-            Home
-          </button>
-          <div className='nav-routes-divider' />
-          <button
-            className={`${squarebrackets} nav-routes-route`}
-            onClick={() => this.onClick('/project')}>
-            Projects
-          </button>
-          <div className='nav-routes-divider' />
-          <button
-            className={`${squarebrackets} nav-routes-route`}
-            onClick={() => this.onClick('/about')}>
-            About
-          </button> */}
         </div>
-        <div className='nav-theme'>
-          <label>
-            <input
-              type='radio'
-              name='mode'
-              value='light'
-              onClick={this.props.setMode}
-            />Light Mode
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='mode'
-              value='dark'
-              onClick={this.props.setMode}
-            />Dark Mode
-          </label>
+        {this.props.inDarkTheme === true ?
+        <div className='nav-theme-dark'>
+          <div>
+            <img src={DarkActive}/>
+          </div>
+          <div onClick={()=>this.props.setTheme(false)}>
+            <img src={LightInactive}/>
+          </div>
         </div>
+        :
+        <div className='nav-theme-light'>
+          <div onClick={()=>this.props.setTheme(true)}>
+            <img src={DarkInactive}/>
+          </div>
+          <div>
+            <img src={LightActive}/>
+          </div>
+        </div>
+        }
       </div>
     );
   }

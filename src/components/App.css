@@ -1,6 +1,6 @@
 /* -------------------- NAV BAR BEGIN -------------------- */
 
-.nav-container{
+.nav-container {
   justify-content: space-between;
   grid-area: nav;
   height: 60px;
@@ -12,20 +12,20 @@
   padding-right: 50px;
 }
 
-.nav-routes{
+.nav-routes {
   display: inline-flex;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
 }
 
-.nav-routes-buttonWrapper{
+.nav-routes-buttonWrapper {
   display: inline-flex;
   width: 82px;
   justify-content: center;
 }
 
-.nav-routes-route{
+.nav-routes-route {
   background-color: inherit;
   border: none;
   color: white;
@@ -34,11 +34,11 @@
   cursor: pointer;
 }
 
-.nav-routes-route:focus{
+.nav-routes-route:focus {
   outline: none;
 }
 
-.nav-routes-focus{
+.nav-routes-focus {
   font-weight: 600;
   outline: none;
   background-color: inherit;
@@ -50,52 +50,58 @@
 }
 
 /* code taken from here: https://jaspreetchahal.org/pure-css-square-brackets/ */
-.squarebrackets 
-{
+.squarebrackets {
   position: relative;
   z-index: 999;
 }
 .squarebrackets:before {
-   content: " ";
-   position: absolute;
-   border-left: 2px solid #3E833C;
-   border-top: 2px solid #3E833C;
-   border-bottom: 2px solid #3E833C;
-   padding: 2px;
-   top: -5px;
-   bottom: -5px;
-   left: -6px;
-   z-index: 999;
+  content: " ";
+  position: absolute;
+  border-left: 2px solid #3e833c;
+  border-top: 2px solid #3e833c;
+  border-bottom: 2px solid #3e833c;
+  padding: 2px;
+  top: -5px;
+  bottom: -5px;
+  left: -6px;
+  z-index: 999;
 }
-.squarebrackets:after
-{
-   content: " ";
-   position: absolute;
-   border-right: 2px solid #3E833C;
-   border-top: 2px solid #3E833C;
-   border-bottom: 2px solid #3E833C;
-   padding: 2px;
-   top: -5px;
-   bottom: -5px;
-   right: -6px;
-   z-index: 999;
+.squarebrackets:after {
+  content: " ";
+  position: absolute;
+  border-right: 2px solid #3e833c;
+  border-top: 2px solid #3e833c;
+  border-bottom: 2px solid #3e833c;
+  padding: 2px;
+  top: -5px;
+  bottom: -5px;
+  right: -6px;
+  z-index: 999;
 }
 
-.nav-routes-divider{
+.nav-routes-divider {
   background-color: white;
   width: 1px;
   height: 20px;
   margin: 20px 40px 0 40px;
 }
 
-.nav-logo{
- line-height: 60px;
-}
-
-.nav-theme{
+.nav-logo {
   line-height: 60px;
 }
 
+.nav-theme-dark {
+  line-height: 60px;
+  background-color: blue;
+}
+
+.nav-theme-light {
+  line-height: 60px;
+  background-color: red;
+}
+
+.modeSetting {
+}
 
 /* -------------------- NAV BAR END -------------------- */
 
@@ -106,7 +112,7 @@
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
-  grid-template-areas: 
+  grid-template-areas:
     "intro profile"
     "viewProjects viewProjects";
   padding: 160px 0 90px 120px;
@@ -115,50 +121,58 @@
   background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
 }
 
-.home-intro{
+.home-intro {
   grid-area: intro;
 }
 
-.home-profile{
+.home-profile {
   grid-area: profile;
 }
 
-.home-profile-img{
+.home-profile-img {
   width: 40%;
   border-radius: 50%;
 }
 
-.home-viewProjects{
+.home-viewProjects {
   grid-area: viewProjects;
 }
 
-.home-viewProjects-button{
+.home-viewProjects-button {
   height: 60px;
   width: 265px;
   border-radius: 5px;
-  background-color: #3E833C;
+  background-color: #3e833c;
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 0.51px;
   line-height: 29px;
-  color: #F0F0F0;
+  color: #f0f0f0;
 }
 
 /* -------------------- HOME END -------------------- */
 
 /* -------------------- PROJECT BEGIN -------------------- */
 
-.project-container{
+.project-container {
   grid-area: body;
+}
+
+iframe:focus {
+  outline: none;
+}
+
+iframe[seamless] {
+  display: block;
 }
 
 /* -------------------- PROJECT END -------------------- */
 
 /* -------------------- ABOUT BEGIN -------------------- */
 
-.about-container{
+.about-container {
   grid-area: body;
 }
 
@@ -166,7 +180,7 @@
 
 /* -------------------- CONTACT BEGIN -------------------- */
 
-.contact-container{
+.contact-container {
   grid-area: contact;
   background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
   border-radius: 4px;
@@ -174,28 +188,28 @@
   padding-bottom: 40px;
 }
 
-.contact-intro{
+.contact-intro {
   display: inline-flex;
 }
 
-.contact-linkedin-link{
+.contact-linkedin-link {
   height: 20px;
   margin-top: 17px;
 }
 
-.contact-linkedin-image{
+.contact-linkedin-image {
   width: 5.6rem;
   margin-left: 4px;
   margin-bottom: -3px;
 }
 
-.contact-form-container{
+.contact-form-container {
   width: 820px;
   display: grid;
   gap: 30px 10px;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
-  grid-template-areas: 
+  grid-template-areas:
     "name  email"
     "message message"
     "button .";
@@ -204,96 +218,95 @@
   transform: translate(-50%);
 }
 
-.contact-form-container-p{
+.contact-form-container-p {
   text-align: start;
   margin: 0 0 5px 0;
-  font-size: .875rem;
+  font-size: 0.875rem;
 }
 
-.contact-name{
+.contact-name {
   grid-area: name;
 }
 
-.contact-name-input{
+.contact-name-input {
   height: 50px;
   width: 400px;
   border-radius: 5px;
   border: none;
   background-color: #252525;
-  color: #F0F0F0;
+  color: #f0f0f0;
 }
 
-.contact-name-input:focus{
+.contact-name-input:focus {
   border: 1px solid green;
   outline: none;
 }
 
-.contact-email{
+.contact-email {
   grid-area: email;
 }
 
-.contact-email-input{
+.contact-email-input {
   height: 50px;
   width: 400px;
   border-radius: 5px;
   border: none;
   background-color: #252525;
-  color: #F0F0F0;
+  color: #f0f0f0;
 }
 
-.contact-email-input:focus{
+.contact-email-input:focus {
   border: 1px solid green;
   outline: none;
 }
 
-.contact-message{
+.contact-message {
   grid-area: message;
 }
 
-.contact-message-input{
+.contact-message-input {
   height: 150px;
   width: 820px;
   border-radius: 5px;
   border: none;
   background-color: #252525;
-  color: #F0F0F0;
+  color: #f0f0f0;
 }
 
-.contact-message-input:focus{
+.contact-message-input:focus {
   border: 1px solid green;
   outline: none;
 }
 
-.contact-button{
+.contact-button {
   grid-area: button;
   text-align: start;
 }
 
-.contact-button-send{
+.contact-button-send {
   height: 40px;
   width: 97px;
   border-radius: 5px;
-  background-color: #3E833C;
+  background-color: #3e833c;
   border: none;
   cursor: pointer;
-  color: #F0F0F0;
+  color: #f0f0f0;
 }
 
 /* Class for fields that are not valid */
-.is-invalid{
+.is-invalid {
   border: 1px solid red;
 }
 
-.invalid-feedback{
+.invalid-feedback {
   color: red;
 }
 
 /* -------------------- CONTACT END -------------------- */
 
-
 /* -------------------- FOOTER BEGIN -------------------- */
 
-.footer-container{
+.footer-container {
   grid-area: footer;
   background-color: #222222;
   margin-left: -50px;
@@ -303,4 +316,3 @@
 }
 
 /* -------------------- FOOTER END -------------------- */
-

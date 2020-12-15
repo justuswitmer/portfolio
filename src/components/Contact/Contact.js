@@ -44,21 +44,21 @@ function Contact(props) {
 
   // Determines if there are any issues with required fields. If no, it returns true.
   const validateForm = () => {
-    if (!email.includes("@")) {
-      setEmailError("Invalid Email Format");
+    if (!email.includes('@')) {
+      setEmailError('Invalid Email Format');
     }
     if (!fullName) {
-      setFullNameError("Name Cannot Be Blank");
+      setFullNameError('Name Cannot Be Blank');
     }
     if (!message) {
-      setMessageError("Please Enter a Mesage");
+      setMessageError('Please Enter a Mesage');
     }
     if (
-      !email.includes("@") ||
+      !email.includes('@') ||
       !fullName ||
       !message
     ) {
-      console.log("Message Error");
+      console.log('Message Error');
       return false;
     }
     return true;
@@ -69,32 +69,19 @@ function Contact(props) {
     const isValid = validateForm();
 
     if (isValid) {
-      props.history.push("/thanks");
-      // add in dispatch details here
+      props.history.push('/thanks');
       const newMessage = {
         fullName: fullName,
         email: email,
         message: message
       };
       dispatch({
-        type: "SEND_MESSAGE",
+        type: 'SEND_MESSAGE',
+        url: '/send-message',
         payload: newMessage,
       });
     }
-  };
-
-  // function ValidateEmail(input) {
-  //   var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  //   if (input.value.match(validRegex)) {
-  //     alert("Valid email address!");
-  //     document.form1.text1.focus();
-  //     return true;
-  //   } else {
-  //     alert("Invalid email address!");
-  //     document.form1.text1.focus();
-  //     return false;
-  //   }
-  // }
+  };        
 
 
   return (
