@@ -30,9 +30,9 @@ class Nav extends Component {
   render() {
     return (
       <div className='nav-container'>
-        <div className='nav-logo'>
-          <div><img src={LogoLight}/></div>
-        </div>
+          <img 
+            className='nav-logo'
+            src={LogoLight}/>
         <div className='nav-routes'>
           {routes.map(route =>
             <NavItem
@@ -43,25 +43,34 @@ class Nav extends Component {
             />
           )}
         </div>
+        <div>
         {this.props.inDarkTheme === true ?
-        <div className='nav-theme-dark'>
-          <div>
-            <img src={DarkActive}/>
-          </div>
-          <div onClick={()=>this.props.setTheme(false)}>
-            <img src={LightInactive}/>
-          </div>
+        <div className='nav-theme ntdark'>
+            <img 
+              className='nav-theme-svg' 
+              src={DarkActive}
+            />
+        <div className='nav-theme-divider'></div>
+            <img 
+              className='nav-theme-svg'
+              src={LightInactive} 
+              onClick={()=>this.props.setTheme(false)}
+            />
         </div>
         :
-        <div className='nav-theme-light'>
-          <div onClick={()=>this.props.setTheme(true)}>
-            <img src={DarkInactive}/>
-          </div>
-          <div>
-            <img src={LightActive}/>
-          </div>
+        <div className='nav-theme ntlight'>
+            <img 
+              className='nav-theme-svg'
+              src={DarkInactive}
+              onClick={()=>this.props.setTheme(true)}
+            />
+            <img 
+              className='nav-theme-svg'
+              src={LightActive}
+            />
         </div>
         }
+        </div>
       </div>
     );
   }

@@ -20,7 +20,7 @@ class NavItem extends Component {
             {this.props.route.name}
           </div>
         </div>
-        {this.props.route.hasDivider == true ?
+        {this.props.route.hasDivider === true ?
           <div className='nav-routes-divider' />
           :
           ''}

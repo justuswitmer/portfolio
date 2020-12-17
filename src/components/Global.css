@@ -4,18 +4,17 @@
   min-height: -webkit-fill-available;
 
   /* defining how many columns I want */
-  grid-template-columns: repeat(1, 1fr [col-start]);;
+  grid-template-columns: repeat(1, 1fr [col-start]);
 
   /* defining how many rows I want */
-  grid-template-rows: 60px auto 500px 150px;
+  grid-template-rows: 80px auto 500px 150px;
   gap: 30px;
-  
-  grid-template-areas: 
+
+  grid-template-areas:
     "nav"
     "body"
     "contact"
-    "footer"
-  ;
+    "footer";
 }
 
 /* -------------------- light and dark mode stuff begin -------------------- */
@@ -29,9 +28,10 @@
 .App.light {
   color: #222;
   background-color: #c4c0c0;
+  padding: 0 50px;
 }
 
-.light{
+.light {
   color: #222;
 }
 

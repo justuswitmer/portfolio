@@ -3,7 +3,7 @@
 .nav-container {
   justify-content: space-between;
   grid-area: nav;
-  height: 60px;
+  line-height: 80px;
   background-color: #222222;
   display: inline-flex;
   margin-left: -50px;
@@ -30,7 +30,7 @@
   border: none;
   color: white;
   font-size: 1rem;
-  margin-top: 1.25rem;
+
   cursor: pointer;
 }
 
@@ -83,24 +83,38 @@
   background-color: white;
   width: 1px;
   height: 20px;
-  margin: 20px 40px 0 40px;
+  margin: 30px 40px 30px 40px;
 }
 
 .nav-logo {
-  line-height: 60px;
+  height: 100%;
 }
 
-.nav-theme-dark {
-  line-height: 60px;
-  background-color: blue;
+.nav-theme {
+  display: inline-flex;
+  width: 61px;
+  height: 30px;
+  vertical-align: middle;
+  border-radius: 5px;
 }
 
-.nav-theme-light {
-  line-height: 60px;
-  background-color: red;
+.ntdark {
+  background-color: #1d1d1d;
 }
 
-.modeSetting {
+.ntlight {
+  background-color: #9c9c9c;
+}
+
+.nav-theme-divider {
+  width: 1px;
+  height: 20px;
+  margin: 5px 0 5px 0;
+  background-color: #272727;
+}
+
+.nav-theme-svg {
+  margin: 0 7px;
 }
 
 /* -------------------- NAV BAR END -------------------- */
