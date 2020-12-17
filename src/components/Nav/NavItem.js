@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class NavItem extends Component {
 
   componentDidMount = () => {
-    this.props.hasBracket(this.props.squarebrackets)
+    this.hasBracket(this.props.history.location.pathname);
+  }
+
+  hasBracket = (evt) => {
+    this.props.history.push(evt);
+    this.props.dispatch({
+      type: 'UPDATE_HAS_BRACKETS',
+      payload: evt,
+    });
   }
 
   render() {
@@ -13,10 +22,10 @@ class NavItem extends Component {
       <>
         <div className='nav-routes-buttonWrapper'>
           <div
-            className={this.props.squarebrackets === this.props.route.route ?
+            className={this.props.store.hasBrackets === this.props.route.route ?
               'squarebrackets nav-routes-focus'
               : 'nav-routes-route'}
-            onClick={() => this.props.hasBracket(this.props.route.route)}>
+            onClick={() => this.hasBracket(this.props.route.route)}>
             {this.props.route.name}
           </div>
         </div>
@@ -29,23 +38,4 @@ class NavItem extends Component {
   }
 }
 
-export default connect()(withRouter(NavItem));
-
-
-/* <button
-className={`${squarebrackets} nav-routes-route`}
-onClick={() => this.onClick('/')}>
-Home
-</button>
-<div className='nav-routes-divider' />
-<button
-className={`${squarebrackets} nav-routes-route`}
-onClick={() => this.onClick('/project')}>
-Projects
-</button>
-<div className='nav-routes-divider' />
-<button
-className={`${squarebrackets} nav-routes-route`}
-onClick={() => this.onClick('/about')}>
-About
-</button> */
+export default connect(mapStoreToProps)(withRouter(NavItem));

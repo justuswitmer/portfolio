@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import NavItem from './NavItem';
+
+// SVG imports
 import LogoLight from '../images/LogoLight.svg';
 import LogoDark from '../images/LogoDark.svg';
 import DarkActive from '../images/DarkActive.svg';

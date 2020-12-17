@@ -45,7 +45,7 @@
   border: none;
   color: white;
   font-size: 1rem;
-  margin-top: 1.25rem;
+
   cursor: pointer;
 }
 
@@ -61,9 +61,9 @@
   border-top: 2px solid #3e833c;
   border-bottom: 2px solid #3e833c;
   padding: 2px;
-  top: -5px;
-  bottom: -5px;
-  left: -6px;
+  top: 27px;
+  bottom: 27px;
+  left: -15px;
   z-index: 999;
 }
 .squarebrackets:after {
@@ -73,9 +73,9 @@
   border-top: 2px solid #3e833c;
   border-bottom: 2px solid #3e833c;
   padding: 2px;
-  top: -5px;
-  bottom: -5px;
-  right: -6px;
+  top: 27px;
+  bottom: 27px;
+  right: -15px;
   z-index: 999;
 }
 
