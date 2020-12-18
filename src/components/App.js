@@ -9,7 +9,6 @@ import Footer from './Footer/Footer';
 import Home from './Home/Home';
 
 import './App.css';
-import './Global.css';
 
 class App extends Component {
   // state = {

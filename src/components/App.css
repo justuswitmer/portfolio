@@ -1,332 +1,460 @@
-/* -------------------- NAV BAR BEGIN -------------------- */
-
-.nav-container {
-  justify-content: space-between;
-  grid-area: nav;
-  line-height: 80px;
-  background-color: #222222;
-  display: inline-flex;
-  margin-left: -50px;
-  margin-right: -50px;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.nav-routes {
-  display: inline-flex;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.nav-routes-buttonWrapper {
-  display: inline-flex;
-  width: 82px;
-  justify-content: center;
-}
-
-.nav-routes-route {
-  background-color: inherit;
-  border: none;
-  color: white;
-  font-size: 1rem;
-
-  cursor: pointer;
-}
-
-.nav-routes-route:focus {
-  outline: none;
-}
-
-.nav-routes-focus {
-  font-weight: 600;
-  outline: none;
-  background-color: inherit;
-  border: none;
-  color: white;
-  font-size: 1rem;
-
-  cursor: pointer;
-}
-
-/* code taken from here: https://jaspreetchahal.org/pure-css-square-brackets/ */
-.squarebrackets {
-  position: relative;
-  z-index: 999;
-}
-.squarebrackets:before {
-  content: " ";
-  position: absolute;
-  border-left: 2px solid #3e833c;
-  border-top: 2px solid #3e833c;
-  border-bottom: 2px solid #3e833c;
-  padding: 2px;
-  top: 27px;
-  bottom: 27px;
-  left: -15px;
-  z-index: 999;
-}
-.squarebrackets:after {
-  content: " ";
-  position: absolute;
-  border-right: 2px solid #3e833c;
-  border-top: 2px solid #3e833c;
-  border-bottom: 2px solid #3e833c;
-  padding: 2px;
-  top: 27px;
-  bottom: 27px;
-  right: -15px;
-  z-index: 999;
-}
-
-.nav-routes-divider {
-  background-color: white;
-  width: 1px;
-  height: 20px;
-  margin: 30px 40px 30px 40px;
-}
-
-.nav-logo {
-  height: 100%;
-}
-
-.nav-theme {
-  display: inline-flex;
-  width: 61px;
-  height: 30px;
-  vertical-align: middle;
-  border-radius: 5px;
-}
-
-.ntdark {
-  background-color: #1d1d1d;
-}
-
-.ntlight {
-  background-color: #9c9c9c;
-}
-
-.nav-theme-divider {
-  width: 1px;
-  height: 20px;
-  margin: 5px 0 5px 0;
-  background-color: #272727;
-}
-
-.nav-theme-svg {
-  margin: 0 7px;
-}
-
-/* -------------------- NAV BAR END -------------------- */
-
-/* -------------------- HOME BEGIN -------------------- */
-
-.home-container {
-  grid-area: body;
+.App {
+  text-align: center;
   display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto;
+  min-height: -webkit-fill-available;
+  font-family: "Raleway", sans-serif;
+
+  /* defining how many columns I want */
+  grid-template-columns: repeat(1, 1fr [col-start]);
+
+  /* defining how many rows I want */
+  grid-template-rows: 80px auto 430px 150px;
+  gap: 30px;
+
   grid-template-areas:
-    "intro profile"
-    "viewProjects viewProjects";
-  padding: 160px 0 90px 120px;
-  text-align: left;
-  border-radius: 4px;
-  background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
+    "nav"
+    "body"
+    "contact"
+    "footer";
 }
 
-.home-intro {
-  grid-area: intro;
+/* -------------------- light and dark mode stuff begin -------------------- */
+
+.App.dark {
+  color: #c4c0c0;
+  background-color: #0e0e0e;
+  padding: 0 50px;
 }
 
-.home-profile {
-  grid-area: profile;
+.App.light {
+  color: #222;
+  background-color: #c4c0c0;
+  padding: 0 50px;
 }
 
-.home-profile-img {
-  width: 40%;
-  border-radius: 50%;
+.light {
+  color: #222;
 }
 
-.home-viewProjects {
-  grid-area: viewProjects;
+.dark {
+  color: #c4c0c0;
+}
+/* -------------------- light and dark mode stuff end -------------------- */
+
+@media screen and (max-width: 9999px) {
+  /* -------------------- NAV BAR BEGIN -------------------- */
+
+  .nav-container {
+    justify-content: space-between;
+    grid-area: nav;
+    line-height: 80px;
+    background-color: #222222;
+    display: inline-flex;
+    margin-left: -50px;
+    margin-right: -50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .nav-routes {
+    display: inline-flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .nav-routes-buttonWrapper {
+    display: inline-flex;
+    width: 82px;
+    justify-content: center;
+  }
+
+  .nav-routes-route {
+    background-color: inherit;
+    border: none;
+    color: white;
+    font-size: 1rem;
+
+    cursor: pointer;
+  }
+
+  .nav-routes-route:focus {
+    outline: none;
+  }
+
+  .nav-routes-focus {
+    font-weight: 600;
+    outline: none;
+    background-color: inherit;
+    border: none;
+    color: white;
+    font-size: 1rem;
+
+    cursor: pointer;
+  }
+
+  /* code taken from here: https://jaspreetchahal.org/pure-css-square-brackets/ */
+  .squarebrackets {
+    position: relative;
+    z-index: 999;
+  }
+  .squarebrackets:before {
+    content: " ";
+    position: absolute;
+    border-left: 2px solid #3e833c;
+    border-top: 2px solid #3e833c;
+    border-bottom: 2px solid #3e833c;
+    padding: 2px;
+    top: 27px;
+    bottom: 27px;
+    left: -15px;
+    z-index: 999;
+  }
+  .squarebrackets:after {
+    content: " ";
+    position: absolute;
+    border-right: 2px solid #3e833c;
+    border-top: 2px solid #3e833c;
+    border-bottom: 2px solid #3e833c;
+    padding: 2px;
+    top: 27px;
+    bottom: 27px;
+    right: -15px;
+    z-index: 999;
+  }
+
+  .nav-routes-divider {
+    background-color: white;
+    width: 1px;
+    height: 20px;
+    margin: 30px 40px 30px 40px;
+  }
+
+  .nav-logo {
+    height: 100%;
+  }
+
+  .nav-theme {
+    display: inline-flex;
+    width: 61px;
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 5px;
+  }
+
+  .ntdark {
+    background-color: #1d1d1d;
+  }
+
+  .ntlight {
+    background-color: #9c9c9c;
+  }
+
+  .nav-theme-divider {
+    width: 1px;
+    height: 20px;
+    margin: 5px 0 5px 0;
+    background-color: #272727;
+  }
+
+  .nav-theme-svg {
+    margin: 0 7px;
+  }
+
+  /* -------------------- NAV BAR END -------------------- */
+
+  /* -------------------- HOME BEGIN -------------------- */
+
+  .home-container {
+    grid-area: body;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "intro profile"
+      "viewProjects viewProjects";
+    padding: 160px 0 90px 120px;
+    text-align: left;
+    border-radius: 4px;
+    background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
+  }
+
+  .home-intro {
+    grid-area: intro;
+  }
+
+  .home-intro-h2 {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 64px;
+    letter-spacing: 1.07px;
+  }
+
+  .home-intro-p {
+    line-height: 33px;
+    font-size: 24px;
+    letter-spacing: 0.51px;
+    width: 530px;
+  }
+
+  .home-profile {
+    grid-area: profile;
+  }
+
+  .home-profile-img {
+    width: 340px;
+    border-radius: 50%;
+    float: right;
+    margin-right: 120px;
+  }
+
+  .home-viewProjects {
+    grid-area: viewProjects;
+  }
+
+  .home-viewProjects-button {
+    height: 60px;
+    width: 265px;
+    border-radius: 5px;
+    background-color: #3e833c;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.51px;
+    line-height: 29px;
+    color: #f0f0f0;
+  }
+
+  /* -------------------- HOME END -------------------- */
+
+  /* -------------------- PROJECT BEGIN -------------------- */
+
+  .project-container {
+    grid-area: body;
+  }
+
+  iframe:focus {
+    outline: none;
+  }
+
+  iframe[seamless] {
+    display: block;
+  }
+
+  /* -------------------- PROJECT END -------------------- */
+
+  /* -------------------- ABOUT BEGIN -------------------- */
+
+  .about-container {
+    grid-area: body;
+  }
+
+  /* -------------------- ABOUT BEGIN -------------------- */
+
+  /* -------------------- CONTACT BEGIN -------------------- */
+
+  .contact-container {
+    grid-area: contact;
+    background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
+    border-radius: 4px;
+    align-items: center;
+    padding-bottom: 40px;
+  }
+
+  .contact-intro {
+    display: inline-flex;
+  }
+
+  .contact-linkedin-link {
+    height: 20px;
+    margin-top: 17px;
+  }
+
+  .contact-linkedin-image {
+    width: 5.6rem;
+    margin-left: 4px;
+    margin-bottom: -0.28rem;
+  }
+
+  .contact-form-container {
+    width: 820px;
+    display: grid;
+    gap: 30px 10px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "name  email"
+      "message message"
+      "button .";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .contact-form-container-p {
+    text-align: start;
+    margin: 0 0 5px 0;
+    font-size: 0.875rem;
+  }
+
+  .contact-name {
+    grid-area: name;
+  }
+
+  .contact-name-input {
+    height: 50px;
+    width: 400px;
+    border-radius: 5px;
+    border: none;
+    background-color: #252525;
+    color: #f0f0f0;
+  }
+
+  .contact-name-input:focus {
+    border: 1px solid green;
+    outline: none;
+  }
+
+  .contact-email {
+    grid-area: email;
+  }
+
+  .contact-email-input {
+    height: 50px;
+    width: 400px;
+    border-radius: 5px;
+    border: none;
+    background-color: #252525;
+    color: #f0f0f0;
+  }
+
+  .contact-email-input:focus {
+    border: 1px solid green;
+    outline: none;
+  }
+
+  .contact-message {
+    grid-area: message;
+  }
+
+  .contact-message-input {
+    height: 150px;
+    width: 820px;
+    border-radius: 5px;
+    border: none;
+    background-color: #252525;
+    color: #f0f0f0;
+  }
+
+  .contact-message-input:focus {
+    border: 1px solid green;
+    outline: none;
+  }
+
+  .contact-button {
+    grid-area: button;
+    text-align: start;
+  }
+
+  .contact-button-send {
+    height: 40px;
+    width: 97px;
+    border-radius: 5px;
+    background-color: #3e833c;
+    border: none;
+    cursor: pointer;
+    color: #f0f0f0;
+  }
+
+  /* Class for fields that are not valid */
+  .is-invalid {
+    border: 1px solid red;
+  }
+
+  .invalid-feedback {
+    color: red;
+  }
+
+  /* -------------------- CONTACT END -------------------- */
+
+  /* -------------------- FOOTER BEGIN -------------------- */
+
+  .footer-container {
+    grid-area: footer;
+    background-color: #222222;
+    margin-left: -50px;
+    margin-right: -50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  /* -------------------- FOOTER END -------------------- */
 }
 
-.home-viewProjects-button {
-  height: 60px;
-  width: 265px;
-  border-radius: 5px;
-  background-color: #3e833c;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: 0.51px;
-  line-height: 29px;
-  color: #f0f0f0;
+@media screen and (max-width: 930px) {
+  .App {
+    text-align: center;
+    display: grid;
+    min-height: -webkit-fill-available;
+
+    /* defining how many columns I want */
+    grid-template-columns: repeat(1, 1fr [col-start]);
+
+    /* defining how many rows I want */
+    grid-template-rows: 80px auto 550px 150px;
+    gap: 30px;
+
+    grid-template-areas:
+      "nav"
+      "body"
+      "contact"
+      "footer";
+  }
+
+  /* -------------------- CONTACT BEGIN -------------------- */
+  .contact-form-container {
+    justify-content: center;
+    display: grid;
+    gap: 30px 10px;
+    grid-template-columns: 400px;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "name"
+      "email"
+      "message"
+      "button";
+  }
+
+  .contact-form-container-p {
+    text-align: start;
+    margin: 0 0 5px 0;
+    font-size: 0.875rem;
+  }
+
+  .contact-intro {
+    display: block;
+    padding: 0 10px 0 10px;
+  }
+
+  .contact-name-input {
+    width: 390px;
+  }
+
+  .contact-email-input {
+    width: 390px;
+  }
+
+  .contact-message-input {
+    width: 390px;
+  }
+
+  /* -------------------- CONTACT END -------------------- */
 }
 
-/* -------------------- HOME END -------------------- */
-
-/* -------------------- PROJECT BEGIN -------------------- */
-
-.project-container {
-  grid-area: body;
+@media screen and (max-width: 665px) {
+  .app {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
 }
-
-iframe:focus {
-  outline: none;
-}
-
-iframe[seamless] {
-  display: block;
-}
-
-/* -------------------- PROJECT END -------------------- */
-
-/* -------------------- ABOUT BEGIN -------------------- */
-
-.about-container {
-  grid-area: body;
-}
-
-/* -------------------- ABOUT BEGIN -------------------- */
-
-/* -------------------- CONTACT BEGIN -------------------- */
-
-.contact-container {
-  grid-area: contact;
-  background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
-  border-radius: 4px;
-  align-items: center;
-  padding-bottom: 40px;
-}
-
-.contact-intro {
-  display: inline-flex;
-}
-
-.contact-linkedin-link {
-  height: 20px;
-  margin-top: 17px;
-}
-
-.contact-linkedin-image {
-  width: 5.6rem;
-  margin-left: 4px;
-  margin-bottom: -3px;
-}
-
-.contact-form-container {
-  width: 820px;
-  display: grid;
-  gap: 30px 10px;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "name  email"
-    "message message"
-    "button .";
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.contact-form-container-p {
-  text-align: start;
-  margin: 0 0 5px 0;
-  font-size: 0.875rem;
-}
-
-.contact-name {
-  grid-area: name;
-}
-
-.contact-name-input {
-  height: 50px;
-  width: 400px;
-  border-radius: 5px;
-  border: none;
-  background-color: #252525;
-  color: #f0f0f0;
-}
-
-.contact-name-input:focus {
-  border: 1px solid green;
-  outline: none;
-}
-
-.contact-email {
-  grid-area: email;
-}
-
-.contact-email-input {
-  height: 50px;
-  width: 400px;
-  border-radius: 5px;
-  border: none;
-  background-color: #252525;
-  color: #f0f0f0;
-}
-
-.contact-email-input:focus {
-  border: 1px solid green;
-  outline: none;
-}
-
-.contact-message {
-  grid-area: message;
-}
-
-.contact-message-input {
-  height: 150px;
-  width: 820px;
-  border-radius: 5px;
-  border: none;
-  background-color: #252525;
-  color: #f0f0f0;
-}
-
-.contact-message-input:focus {
-  border: 1px solid green;
-  outline: none;
-}
-
-.contact-button {
-  grid-area: button;
-  text-align: start;
-}
-
-.contact-button-send {
-  height: 40px;
-  width: 97px;
-  border-radius: 5px;
-  background-color: #3e833c;
-  border: none;
-  cursor: pointer;
-  color: #f0f0f0;
-}
-
-/* Class for fields that are not valid */
-.is-invalid {
-  border: 1px solid red;
-}
-
-.invalid-feedback {
-  color: red;
-}
-
-/* -------------------- CONTACT END -------------------- */
-
-/* -------------------- FOOTER BEGIN -------------------- */
-
-.footer-container {
-  grid-area: footer;
-  background-color: #222222;
-  margin-left: -50px;
-  margin-right: -50px;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-/* -------------------- FOOTER END -------------------- */

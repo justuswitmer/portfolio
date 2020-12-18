@@ -87,18 +87,20 @@ function Contact(props) {
   return (
     <animated.div style={trans} className='contact-container'>
       <div className='contact-intro'>
-        <h3>You can reach me on</h3>
-        <a
-          href="https://www.linkedin.com/in/justus-witmer"
-          className='contact-linkedin-link'
-        >
-          <img
-            src={linkedin}
-            className='contact-linkedin-image'
-            alt='LinkedIn Logo'
-          />
-        </a>
-        <h3>or through filling out the form below.</h3>
+        <h3>
+          You can reach me on
+          <a
+            href="https://www.linkedin.com/in/justus-witmer"
+            className='contact-linkedin-link'
+          >
+            <img
+              src={linkedin}
+              className='contact-linkedin-image'
+              alt='LinkedIn Logo'
+            />
+          </a>
+          or through filling out the form below.
+        </h3>
       </div>
       <div className='contact-form-container'>
         <div className='contact-name'>
