@@ -18,17 +18,6 @@ const routes = [
 ];
 class Nav extends Component {
 
-  state = {
-    squarebrackets: '',
-  }
-
-  hasBracket = (evt) => {
-    this.props.history.push(evt);
-    this.setState({
-      squarebrackets: evt
-    });
-  }
-
   render() {
     return (
       <div className='nav-container'>
@@ -40,8 +29,6 @@ class Nav extends Component {
             <NavItem
               key={route.name}
               route={route}
-              hasBracket={this.hasBracket}
-              squarebrackets={this.state.squarebrackets}
             />
           )}
         </div>

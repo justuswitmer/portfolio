@@ -8,10 +8,8 @@ function Home() {
   return (
     <animated.div style={trans} className='home-container'>
       <div className='home-intro'>
-        <div className='home-intro-h2'>
-          <h2>Hi, I'm Justus Witmer.</h2>
-          <h2>I am a software developer.</h2>
-        </div>
+          <h2 className='home-intro-h2'>Hi, I'm Justus.</h2>
+          <h2 className='home-intro-h2'>I am a software developer.</h2>
         <p className='home-intro-p'>I build tools that help users focus on their goals and dreams and not on the software that hinders them.</p>
       </div>
       <div className='home-profile'>

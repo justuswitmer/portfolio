@@ -1,8 +1,39 @@
+/* -------------------- GLOBAL ELEMENTS -------------------- */
+@font-face {
+  font-family: "Roboto Flex";
+  src: url("RobotoFlex-VF.woff2") format("woff2 supports variations"),
+    url("RobotoFlex-VF.woff2") format("woff2-variations");
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+}
+
+:root {
+  /* dark theme */
+  --primarydark: #0e0e0e;
+
+  /* light theme */
+  --primarylight: #c4c0c0;
+}
+
+/* -------------------- Light And Dark Mode Begin -------------------- */
+.light {
+  color: #222;
+  background-color: #c4c0c0;
+  padding: 0 50px;
+}
+
+.dark {
+  color: #c4c0c0;
+  background-color: #0e0e0e;
+  padding: 0 50px;
+}
+/* -------------------- Light And Dark Mode End -------------------- */
+
 .App {
   text-align: center;
   display: grid;
   min-height: -webkit-fill-available;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto Flex";
 
   /* defining how many columns I want */
   grid-template-columns: repeat(1, 1fr [col-start]);
@@ -18,28 +49,7 @@
     "footer";
 }
 
-/* -------------------- light and dark mode stuff begin -------------------- */
-
-.App.dark {
-  color: #c4c0c0;
-  background-color: #0e0e0e;
-  padding: 0 50px;
-}
-
-.App.light {
-  color: #222;
-  background-color: #c4c0c0;
-  padding: 0 50px;
-}
-
-.light {
-  color: #222;
-}
-
-.dark {
-  color: #c4c0c0;
-}
-/* -------------------- light and dark mode stuff end -------------------- */
+/* -------------------- SPECIFIC ELEMENTS -------------------- */
 
 @media screen and (max-width: 9999px) {
   /* -------------------- NAV BAR BEGIN -------------------- */
@@ -181,20 +191,22 @@
 
   .home-intro {
     grid-area: intro;
+    padding-top: 35px;
   }
 
   .home-intro-h2 {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 50px;
-    line-height: 64px;
     letter-spacing: 1.07px;
+    margin: 10px 184px 10px 0;
   }
 
   .home-intro-p {
     line-height: 33px;
     font-size: 24px;
     letter-spacing: 0.51px;
-    width: 530px;
+    max-width: 550px;
+    margin-top: 40px;
   }
 
   .home-profile {
@@ -210,6 +222,12 @@
 
   .home-viewProjects {
     grid-area: viewProjects;
+    justify-items: center;
+    display: grid;
+  }
+
+  .home-viewProjects > p {
+    font-size: 24px;
   }
 
   .home-viewProjects-button {
