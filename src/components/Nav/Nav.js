@@ -50,32 +50,45 @@ class Nav extends Component {
         <div>
         {this.props.store.setTheme === true ?
         <div className='nav-theme ntdark'>
-            <img 
-              className='nav-theme-svg' 
+          <div className='nav-theme-img'>
+            <img
+              className='nav-theme-svg'
               src={DarkActive}
               alt=''
             />
-        <div className='nav-theme-divider'></div>
-            <img 
-              className='nav-theme-svg'
-              src={LightInactive} 
-              alt=''
-              onClick={()=>this.setTheme(false)}
-            />
+            <span className='nav-theme-img-text'>Dark Mode</span>
+          </div>
+          <div className='nav-theme-divider'></div>
+            <div className='nav-theme-img'>
+              <img 
+                className='nav-theme-svg'
+                src={LightInactive} 
+                alt=''
+                onClick={()=>this.setTheme(false)}
+              />
+              <span className='nav-theme-img-text'>Light Mode</span>
+            </div>
         </div>
         :
         <div className='nav-theme ntlight'>
+          <div className='nav-theme-img'>
             <img 
               className='nav-theme-svg'
               src={DarkInactive}
               alt=''
               onClick={()=>this.setTheme(true)}
             />
+            <span className='nav-theme-img-text'>Dark Mode</span>
+          </div>
+          <div className='nav-theme-divider'></div>
+          <div className='nav-theme-img'>
             <img 
               className='nav-theme-svg'
               src={LightActive}
               alt=''
             />
+            <span className='nav-theme-img-text'>Light Mode</span>
+          </div>
         </div>
         }
         </div>

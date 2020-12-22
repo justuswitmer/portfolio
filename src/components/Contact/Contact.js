@@ -25,8 +25,6 @@ function Contact(props) {
   const [emailError, setEmailError] = useState("");
   const [fullNameError, setFullNameError] = useState("");
   const [messageError, setMessageError] = useState("");
-  const to = 'justus.witmer@gmail.com';
-  const from = 'ja.witmer92@gmail.com';
 
   //Handles the setting of each state and resets error fields.
   const handleEmail = (event) => {

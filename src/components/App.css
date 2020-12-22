@@ -66,6 +66,9 @@
     margin-right: -50px;
     padding-left: 50px;
     padding-right: 50px;
+    position: sticky;
+    top: 0;
+    opacity: 0.98;
   }
 
   .nav-routes {
@@ -171,6 +174,31 @@
 
   .nav-theme-svg {
     margin: 0 7px;
+  }
+
+  /* Show tooltips https://www.w3schools.com/css/css_tooltip.asp */
+  .nav-theme-img {
+    line-height: 35px;
+  }
+
+  .nav-theme-img .nav-theme-img-text {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0 5px;
+    top: 60px;
+    left: 91%;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  .nav-theme-img:hover .nav-theme-img-text {
+    visibility: visible;
+    opacity: 1;
   }
 
   /* -------------------- NAV BAR END -------------------- */
