@@ -2,7 +2,7 @@ import axios from 'axios';
 import { takeLatest } from 'redux-saga/effects';
 
 function* sendMessage(action) {
-
+  console.log('in sendMessage Saga with action url and payload:', action.url, action.payload);
   yield axios({
     method: 'POST',
     url: action.url,

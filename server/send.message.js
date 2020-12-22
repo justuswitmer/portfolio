@@ -11,8 +11,8 @@ sendMessage.post('/', (req, res) => {
     email,
   } = req.body;
   const msg = {
-    to: email, //will pull in customer's email
-    from: process.env.FROM_EMAIL_ADDRESS,
+    to: '', //will pull in customer's email
+    from: '',
     subject: "You have a new Message from your Portoflio Website",
     html:
     `
@@ -41,7 +41,7 @@ sendMessage.post('/', (req, res) => {
       >
         <div>
           <div style="background-color: white; padding: 15px; margin-bottom: 30px;">
-            <img style="max-width: 200px; width: auto; height: auto" src="${logo}" />
+            <img style="max-width: 200px; width: auto; height: auto" />
           </div>
           <div
             style="
@@ -53,9 +53,9 @@ sendMessage.post('/', (req, res) => {
           >
             
             <h1 style="color: black">
-              Thank you for your request, ${first}!
+              Thank you for your request, {first}!
             </h1>
-            <h3 style="color: black">Submitted on ${display_date}</h3>
+            <h3 style="color: black">Submitted on {display_date}</h3>
             <p style="color: black">We will reach out to you soon to let you know the status of your request</p>
             <div
               style="
@@ -68,7 +68,7 @@ sendMessage.post('/', (req, res) => {
                 margin-bottom: 30px;
               "
             >
-              <h2>Your ${service_type} Service Request</h2>
+              <h2>Your {service_type} Service Request</h2>
               <!-- better to use a table -->
               <div style="margin: auto; text-align: center; margin-top: 1%; overflow-x: auto;">
                 <h3>Service Details</h3>
@@ -110,13 +110,13 @@ sendMessage.post('/', (req, res) => {
                   </tr>
                   <tr>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${email_appt_date}
+                      {email_appt_date}
                     </td>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${service_type}
+                      {service_type}
                     </td>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${additional_serv}
+                      {additional_serv}
                     </td>
                   </tr>
                 </table>
@@ -172,16 +172,16 @@ sendMessage.post('/', (req, res) => {
                   </tr>
                   <tr>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${fuel_type}
+                      {fuel_type}
                     </td>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${fuel_qty}
+                      {fuel_qty}
                     </td>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${oil_type}
+                      {oil_type}
                     </td>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${oil_qty}qts
+                      {oil_qty}qts
                     </td>
                   </tr>
                 </table>
@@ -235,16 +235,16 @@ sendMessage.post('/', (req, res) => {
                   </tr>
                   <tr>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${first} ${last}
+                      {first} {last}
                     </td>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      N${tail}
+                      N{tail}
                     </td>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${email}
+                      {email}
                     </td>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${phone}
+                      {phone}
                     </td>
                   </tr>
                 </table>
@@ -285,13 +285,13 @@ sendMessage.post('/', (req, res) => {
                   </tr>
                   <tr>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${hangar_access}
+                      {hangar_access}
                     </td>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${hangar_num}
+                      {hangar_num}
                     </td>
                     <td style="border: 1px solid black; padding: 10px; width: auto">
-                      ${additional_comm}
+                      {additional_comm}
                     </td>
                   </tr>
                 </table>

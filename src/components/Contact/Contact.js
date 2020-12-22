@@ -25,6 +25,8 @@ function Contact(props) {
   const [emailError, setEmailError] = useState("");
   const [fullNameError, setFullNameError] = useState("");
   const [messageError, setMessageError] = useState("");
+  const to = 'justus.witmer@gmail.com';
+  const from = 'ja.witmer92@gmail.com';
 
   //Handles the setting of each state and resets error fields.
   const handleEmail = (event) => {
@@ -67,7 +69,6 @@ function Contact(props) {
   //If Forms are validated, dispatch is made
   const onSubmit = () => {
     const isValid = validateForm();
-
     if (isValid) {
       props.history.push('/thanks');
       const newMessage = {
@@ -75,13 +76,22 @@ function Contact(props) {
         email: email,
         message: message
       };
-      dispatch({
-        type: 'SEND_MESSAGE',
-        url: '/send-message',
-        payload: newMessage,
-      });
+      console.log('sending dispatch', newMessage);
+    fetch(`http://127.0.0.1:5000/send-email?recipient=${fullName}&sender=${email}&topic=Hello!&text=${message}`) //query string url
+      .catch(err => console.error(err))
+      // dispatch({
+      //   type: 'SEND_MESSAGE',
+      //   url: '/send-email',
+      //   payload: newMessage,
+      // });
     }
   };        
+
+  // sendEmail = _ => {
+  //   const { email } = this.state;
+  //   fetch(`http://127.0.0.1:4000/send-email?recipient=${email.recipient}&sender=${email.sender}&topic=${email.subject}&text=${email.text}`) //query string url
+  //     .catch(err => console.error(err))
+  // }
 
 
   return (
