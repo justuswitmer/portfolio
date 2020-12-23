@@ -1,11 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReactPlayer from "react-player"
+import { withRouter } from 'react-router-dom';
 
 class Portfolio extends Component {
+
+  componentDidMount = () => {
+    this.hasBracket(this.props.history.location.pathname);
+  }
+
+  hasBracket = (evt) => {
+    this.props.dispatch({
+      type: 'UPDATE_HAS_BRACKETS',
+      payload: evt,
+    });
+  }
   render() {
     return (
       <div className='project-container'>
-        <h2 className='portfolioHeader'>Here are some projects I have worked on!</h2>
+        <h2 className='portfolioHeader'>Here are some projects I have worked on!</h2> 
+        <ReactPlayer
+          url="https://vimeo.com/493976119"
+        />
+        <ReactPlayer
+          url="https://vimeo.com/493975723"
+        />
+
         <a
           className='portfolioChild one secondary'
           href="g">
@@ -45,4 +65,4 @@ const mapStateToProps = reduxState => ({
   projects: reduxState.imageReducer
 })
 
-export default connect(mapStateToProps)(Portfolio);
+export default connect(mapStateToProps)(withRouter(Portfolio));

@@ -7,9 +7,9 @@ export default function About() {
       <div className='aboutIntro'>
 
         <p className='secondary'>
-          I am a Full Stack Software Engineer student at Prime Digital Academy, with a background in analytics.
-          I have experience in small business analytics as well as finance analytics. My interests lie mainly in using my skills as a software engineer to leverage data analysis to better inform a business on decision making.
-          My personality is such that I am always pushing for new ways to look at data, yet I also have enough restraint to know when to slow down and complete a project.
+        Data-driven, analytical Full Stack Software Engineer with experience in small business and finance. 
+        Specialties include compensation analytics, problem-solving, and project management. 
+        A visionary leader recognized for having the organization and consistency to achieve project deadlines and foresee potential pitfalls or inefficiencies, who is always pushing for new ways to look at data.
         </p>
       </div>
       <h3 className='aboutPersonality'>I really enjoy learning about my personality and what makes me tick. Here are a few pesronality profiles about myself.</h3>

@@ -68,7 +68,6 @@ function Contact(props) {
   const onSubmit = () => {
     const isValid = validateForm();
     if (isValid) {
-      props.history.push('/thanks');
       const newMessage = {
         fullName: fullName,
         email: email,
@@ -83,6 +82,7 @@ function Contact(props) {
       //   payload: newMessage,
       // });
     }
+    props.history.push('/thanks');
   };        
 
   // sendEmail = _ => {
