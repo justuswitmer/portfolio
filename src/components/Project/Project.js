@@ -18,14 +18,19 @@ class Portfolio extends Component {
   render() {
     return (
       <div className='project-container'>
-        <h2 className='portfolioHeader'>Here are some projects I have worked on!</h2> 
-        <ReactPlayer
-          url="https://vimeo.com/493976119"
-        />
-        <ReactPlayer
-          url="https://vimeo.com/493975723"
-        />
-
+        <h2>Here are some projects I have worked on!</h2> 
+        <div className='project-video'>
+          <ReactPlayer
+            className='project-video-player'
+            width='50%'
+            url="https://vimeo.com/493976119"
+          />
+          <ReactPlayer
+            className='project-video-player'
+            width='50%'
+            url="https://vimeo.com/493975723"
+          />
+        </div>
         <a
           className='portfolioChild one secondary'
           href="g">

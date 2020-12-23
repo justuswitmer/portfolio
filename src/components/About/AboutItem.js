@@ -9,7 +9,7 @@ function AboutItem(props) {
 
   return (
     <>
-      <button onClick={handleShow}>{props.about.profile}</button>
+      <button onClick={handleShow} className='aboutitem-button'>{props.about.profile}</button>
       <Modal
         size="lg"
         show={show}
@@ -20,7 +20,7 @@ function AboutItem(props) {
           <p>{props.about.profile}</p>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body id='aboutitem-modal'>
           <div className='card'>
             {props.about.type.map(type =>
               <p>{type}</p>

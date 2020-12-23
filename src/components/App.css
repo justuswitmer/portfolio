@@ -41,7 +41,7 @@
   grid-template-columns: repeat(1, 1fr [col-start]);
 
   /* defining how many rows I want */
-  grid-template-rows: 80px auto 430px 150px;
+  grid-template-rows: 80px auto 530px 150px;
   gap: 30px;
 
   grid-template-areas:
@@ -178,7 +178,7 @@
 
   /* Show tooltips https://www.w3schools.com/css/css_tooltip.asp */
   .nav-theme-img {
-    line-height: 35px;
+    line-height: 30px;
   }
 
   .nav-theme-img .nav-theme-img-text {
@@ -262,6 +262,7 @@
   }
 
   .home-viewProjects > p {
+    margin: 210px 0 40px 0;
     font-size: 24px;
   }
 
@@ -287,12 +288,12 @@
     grid-area: body;
   }
 
-  iframe:focus {
-    outline: none;
+  .project-video {
+    display: flex;
   }
 
-  iframe[seamless] {
-    display: block;
+  .project-video-player {
+    margin: 10px;
   }
 
   /* -------------------- PROJECT END -------------------- */
@@ -301,10 +302,6 @@
 
   .about-container {
     grid-area: body;
-  }
-
-  #modalHeader {
-    height: 100px;
   }
 
   .about-modal-title {
@@ -323,6 +320,28 @@
     /* overflow: hidden; */
   }
 
+  .aboutitem-button {
+    background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
+    border-radius: 4px;
+    color: #c4c0c0;
+    box-sizing: none;
+    border: none;
+    height: 140px;
+    width: 140px;
+    margin: 0 10px 0 10px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  #modalHeader {
+    height: 100px;
+    background-color: #aa7d7d38;
+  }
+
+  #aboutitem-modal {
+    background-color: #aa7d7d38;
+    border-radius: 0 0 4px 4px;
+  }
+
   /* -------------------- ABOUT BEGIN -------------------- */
 
   /* -------------------- CONTACT BEGIN -------------------- */
@@ -336,7 +355,23 @@
   }
 
   .contact-intro {
+    display: block;
+  }
+
+  .contact-intro-h3 {
+    font-size: 1.5rem;
+    font-weight: 350;
+    padding: 40px 0 10px 0;
+  }
+
+  .contact-intro2 {
     display: inline-flex;
+  }
+
+  .contact-intro2-h3 {
+    font-size: 1.125rem;
+    font-weight: 100;
+    padding-bottom: 40px;
   }
 
   .contact-linkedin-link {
@@ -475,7 +510,7 @@
     grid-template-columns: repeat(1, 1fr [col-start]);
 
     /* defining how many rows I want */
-    grid-template-rows: 80px auto 550px 150px;
+    grid-template-rows: 80px auto 640px 150px;
     gap: 30px;
 
     grid-template-areas:
@@ -488,11 +523,16 @@
   /* -------------------- HOME BEGIN 992 -------------------- */
 
   .home-intro-h2 {
-    font-size: 40px;
+    font-size: 30px;
+    margin: 10px 14px 10px 0;
   }
 
   .home-intro-p {
     font-size: 20px;
+  }
+
+  .home-profile-img {
+    margin-right: 40px;
   }
 
   /* -------------------- HOME END 992 -------------------- */
