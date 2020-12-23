@@ -303,6 +303,26 @@
     grid-area: body;
   }
 
+  #modalHeader {
+    height: 100px;
+  }
+
+  .about-modal-title {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .card {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px;
+    /* overflow: hidden; */
+  }
+
   /* -------------------- ABOUT BEGIN -------------------- */
 
   /* -------------------- CONTACT BEGIN -------------------- */
