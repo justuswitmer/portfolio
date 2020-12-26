@@ -1,43 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
-class PortfolioItem extends Component {
+// Material-UI
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  AccordionActions,
+  Divider,
+  Typography,
+} from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-  state = {
-    isHidden: true
-  }
+function PortfolioItem(props) {
 
-  toggleHidden = () => {
-    console.log('toggleHidden was triggered');
-    this.setState({
-      isHidden: !this.state.isHidden
-    });
-  }
-
-  render() {
     return (
-      <a
-        className='portfolioChild'
-        href={this.props.project.href}>
-        <span>{this.props.project.name}</span>
-      </a>
-
+      <div>
+        <a
+          className='portfolioChild'
+          href={props.project.link}>
+          <span>{props.project.title}</span>
+        </a>
+        <img src={props.project.image} width='300px'/>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon
+              color='primary'
+            />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography variant='body2'>
+              AccordianSummary
+            </Typography>   
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant='body2'>
+              AccordianDetails
+            </Typography>
+          </AccordionDetails>
+          <Divider />
+          <AccordionActions>
+            <Typography variant='body2'>
+              AccordionActions
+            </Typography>
+          </AccordionActions>
+        </Accordion>
+      </div>
     );
-  }
 }
 
 export default connect()(PortfolioItem);
-
-/* <a
-onMouseEnter={this.toggleHidden}
-onMouseLeave={this.toggleHidden}
-className='portfolioChild'
-href={this.props.project.href}>
-{
-  this.state.isHidden ?
-    <img src={this.props.project.path}
-      alt={this.props.project.name} />
-    :
-    <span>{this.props.project.name}</span>
-}
-</a> */
