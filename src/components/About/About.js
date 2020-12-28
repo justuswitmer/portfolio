@@ -15,7 +15,7 @@ function About(props) {
         </p>
       </div>
       <div className='about-personality'>
-      <h3>I really enjoy learning about my personality and what makes me tick. Here are a few pesronality profiles about myself.</h3>
+      <h3>I really enjoy learning about my personality and what makes me tick. Here are a few personality profiles about myself.</h3>
       {props.store.about.map(about =>
       <AboutItem
         about={about}

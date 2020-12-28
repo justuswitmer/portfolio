@@ -19,14 +19,12 @@ function PortfolioItem(props) {
     return (
       <div className='project-item'>
         <div className='project-item-title'>
-          <a href={props.project.link}>
-            <span>{props.project.title}</span>
-          </a>
+          <h4>{props.project.title}</h4>
         </div>
         <div className='project-item-image' onClick={gitHub}>
           <img
             src={props.project.image}
-            width='100%'
+            width='200px'
             className='project-imgElement'
           />
           <p className='project-pElement'>Click to view code -></p>
@@ -39,12 +37,12 @@ function PortfolioItem(props) {
               id="panel1a-header"
             >
               <Typography variant='body2'>
-                AccordianSummary
+                See details...
               </Typography>   
             </AccordionSummary>
             <AccordionDetails>
               <Typography variant='body2'>
-                AccordianDetails
+              {props.project.description}
               </Typography>
             </AccordionDetails>
           </Accordion>

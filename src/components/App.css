@@ -298,14 +298,16 @@
 
   .project-secondary {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .project-item {
+    min-width: 200px;
     margin: 10px;
     display: grid;
-    width: 25%;
     grid-template-columns: repeat(1, 1fr [col-start]);
-    grid-template-rows: auto 345px 200px;
+    grid-template-rows: auto 205px 30px;
     grid-template-areas:
       "title"
       "image"
@@ -314,6 +316,7 @@
 
   .project-item-title {
     grid-area: title;
+    margin-top: 30px;
   }
 
   .project-item-image {
@@ -327,8 +330,9 @@
 
   .project-pElement {
     position: relative;
-    top: -94%;
-    line-height: 324px;
+    top: -200px;
+    line-height: 200px;
+    width: 200px;
     background: rgba(29, 106, 154, 0.72);
     color: #fff;
     visibility: hidden;
@@ -339,6 +343,9 @@
 
   .project-item-description {
     grid-area: description;
+    width: 200px;
+    justify-self: center;
+    z-index: 999;
   }
 
   /* -------------------- PROJECT END -------------------- */
