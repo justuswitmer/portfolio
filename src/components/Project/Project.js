@@ -21,7 +21,7 @@ class Portfolio extends Component {
     return (
       <div className='project-container'>
         <h2>Here are some projects I have worked on!</h2> 
-        <div className='project-video'>
+        <div className='project-primary'>
           <ReactPlayer
             className='project-video-player'
             width='50%'
@@ -33,11 +33,13 @@ class Portfolio extends Component {
             url="https://vimeo.com/493975723"
           />
         </div>
+        <div className='project-secondary'>
         {this.props.store.project.map(project =>
         <ProjectItem
         project={project}
         />
         )}
+        </div>
       </div>
     );
   }

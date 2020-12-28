@@ -288,12 +288,57 @@
     grid-area: body;
   }
 
-  .project-video {
+  .project-primary {
     display: flex;
   }
 
   .project-video-player {
     margin: 10px;
+  }
+
+  .project-secondary {
+    display: flex;
+  }
+
+  .project-item {
+    margin: 10px;
+    display: grid;
+    width: 25%;
+    grid-template-columns: repeat(1, 1fr [col-start]);
+    grid-template-rows: auto 345px 200px;
+    grid-template-areas:
+      "title"
+      "image"
+      "description";
+  }
+
+  .project-item-title {
+    grid-area: title;
+  }
+
+  .project-item-image {
+    grid-area: image;
+  }
+
+  .project-item-image:hover .project-pElement {
+    opacity: 90%;
+    visibility: visible;
+  }
+
+  .project-pElement {
+    position: relative;
+    top: -94%;
+    line-height: 324px;
+    background: rgba(29, 106, 154, 0.72);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+    cursor: pointer;
+  }
+
+  .project-item-description {
+    grid-area: description;
   }
 
   /* -------------------- PROJECT END -------------------- */

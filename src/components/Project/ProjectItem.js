@@ -6,46 +6,49 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  AccordionActions,
-  Divider,
   Typography,
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function PortfolioItem(props) {
 
+  const gitHub = () => {
+    window.open(props.project.link, '_blank')
+  }
+
     return (
-      <div>
-        <a
-          className='portfolioChild'
-          href={props.project.link}>
-          <span>{props.project.title}</span>
-        </a>
-        <img src={props.project.image} width='300px'/>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon
-              color='primary'
-            />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography variant='body2'>
-              AccordianSummary
-            </Typography>   
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography variant='body2'>
-              AccordianDetails
-            </Typography>
-          </AccordionDetails>
-          <Divider />
-          <AccordionActions>
-            <Typography variant='body2'>
-              AccordionActions
-            </Typography>
-          </AccordionActions>
-        </Accordion>
+      <div className='project-item'>
+        <div className='project-item-title'>
+          <a href={props.project.link}>
+            <span>{props.project.title}</span>
+          </a>
+        </div>
+        <div className='project-item-image' onClick={gitHub}>
+          <img
+            src={props.project.image}
+            width='100%'
+            className='project-imgElement'
+          />
+          <p className='project-pElement'>Click to view code -></p>
+        </div>
+        <div className='project-item-description'>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon color='primary'/>}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography variant='body2'>
+                AccordianSummary
+              </Typography>   
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography variant='body2'>
+                AccordianDetails
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </div>
       </div>
     );
 }
