@@ -1,12 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { useSpring, animated } from "react-spring";
 import AboutItem from './AboutItem';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 function About(props) {
+  const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   return (
-    <div className='about-container'>
+    <animated.div style={trans} className='about-container'>
       <div className='about-intro'>
         <p className='secondary'>
           Data-driven, analytical Full Stack Software Engineer with experience in small business and finance. 
@@ -22,7 +24,7 @@ function About(props) {
       />
       )}
       </div>
-    </div>
+    </animated.div>
   );
 }
 

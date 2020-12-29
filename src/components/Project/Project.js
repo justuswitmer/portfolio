@@ -1,25 +1,28 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import ReactPlayer from "react-player"
 import { withRouter } from 'react-router-dom';
+import { useSpring, animated } from "react-spring";
 import ProjectItem from './ProjectItem';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
-class Portfolio extends Component {
+function Portfolio(props) {
+  const dispatch = useDispatch();
+  const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
 
-  componentDidMount = () => {
-    this.hasBracket(this.props.history.location.pathname);
-  }
+  useEffect(() => {
+    hasBracket(props.history.location.pathname);
+  }, []);
 
-  hasBracket = (evt) => {
-    this.props.dispatch({
+  const hasBracket = (evt) => {
+    dispatch({
       type: 'UPDATE_HAS_BRACKETS',
       payload: evt,
     });
   }
-  render() {
+
     return (
-      <div className='project-container'>
+      <animated.div style={trans} className='project-container'>
         <h2>Here are some projects I have worked on!</h2> 
         <div className='project-primary'>
           <ReactPlayer
@@ -34,15 +37,14 @@ class Portfolio extends Component {
           />
         </div>
         <div className='project-secondary'>
-        {this.props.store.project.map(project =>
+        {props.store.project.map(project =>
         <ProjectItem
         project={project}
         />
         )}
         </div>
-      </div>
+      </animated.div>
     );
-  }
 }
 
 export default connect(mapStoreToProps)(withRouter(Portfolio));
