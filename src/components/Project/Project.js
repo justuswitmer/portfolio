@@ -10,32 +10,20 @@ function Portfolio(props) {
   const dispatch = useDispatch();
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
 
-  useEffect(() => {
-    hasBracket(props.history.location.pathname);
-  }, []);
+  // const hasBracket = (evt) => {
+  //   ;
+  // }
 
-  const hasBracket = (evt) => {
+  useEffect(() => {
     dispatch({
       type: 'UPDATE_HAS_BRACKETS',
-      payload: evt,
+      payload: props.history.location.pathname,
     });
-  }
-
-  let r = document.querySelector(':root');
-
-  function checkTheme() {
-    console.log('r.style', r.style[0]);
-    console.log('r.style', r.style[1]);
-    console.log('r.style', r.style[2]);
-    console.log('r.style', r.style[3]);
-    console.log('theme status:', props.store.setTheme);
-    
-  }
+  }, [dispatch, props.history.location.pathname]);
 
     return (
       <animated.div style={trans} className='project-container'>
         <h2>Here are some projects I have worked on!</h2> 
-        <button onClick={checkTheme}>Check Theme</button>
         <div className='project-primary'>
           <ReactPlayer
             className='project-video-player'

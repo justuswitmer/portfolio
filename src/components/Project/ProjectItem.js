@@ -28,8 +28,9 @@ function PortfolioItem(props) {
             src={props.project.image}
             width='200px'
             className='project-imgElement'
+            alt=''
           />
-          <p className='project-pElement'>Click to view code <img src={arrow}/></p>
+          <p className='project-pElement'>Click to view code <img src={arrow} alt=''/></p>
         </div>
         <div className='project-item-description'>
           <Accordion>

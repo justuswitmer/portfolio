@@ -25,16 +25,20 @@ function Nav(props) {
   // Get the root element
   let r = document.querySelector(':root');
 
-  useEffect(() => {
-    setTheme(true);
-  }, []);
-
   const setTheme = (property) => {
     dispatch({
       type: 'SET_THEME',
       payload: property
     });
   }
+
+  useEffect(() => {
+    dispatch({
+      type: 'SET_THEME',
+      payload: true
+    });
+  }, [dispatch]);
+
 
   function setDarkThemeColor() {
     console.log('in setDarkThemeColor');

@@ -3,8 +3,6 @@ import profilePic from '../images/BWProfile.jpg';
 import { useSpring, animated } from "react-spring";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import backgroundLight from '../images/BackgroundLight.svg';
-import backgroundDark from '../images/BackgroundDark.svg';
 
 function Home(props) {
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });

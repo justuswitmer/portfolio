@@ -1,4 +1,3 @@
-import mapStoreToProps from "../../redux/mapStoreToProps";
 import { withRouter } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 function Thanks(props) {
