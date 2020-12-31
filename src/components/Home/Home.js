@@ -3,12 +3,15 @@ import profilePic from '../images/BWProfile.jpg';
 import { useSpring, animated } from "react-spring";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import backgroundLight from '../images/BackgroundLight.svg';
+import backgroundDark from '../images/BackgroundDark.svg';
 
 function Home(props) {
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   return (
     <animated.div style={trans} className='home-container'>
+      {/* <img src={backgroundDark} className='home-background-image'/> */}
       <div className='home-intro'>
           <h2 className='home-intro-h2'>Hi, I'm Justus.</h2>
           <h2 className='home-intro-h2'>I am a software developer.</h2>

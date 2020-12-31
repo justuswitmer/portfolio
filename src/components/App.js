@@ -13,7 +13,7 @@ import './App.css';
 function App(props) {
     return (
       <Router>
-        <div className={props.store.setTheme === true ? 'App dark': 'App light'}>
+        <div className='App'>
           <Nav/>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />

@@ -9,7 +9,9 @@ import {
   Typography,
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import arrow from '../images/up_right_arrow.svg';
 
+// const arrow = '->';
 function PortfolioItem(props) {
 
   const gitHub = () => {
@@ -27,7 +29,7 @@ function PortfolioItem(props) {
             width='200px'
             className='project-imgElement'
           />
-          <p className='project-pElement'>Click to view code -></p>
+          <p className='project-pElement'>Click to view code <img src={arrow}/></p>
         </div>
         <div className='project-item-description'>
           <Accordion>

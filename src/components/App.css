@@ -10,40 +10,30 @@
 }
 
 :root {
-  /* dark theme */
-  --primarydark: #0e0e0e;
-
-  /* light theme */
-  --primarylight: #c4c0c0;
+  --font_color: #c4c0c0;
+  --background_color: #0e0e0e;
+  --primary_color: #161616;
+  --secondary_color: #252525;
+  --accent_color: #3e833c;
+  --about_card_bg: #c4c0c0;
+  --about_modal_bg: #aa7d7d38;
+  --theme_cont_bg: #1d1d1d;
+  --warning: #ff0000;
 }
-
-/* -------------------- Light And Dark Mode Begin -------------------- */
-.light {
-  color: #222;
-  background-color: #c4c0c0;
-  padding: 0 50px;
-}
-
-.dark {
-  color: #c4c0c0;
-  background-color: #0e0e0e;
-  padding: 0 50px;
-}
-/* -------------------- Light And Dark Mode End -------------------- */
 
 .App {
   text-align: center;
+  background-color: var(--background_color);
+  color: var(--font_color);
   display: grid;
+  padding: 0 50px;
   min-height: -webkit-fill-available;
   font-family: "Roboto Flex";
-
   /* defining how many columns I want */
   grid-template-columns: repeat(1, 1fr [col-start]);
-
   /* defining how many rows I want */
   grid-template-rows: 80px auto 530px 150px;
   gap: 30px;
-
   grid-template-areas:
     "nav"
     "body"
@@ -155,14 +145,7 @@
     height: 30px;
     vertical-align: middle;
     border-radius: 5px;
-  }
-
-  .ntdark {
-    background-color: #1d1d1d;
-  }
-
-  .ntlight {
-    background-color: #9c9c9c;
+    background-color: var(--theme_cont_bg);
   }
 
   .nav-theme-divider {
@@ -216,11 +199,11 @@
     padding: 160px 0 90px 120px;
     text-align: left;
     border-radius: 4px;
-    /* background-image: linear-gradient(131deg, #181818 0%, #161616 100%); */
-    background-image: url("./images/BackgroundSymbol.svg");
+    background-image: url("./images/BackgroundDark.svg");
+    background-position: center;
+    background-color: var(--primary_color);
     background-repeat: no-repeat;
-    background-size: 90%;
-    /* background-color: #24000075; */
+    background-size: 95%;
   }
 
   .home-intro {
@@ -270,7 +253,7 @@
     height: 60px;
     width: 265px;
     border-radius: 5px;
-    background-color: #3e833c;
+    background-color: var(--accent_color);
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
@@ -333,7 +316,7 @@
     top: -200px;
     line-height: 200px;
     width: 200px;
-    background: rgba(29, 106, 154, 0.72);
+    background: #1d6a9ab8;
     color: #fff;
     visibility: hidden;
     opacity: 0;
@@ -364,7 +347,7 @@
   }
 
   .card {
-    background-color: var(--light-color);
+    background-color: var(--about_card_bg);
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -373,9 +356,9 @@
   }
 
   .aboutitem-button {
-    background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
+    background-color: var(--primary_color);
     border-radius: 4px;
-    color: #c4c0c0;
+    color: var(--font_color);
     box-sizing: none;
     border: none;
     height: 140px;
@@ -384,13 +367,17 @@
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
   }
 
+  .aboutitem-button:focus {
+    outline: none;
+  }
+
   #modalHeader {
     height: 100px;
-    background-color: #aa7d7d38;
+    background-color: var(--about_modal_bg);
   }
 
   #aboutitem-modal {
-    background-color: #aa7d7d38;
+    background-color: var(--about_modal_bg);
     border-radius: 0 0 4px 4px;
   }
 
@@ -400,10 +387,14 @@
 
   .contact-container {
     grid-area: contact;
-    background-image: linear-gradient(131deg, #181818 0%, #161616 100%);
     border-radius: 4px;
     align-items: center;
     padding-bottom: 40px;
+    background-image: url("./images/BackgroundDark.svg");
+    background-position: center;
+    background-color: var(--primary_color);
+    background-repeat: no-repeat;
+    background-size: 95%;
   }
 
   .contact-intro {
@@ -467,12 +458,12 @@
     width: 400px;
     border-radius: 5px;
     border: none;
-    background-color: #252525;
-    color: #f0f0f0;
+    background-color: var(--secondary_color);
+    color: var(--font_color);
   }
 
   .contact-name-input:focus {
-    border: 1px solid green;
+    border: 1px solid var(--accent_color);
     outline: none;
   }
 
@@ -485,12 +476,12 @@
     width: 400px;
     border-radius: 5px;
     border: none;
-    background-color: #252525;
-    color: #f0f0f0;
+    background-color: var(--secondary_color);
+    color: var(--font_color);
   }
 
   .contact-email-input:focus {
-    border: 1px solid green;
+    border: 1px solid var(--accent_color);
     outline: none;
   }
 
@@ -503,12 +494,12 @@
     width: 820px;
     border-radius: 5px;
     border: none;
-    background-color: #252525;
-    color: #f0f0f0;
+    background-color: var(--secondary_color);
+    color: var(--font_color);
   }
 
   .contact-message-input:focus {
-    border: 1px solid green;
+    border: 1px solid var(--accent_color);
     outline: none;
   }
 
@@ -521,19 +512,19 @@
     height: 40px;
     width: 97px;
     border-radius: 5px;
-    background-color: #3e833c;
+    background-color: var(--accent_color);
     border: none;
     cursor: pointer;
-    color: #f0f0f0;
+    color: var(--font_color);
   }
 
   /* Class for fields that are not valid */
   .is-invalid {
-    border: 1px solid red;
+    border: 1px solid var(--warning);
   }
 
   .invalid-feedback {
-    color: red;
+    color: var(--warning);
   }
 
   /* -------------------- CONTACT END -------------------- */
@@ -542,7 +533,7 @@
 
   .footer-container {
     grid-area: footer;
-    background-color: #222222;
+    background-color: var(--primary_color);
     margin-left: -50px;
     margin-right: -50px;
     padding-left: 50px;

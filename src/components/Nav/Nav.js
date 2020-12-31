@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import NavItem from './NavItem';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import { useSpring, animated } from "react-spring";
 
 // SVG imports
 import LogoLight from '../images/LogoLight.svg';
@@ -18,27 +19,54 @@ const routes = [
   { name: 'About', route: '/about', hasDivider: false },
 ];
 
-class Nav extends Component {
+function Nav(props) {
+  const dispatch = useDispatch();
+  const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
+  // Get the root element
+  let r = document.querySelector(':root');
 
-  componentDidMount = () => {
-    this.setTheme(true);
-  }
+  useEffect(() => {
+    setTheme(true);
+  }, []);
 
-  setTheme = (property) => {
-    this.props.dispatch({
+  const setTheme = (property) => {
+    dispatch({
       type: 'SET_THEME',
       payload: property
     });
   }
 
-  render() {
+  function setDarkThemeColor() {
+    console.log('in setDarkThemeColor');
+    setTheme(true);
+    // Set the value of the variables to another value (either light or dark theme)
+    // Inspiration from here: https://www.w3schools.com/css/css3_variables_javascript.asp
+    r.style.setProperty('--font_color', '#c4c0c0')
+    r.style.setProperty('--background_color', '#0e0e0e')
+    r.style.setProperty('--primary_color', '#161616')
+    r.style.setProperty('--secondary_color', '#252525')
+    console.log('r.style', r.style);
+  }
+
+  function setLightThemeColor() {
+    console.log('in setLightThemeColor');
+    setTheme(false);
+    // Set the value of the variables to another value (either light or dark theme)
+    // Inspiration from here: https://www.w3schools.com/css/css3_variables_javascript.asp
+    r.style.setProperty('--font_color', '#0e0e0e')
+    r.style.setProperty('--background_color', '#c4c0c0')
+    r.style.setProperty('--primary_color', '#848892')
+    r.style.setProperty('--secondary_color', '#9fa3ac')
+    console.log('r.style', r.style);
+  }
+
     return (
-      <div className='nav-container'>
-          <img 
-            className='nav-logo'
-            src={LogoLight}
-            alt='Light Logo'
-          />
+      <animated.div style={trans} className='nav-container'>
+        <img 
+          className='nav-logo'
+          src={LogoLight}
+          alt='Light Logo'
+        />
         <div className='nav-routes'>
           {routes.map(route =>
             <NavItem
@@ -47,54 +75,32 @@ class Nav extends Component {
             />
           )}
         </div>
+        {/* The div below is to help its child div maintain vertical alignment */}
         <div>
-        {this.props.store.setTheme === true ?
-        <div className='nav-theme ntdark'>
-          <div className='nav-theme-img'>
-            <img
-              className='nav-theme-svg'
-              src={DarkActive}
-              alt=''
-            />
-            <span className='nav-theme-img-text'>Dark Mode</span>
-          </div>
-          <div className='nav-theme-divider'></div>
+          <div className='nav-theme'>
             <div className='nav-theme-img'>
-              <img 
+              <img
                 className='nav-theme-svg'
-                src={LightInactive} 
-                alt=''
-                onClick={()=>this.setTheme(false)}
+                src={props.store.setTheme === true ? DarkActive : DarkInactive }
+                alt='Dark Theme'
+                onClick={()=>setDarkThemeColor()}
               />
-              <span className='nav-theme-img-text'>Light Mode</span>
+              <span className='nav-theme-img-text'>Dark Theme</span>
             </div>
-        </div>
-        :
-        <div className='nav-theme ntlight'>
-          <div className='nav-theme-img'>
-            <img 
-              className='nav-theme-svg'
-              src={DarkInactive}
-              alt=''
-              onClick={()=>this.setTheme(true)}
-            />
-            <span className='nav-theme-img-text'>Dark Mode</span>
-          </div>
-          <div className='nav-theme-divider'></div>
-          <div className='nav-theme-img'>
-            <img 
-              className='nav-theme-svg'
-              src={LightActive}
-              alt=''
-            />
-            <span className='nav-theme-img-text'>Light Mode</span>
+            <div className='nav-theme-divider'></div>
+              <div className='nav-theme-img'>
+                <img 
+                  className='nav-theme-svg'
+                  src={props.store.setTheme === true ? LightInactive : LightActive } 
+                  alt='Light Theme'
+                  onClick={()=>setLightThemeColor()}
+                />
+                <span className='nav-theme-img-text'>Light Theme</span>
+              </div>
           </div>
         </div>
-        }
-        </div>
-      </div>
+      </animated.div>
     );
-  }
 }
 
 export default connect(mapStoreToProps)(withRouter(Nav));
