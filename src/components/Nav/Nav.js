@@ -49,6 +49,7 @@ function Nav(props) {
     r.style.setProperty('--background_color', '#0e0e0e')
     r.style.setProperty('--primary_color', '#161616')
     r.style.setProperty('--secondary_color', '#252525')
+    r.style.setProperty('--accent_color', '#2c5f2d')
     console.log('r.style', r.style);
   }
 
@@ -57,10 +58,11 @@ function Nav(props) {
     setTheme(false);
     // Set the value of the variables to another value (either light or dark theme)
     // Inspiration from here: https://www.w3schools.com/css/css3_variables_javascript.asp
-    r.style.setProperty('--font_color', '#0e0e0e')
-    r.style.setProperty('--background_color', '#c4c0c0')
-    r.style.setProperty('--primary_color', '#848892')
-    r.style.setProperty('--secondary_color', '#9fa3ac')
+    r.style.setProperty('--font_color', '#082621')
+    r.style.setProperty('--background_color', '#c6d3d2')
+    r.style.setProperty('--primary_color', '#b7d1cf')
+    r.style.setProperty('--secondary_color', '#d8f2f0e0')
+    r.style.setProperty('--accent_color', '#3e9e40b6')
     console.log('r.style', r.style);
   }
 
