@@ -1,17 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-// Material-UI
-import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
-} from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import arrow from '../images/up_right_arrow.svg';
 
-// const arrow = '->';
 function PortfolioItem(props) {
 
   const gitHub = () => {
@@ -28,27 +19,13 @@ function PortfolioItem(props) {
             src={props.project.image}
             width='200px'
             className='project-imgElement'
-            alt=''
+            alt={props.project.description}
           />
-          <p className='project-pElement'>Click to view code <img src={arrow} alt=''/></p>
-        </div>
-        <div className='project-item-description'>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon color='primary'/>}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography variant='body2'>
-                See details...
-              </Typography>   
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography variant='body2'>
-              {props.project.description}
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+          <span className='project-pElement'>
+            {props.project.description} 
+            <img src={arrow} 
+              alt='arrow to external link'/>
+          </span>
         </div>
       </div>
     );
