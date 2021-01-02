@@ -7,7 +7,6 @@ import Project from './Project/Project';
 import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
 import Home from './Home/Home';
-import Thanks from './Thanks/Thanks';
 import './App.css';
 
 function App(props) {
@@ -18,7 +17,6 @@ function App(props) {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/project" component={Project} />
-          <Route exact path="/thanks" component={Thanks} />
           <Contact />
           <Footer />
         </div>

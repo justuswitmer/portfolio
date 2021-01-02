@@ -527,6 +527,17 @@
     color: var(--warning);
   }
 
+  .contact-modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+  }
+
+  .contact-modal-header {
+    display: block;
+    text-align: center;
+  }
+
   /* -------------------- CONTACT END -------------------- */
 
   /* -------------------- FOOTER BEGIN -------------------- */

@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from "react-redux";
 import { withRouter } from "react-router-dom";
 import linkedin from '../images/LI-Logo.png';
 import { useSpring, animated } from "react-spring";
+import { Modal } from "react-bootstrap";
 
 function Contact(props) {
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const getEmail = () => {
     setEmail('');
@@ -15,10 +19,9 @@ function Contact(props) {
   }, []);
 
   //Data fields
-  const newMessage = useSelector((state) => state.newMessage);
-  const [email, setEmail] = useState(newMessage.email);
-  const [fullName, setFullName] = useState(newMessage.fullName);
-  const [message, setMessage] = useState(newMessage.message);
+  const [email, setEmail] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [message, setMessage] = useState('');
 
   //For Input Validation
   const [emailError, setEmailError] = useState("");
@@ -67,28 +70,16 @@ function Contact(props) {
   const onSubmit = () => {
     const isValid = validateForm();
     if (isValid) {
-      const newMessage = {
-        fullName: fullName,
-        email: email,
-        message: message
-      };
-      console.log('sending dispatch', newMessage);
-    fetch(`http://127.0.0.1:5000/send-email?recipient=${fullName}&sender=${email}&topic=Hello!&text=${message}`) //query string url
+    // fetch(`http://127.0.0.1:5000/send-email?recipient=${fullName}&sender=${email}&topic=Hello!&text=${message}`) //query string url
+    //   .catch(err => console.error(err))
+      fetch(`http://www.justuswitmer.com/send-email?recipient=${fullName}&sender=${email}&topic=Hello!&text=${message}`) //query string url
       .catch(err => console.error(err))
-      // dispatch({
-      //   type: 'SEND_MESSAGE',
-      //   url: '/send-email',
-      //   payload: newMessage,
-      // });
-    }
-    props.history.push('/thanks');
-  };        
-
-  // sendEmail = _ => {
-  //   const { email } = this.state;
-  //   fetch(`http://127.0.0.1:4000/send-email?recipient=${email.recipient}&sender=${email.sender}&topic=${email.subject}&text=${email.text}`) //query string url
-  //     .catch(err => console.error(err))
-  // }
+      setFullName('');
+      setEmail('');
+      setMessage('');
+      handleShow();
+    };
+  };
 
 
   return (
@@ -118,6 +109,7 @@ function Contact(props) {
           <input
             className={`contact-name-input ${fullNameError ? "is-invalid" : ""}`}
             type='text'
+            value={fullName}
             onChange={(event) => handleFullName(event.target.value)}
           />
           <div className="invalid-feedback">{fullNameError}</div>
@@ -127,6 +119,7 @@ function Contact(props) {
           <input
             className={`contact-email-input ${emailError ? "is-invalid" : ""}`}
             type='email'
+            value={email}
             onChange={(event) => handleEmail(event.target.value)}
           />
           <div className="invalid-feedback">{emailError}</div>
@@ -138,6 +131,7 @@ function Contact(props) {
             type='text'
             rows='10'
             cols='50'
+            value={message}
             onChange={(event) => handleMessage(event.target.value)}
           />
           <div className="invalid-feedback">{messageError}</div>
@@ -148,6 +142,18 @@ function Contact(props) {
             onClick={onSubmit}
           >Send</button>
         </div>
+        <Modal
+        size="lg"
+        show={show}
+        onHide={handleClose}
+        className='contact-modal'
+        >
+          <Modal.Header closeButton id='modalHeader' className='contact-modal-header'>
+            <Modal.Title id='example-modal-sizes-title-lg'>
+            <p>Thanks for contacting me! I will respond as soon as I can.</p>
+            </Modal.Title>
+          </Modal.Header>
+        </Modal>
       </div>
     </animated.div>
   );
