@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import linkedin from '../images/LI-Logo.png';
 import { useSpring, animated } from "react-spring";
 import { Modal } from "react-bootstrap";
@@ -10,6 +11,8 @@ function Contact(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const dispatch = useDispatch();
+
 
   const getEmail = () => {
     setEmail('');
@@ -70,11 +73,15 @@ function Contact(props) {
   const onSubmit = () => {
     const isValid = validateForm();
     if (isValid) {
-    // fetch(`http://127.0.0.1:5000/send-email?recipient=${fullName}&sender=${email}&topic=Hello!&text=${message}`) //query string url
-    //   .catch(err => console.error(err))
-      fetch(`https://www.justuswitmer.com/send-email?recipient=${fullName}&sender=${email}&topic=Hello!&text=${message}`) //query string url
-      .catch(err => console.error('got an error, in my fetch!', err))
-      console.log('hit the fetch api call with name, email, and message!', fullName, email, message);
+      dispatch({
+        type: "SEND_MESSAGE",
+        url: "/send-email",
+        payload: {
+            name: fullName,
+            email: email,
+            message: message,
+        },
+      });
       setFullName('');
       setEmail('');
       setMessage('');

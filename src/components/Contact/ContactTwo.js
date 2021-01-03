@@ -21,7 +21,7 @@
 //   };
 //   // right away puts email as a string so an error is not thrown
 //   componentDidMount = () => {
-//     getEmail();
+//     this.getEmail();
 //   };
 //   // const [show, setShow] = useState(false);
 //   // const handleClose = () => setShow(false);
@@ -47,13 +47,13 @@
 //     setFullNameError(""); // resets error message to empty string; removing the error-related css classes.
 //   };
 
-//   const handleMessage = (event) => {
+//   handleMessage = (event) => {
 //     setMessage(event);
 //     setMessageError(""); // resets error message to empty string; removing the error-related css classes.
 //   };
 
 //   // Determines if there are any issues with required fields. If no, it returns true.
-//   const validateForm = () => {
+//   validateForm = () => {
 //     if (!email.includes('@')) {
 //       setEmailError('Invalid Email Format');
 //     }

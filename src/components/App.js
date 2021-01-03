@@ -19,7 +19,7 @@ function App(props) {
           <Route exact path="/about" component={About} />
           <Route exact path="/project" component={Project} />
           <Contact />
-          {/* <ContactTwo /> */}
+          {/* <ContactTwo /> */}s
           <Footer />
         </div>
       </Router>
