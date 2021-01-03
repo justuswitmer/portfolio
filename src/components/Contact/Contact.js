@@ -72,7 +72,7 @@ function Contact(props) {
     if (isValid) {
     // fetch(`http://127.0.0.1:5000/send-email?recipient=${fullName}&sender=${email}&topic=Hello!&text=${message}`) //query string url
     //   .catch(err => console.error(err))
-      fetch(`https://www.justuswitmer.com/send-email?recipient=${fullName}&sender=${email}&topic=Hello!&text=${message}`) //query string url
+      fetch(`https://justuswitmer.netlify.app/send-email?recipient=${fullName}&sender=${email}&topic=Hello!&text=${message}`) //query string url
       .catch(err => console.error(err))
       setFullName('');
       setEmail('');

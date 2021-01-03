@@ -320,7 +320,7 @@
   }
 
   .project-item-image:hover .project-pElement {
-    opacity: 100%;
+    opacity: 1;
     visibility: visible;
   }
 
@@ -577,6 +577,7 @@
   .contact-modal-header {
     display: block;
     text-align: center;
+    border-radius: 4px;
   }
 
   /* -------------------- CONTACT END -------------------- */
