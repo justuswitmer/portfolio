@@ -71,7 +71,8 @@ function Nav(props) {
         <img 
           className='nav-logo'
           src={LogoLight}
-          alt='Light Logo'
+          alt='Justus Witmer Logo'
+          tabIndex='0'
         />
         <div className='nav-routes'>
           {routes.map(route =>
@@ -91,7 +92,7 @@ function Nav(props) {
                 alt='Dark Theme'
                 onClick={()=>setDarkThemeColor()}
               />
-              <span className='nav-theme-img-text'>Dark Theme</span>
+              <span className='nav-theme-img-text'>Dark theme</span>
             </div>
             <div className='nav-theme-divider'></div>
               <div className='nav-theme-img'>
@@ -101,7 +102,7 @@ function Nav(props) {
                   alt='Light Theme'
                   onClick={()=>setLightThemeColor()}
                 />
-                <span className='nav-theme-img-text'>Light Theme</span>
+                <span className='nav-theme-img-text'>Light theme</span>
               </div>
           </div>
         </div>
