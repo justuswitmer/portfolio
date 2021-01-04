@@ -21,7 +21,7 @@ class NavItem extends Component {
   render() {
     return (
       <>
-        <div className='nav-routes-buttonWrapper'>
+        <div tabIndex='0' className='nav-routes-buttonWrapper'>
           <div
             className={this.props.store.hasBrackets === this.props.route.route ?
               'squarebrackets nav-routes-focus'

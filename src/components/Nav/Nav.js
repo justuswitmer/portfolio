@@ -84,7 +84,7 @@ function Nav(props) {
         </div>
         {/* The div below is to help its child div maintain vertical alignment */}
         <div>
-          <div className='nav-theme'>
+          <div tabIndex='0' className='nav-theme'>
             <div className='nav-theme-img'>
               <img
                 className='nav-theme-svg'
