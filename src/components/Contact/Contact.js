@@ -111,7 +111,73 @@ function Contact(props) {
         </h3>
         </div>
       </div>
-      <div className='contact-form-container'>
+      <form name='contact' method='POST' data-netlify='true' className='contact-form-container' >
+        <div className='contact-name'>
+          <label for='for' className='contact-form-container-p'>Name</label>
+          <input
+            type='text'
+            id='name'
+            name='name'
+            className={`contact-name-input ${fullNameError ? "is-invalid" : ""}`}
+            // value={fullName}
+            // onChange={(event) => handleFullName(event.target.value)}
+          />
+          <div className="invalid-feedback">{fullNameError}</div>
+        </div>
+        <div className='contact-email'>
+          <label className='contact-form-container-p'>Email</label>
+          <input
+            type='text'
+            id='email'
+            name='email'
+            className={`contact-email-input ${emailError ? "is-invalid" : ""}`}
+            // value={email}
+            // onChange={(event) => handleEmail(event.target.value)}
+          />
+          <div className="invalid-feedback">{emailError}</div>
+        </div>
+        <div className='contact-message'>
+          <label className='contact-form-container-p'>Message</label>
+          <textarea
+            id='message'
+            name='message'
+            // rows='10'
+            // cols='50'
+            className={`contact-message-input ${messageError ? "is-invalid" : ""}`}
+            // value={message}
+            // onChange={(event) => handleMessage(event.target.value)}
+          />
+          <div className="invalid-feedback">{messageError}</div>
+        </div>
+        <div className='contact-button'>
+          <button
+            type='submit'
+            className='contact-button-send'
+            // onClick={onSubmit}
+          >Send</button>
+        </div>
+        {/* <Modal
+        size="lg"
+        show={show}
+        onHide={handleClose}
+        className='contact-modal'
+        >
+          <Modal.Header closeButton id='modalHeader' className='contact-modal-header'>
+            <Modal.Title id='example-modal-sizes-title-lg'>
+            <p>Thanks for contacting me! I will respond as soon as I can.</p>
+            </Modal.Title>
+          </Modal.Header>
+        </Modal> */}
+      </form>
+    </animated.div>
+  );
+}
+
+export default withRouter(Contact);
+
+
+
+{/* <div className='contact-form-container'>
         <div className='contact-name'>
           <p className='contact-form-container-p'>Name</p>
           <input
@@ -162,9 +228,4 @@ function Contact(props) {
             </Modal.Title>
           </Modal.Header>
         </Modal>
-      </div>
-    </animated.div>
-  );
-}
-
-export default withRouter(Contact);
+      </div> */}
