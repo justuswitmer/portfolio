@@ -30,6 +30,7 @@ function About(props) {
       <h3>I also enjoy learning about my personality and how I percieve the world</h3>
       {props.store.about.map(about =>
       <AboutItem
+        key={about.profile}
         about={about}
       />
       )}
