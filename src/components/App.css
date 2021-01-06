@@ -19,7 +19,6 @@
   --about_modal_bg: #aa7d7d38;
   --theme_cont_bg: #1d1d1d;
   --warning: #ff0000;
-  --ff: #c6d3d2;
 }
 
 .App {
@@ -50,7 +49,6 @@
   .nav-container {
     justify-content: space-between;
     grid-area: nav;
-    line-height: 80px;
     background-color: #222222;
     display: inline-flex;
     margin-left: -50px;
@@ -73,6 +71,7 @@
     display: inline-flex;
     width: 82px;
     justify-content: center;
+    outline: none;
   }
 
   .nav-routes-route {
@@ -80,8 +79,12 @@
     border: none;
     color: white;
     font-size: 1rem;
-
     cursor: pointer;
+    margin: 30px 0 30px 0;
+  }
+
+  .nav-routes-route:hover {
+    text-decoration: underline;
   }
 
   .nav-routes-route:focus {
@@ -95,8 +98,12 @@
     border: none;
     color: white;
     font-size: 1rem;
-
     cursor: pointer;
+    margin: 30px 0 30px 0;
+  }
+
+  .nav-routes-focus:hover {
+    text-decoration: underline;
   }
 
   /* code taken from here: https://jaspreetchahal.org/pure-css-square-brackets/ */
@@ -110,9 +117,9 @@
     border-left: 2px solid #3e833c;
     border-top: 2px solid #3e833c;
     border-bottom: 2px solid #3e833c;
-    padding: 2px;
-    top: 27px;
-    bottom: 27px;
+    padding-top: 20px;
+    padding-left: 4px;
+    top: -1px;
     left: -15px;
     z-index: 999;
   }
@@ -122,9 +129,9 @@
     border-right: 2px solid #3e833c;
     border-top: 2px solid #3e833c;
     border-bottom: 2px solid #3e833c;
-    padding: 2px;
-    top: 27px;
-    bottom: 27px;
+    padding-top: 20px;
+    padding-left: 4px;
+    top: -1px;
     right: -15px;
     z-index: 999;
   }
@@ -138,15 +145,21 @@
 
   .nav-logo {
     height: 100%;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .nav-theme-wrapper {
+    margin: 25px 0 25px 0;
   }
 
   .nav-theme {
     display: inline-flex;
     width: 61px;
     height: 30px;
-    vertical-align: middle;
     border-radius: 5px;
     background-color: var(--theme_cont_bg);
+    outline: none;
   }
 
   .nav-theme-divider {
@@ -163,6 +176,7 @@
   /* Show tooltips https://www.w3schools.com/css/css_tooltip.asp */
   .nav-theme-img {
     line-height: 30px;
+    cursor: pointer;
   }
 
   .nav-theme-img .nav-theme-img-text {

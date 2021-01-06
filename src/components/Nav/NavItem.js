@@ -17,7 +17,6 @@ class NavItem extends Component {
     });
   }
 
-  
   render() {
     return (
       <>

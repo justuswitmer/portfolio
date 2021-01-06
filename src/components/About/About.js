@@ -1,11 +1,20 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React, { useEffect } from 'react';
+import {connect, useDispatch} from 'react-redux';
 import { useSpring, animated } from "react-spring";
 import AboutItem from './AboutItem';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 function About(props) {
+  const dispatch = useDispatch();
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
+
+  useEffect(() => {
+    dispatch({
+      type: 'UPDATE_HAS_BRACKETS',
+      payload: props.history.location.pathname,
+    });
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }, [dispatch, props.history.location.pathname]);
 
   return (
     <animated.div style={trans} className='about-container'>

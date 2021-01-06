@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import NavItem from './NavItem';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import { useSpring, animated } from "react-spring";
 
 // SVG imports
 import LogoLight from '../images/LogoLight.svg';
@@ -21,7 +20,7 @@ const routes = [
 
 function Nav(props) {
   const dispatch = useDispatch();
-  const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
+
   // Get the root element
   let r = document.querySelector(':root');
 
@@ -67,12 +66,13 @@ function Nav(props) {
   }
 
     return (
-      <animated.div style={trans} className='nav-container'>
+      <div className='nav-container'>
         <img 
           className='nav-logo'
           src={LogoLight}
           alt='Justus Witmer Logo'
           tabIndex='0'
+          onClick={()=>props.history.push('/')}
         />
         <div className='nav-routes'>
           {routes.map(route =>
@@ -83,30 +83,34 @@ function Nav(props) {
           )}
         </div>
         {/* The div below is to help its child div maintain vertical alignment */}
-        <div>
+        <div className='nav-theme-wrapper'>
           <div tabIndex='0' className='nav-theme'>
-            <div className='nav-theme-img'>
+            <div 
+              className='nav-theme-img' 
+              onClick={()=>setDarkThemeColor()}
+            >
               <img
                 className='nav-theme-svg'
                 src={props.store.setTheme === true ? DarkActive : DarkInactive }
                 alt='Dark Theme'
-                onClick={()=>setDarkThemeColor()}
               />
               <span className='nav-theme-img-text'>Dark theme</span>
             </div>
             <div className='nav-theme-divider'></div>
-              <div className='nav-theme-img'>
+              <div 
+                className='nav-theme-img' 
+                onClick={()=>setLightThemeColor()}
+              >
                 <img 
                   className='nav-theme-svg'
                   src={props.store.setTheme === true ? LightInactive : LightActive } 
                   alt='Light Theme'
-                  onClick={()=>setLightThemeColor()}
                 />
                 <span className='nav-theme-img-text'>Light theme</span>
               </div>
           </div>
         </div>
-      </animated.div>
+      </div>
     );
 }
 

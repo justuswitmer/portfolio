@@ -15,6 +15,7 @@ function Portfolio(props) {
       type: 'UPDATE_HAS_BRACKETS',
       payload: props.history.location.pathname,
     });
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   }, [dispatch, props.history.location.pathname]);
 
     return (

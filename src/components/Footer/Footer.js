@@ -9,7 +9,7 @@ function Footer() {
       <p>This website was built with the following tools: react, javascript, and webflow.</p>
       <p>Designed by <a href='https://www.austinbalken.design'>AB UXD</a> & developed by Justus Witmer</p>
       <br></br>
-      <p>Copyright &copy; 2020 Justus Witmer</p>
+      <p>Copyright &copy; 2021 Justus Witmer</p>
     </animated.div>
   );
 }

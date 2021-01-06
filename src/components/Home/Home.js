@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import profilePic from '../images/BWProfile.jpg';
 import { useSpring, animated } from "react-spring";
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 function Home(props) {
+  const dispatch = useDispatch();
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
+
+  useEffect(() => {
+    dispatch({
+      type: 'UPDATE_HAS_BRACKETS',
+      payload: props.history.location.pathname,
+    });
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }, [dispatch, props.history.location.pathname]);
 
   return (
     <animated.div style={trans} className='home-container'>
-      {/* <img src={backgroundDark} className='home-background-image'/> */}
       <div className='home-intro'>
           <h2 className='home-intro-h2'>Hi, I'm Justus.</h2>
           <h2 className='home-intro-h2'>I am a software developer.</h2>
