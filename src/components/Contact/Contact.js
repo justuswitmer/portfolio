@@ -132,7 +132,7 @@ function Contact(props) {
         </div>
       </div>
       <input type='hidden' name='contact' value='contact' />
-      <form name="contact" data-netlify="true" method="post" onSubmit={handleSubmit}>
+      <form name="contact" data-netlify="true" method="POST" onSubmit={handleSubmit}>
         <p>
           <label>
             Your Name: <input type="text" name="name" value={fullName} onChange={(e)=>handleFullName(e.target.value)} />
