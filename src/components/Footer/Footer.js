@@ -6,10 +6,10 @@ function Footer() {
 
   return (
     <animated.div style={trans} className='footer-container'>
-      <p>This website was built with the following tools: react, javascript, and webflow.</p>
-      <p>Designed by <a href='https://www.austinbalken.design'>AB UXD</a> & developed by Justus Witmer</p>
+      <p tabIndex='0'>This website was built with the following tools: react, javascript, and webflow.</p>
+      <p tabIndex='0'>Designed by <a href='https://www.austinbalken.design'>AB UXD</a> & developed by Justus Witmer</p>
       <br></br>
-      <p>Copyright &copy; 2021 Justus Witmer</p>
+      <p tabIndex='0'>Copyright &copy; 2021 Justus Witmer</p>
     </animated.div>
   );
 }

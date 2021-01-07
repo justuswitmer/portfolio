@@ -84,7 +84,7 @@ function Nav(props) {
         </div>
         {/* The div below is to help its child div maintain vertical alignment */}
         <div className='nav-theme-wrapper'>
-          <div tabIndex='0' className='nav-theme'>
+          <div className='nav-theme'>
             <div 
               className='nav-theme-img' 
               onClick={()=>setDarkThemeColor()}
@@ -93,6 +93,7 @@ function Nav(props) {
                 className='nav-theme-svg'
                 src={props.store.setTheme === true ? DarkActive : DarkInactive }
                 alt='Dark Theme'
+                tabIndex='0'
               />
               <span className='nav-theme-img-text'>Dark theme</span>
             </div>
@@ -105,6 +106,7 @@ function Nav(props) {
                   className='nav-theme-svg'
                   src={props.store.setTheme === true ? LightInactive : LightActive } 
                   alt='Light Theme'
+                  tabIndex='0'
                 />
                 <span className='nav-theme-img-text'>Light theme</span>
               </div>

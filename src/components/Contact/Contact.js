@@ -93,9 +93,9 @@ function Contact(props) {
   return (
     <animated.div style={trans} className='contact-container'>
       <div className='contact-intro'>
-        <h3 className='contact-intro-h3'>I am open for full-time work or projects.</h3>
+        <h3 className='contact-intro-h3' tabIndex='0'>I am open for full-time work or projects.</h3>
         <div className='contact-intro2'>
-        <h3 className='contact-intro2-h3'>
+        <h3 className='contact-intro2-h3' tabIndex='0'>
           You can reach me on
           <a
             href="https://www.linkedin.com/in/justus-witmer"

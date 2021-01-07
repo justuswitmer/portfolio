@@ -12,7 +12,7 @@ function PortfolioItem(props) {
     return (
       <div className='project-item'>
         <div className='project-item-title'>
-          <h4>{props.project.title}</h4>
+          <h4 tabIndex='0'>{props.project.title}</h4>
         </div>
         <div className='project-item-image' onClick={gitHub}>
           <img
@@ -20,11 +20,15 @@ function PortfolioItem(props) {
             width='200px'
             className='project-imgElement'
             alt={props.project.description}
+            tabIndex='0'
           />
-          <span className='project-pElement'>
+          <span className='project-pElement' tabIndex='0'>
             {props.project.description} 
-            <img src={arrow} 
-              alt='arrow to external link'/>
+            <img 
+              src={arrow} 
+              alt='arrow to external link'
+              tabIndex='0'
+            />
           </span>
         </div>
       </div>
