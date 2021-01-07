@@ -334,7 +334,7 @@
     margin: 0;
   }
 
-  .project-item-image:hover .project-pElement {
+  .project-item-image:hover .project-description {
     opacity: 1;
     visibility: visible;
     z-index: 998;
@@ -344,7 +344,7 @@
     border-radius: 10px;
   }
 
-  .project-pElement {
+  .project-description {
     position: absolute;
     display: table-cell;
     vertical-align: middle;
@@ -359,6 +359,13 @@
     opacity: 0;
     transition: opacity 0.2s, visibility 0.2s;
     cursor: pointer;
+  }
+
+  .project-description-divElement {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-10%, -50%);
   }
 
   .project-item-description {

@@ -22,14 +22,15 @@ function PortfolioItem(props) {
             alt={props.project.description}
             tabIndex='0'
           />
-          <span className='project-pElement' tabIndex='0'>
-            {props.project.description} 
-            <img 
-              src={arrow} 
-              alt='arrow to external link'
-              tabIndex='0'
-            />
-          </span>
+          <div className='project-description' tabIndex='0'>
+            <div className='project-description-divElement'>{props.project.description} 
+              <img 
+                src={arrow} 
+                alt='arrow to external link'
+                tabIndex='0'
+              />
+            </div>
+          </div>
         </div>
       </div>
     );
