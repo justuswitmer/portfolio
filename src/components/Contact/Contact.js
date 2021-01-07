@@ -131,25 +131,26 @@ function Contact(props) {
         </div>
       </div>
       <form onSubmit={handleSubmit}>
-          <p>
-            <label>
-              Your Name: <input type="text" name="name" value={fullName} onChange={(e)=>handleFullName(e.target.value)} />
-            </label>
-          </p>
-          <p>
-            <label>
-              Your Email: <input type="email" name="email" value={email} onChange={(e)=>handleEmail(e.target.value)} />
-            </label>
-          </p>
-          <p>
-            <label>
-              Message: <textarea name="message" value={message} onChange={(e)=>handleMessage(e.target.value)} />
-            </label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
-        </form>
+        <input type="hidden" name="form-name" value="contact" />
+        <p>
+          <label>
+            Your Name: <input type="text" name="name" value={fullName} onChange={(e)=>handleFullName(e.target.value)} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Email: <input type="email" name="email" value={email} onChange={(e)=>handleEmail(e.target.value)} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Message: <textarea name="message" value={message} onChange={(e)=>handleMessage(e.target.value)} />
+          </label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
     </animated.div>
   );
 }
