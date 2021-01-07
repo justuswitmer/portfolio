@@ -83,6 +83,7 @@ function Contact(props) {
       message: message
     };
     const isValid = validateForm();
+    console.log('seeing what my e.target.getAttribute is:', e.target.getAttribute("name"));
     if (isValid) {
       fetch("/send-email", {
         method: "POST",
@@ -130,7 +131,7 @@ function Contact(props) {
         </h3>
         </div>
       </div>
-      <form data-netlify="true" name="form-name" method="post" onSubmit={handleSubmit}>
+      <form name="contact" method="post" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
         <p>
           <label>
