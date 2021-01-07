@@ -132,7 +132,6 @@ function Contact(props) {
         </div>
       </div>
       <form name="contact" method="post" onSubmit={handleSubmit}>
-        <input type="hidden" name="form-name" value="contact" />
         <p>
           <label>
             Your Name: <input type="text" name="name" value={fullName} onChange={(e)=>handleFullName(e.target.value)} />
