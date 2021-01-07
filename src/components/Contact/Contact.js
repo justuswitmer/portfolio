@@ -32,18 +32,18 @@ function Contact(props) {
   const [messageError, setMessageError] = useState("");
 
   //Handles the setting of each state and resets error fields.
-  const handleEmail = (event) => {
-    setEmail(event);
+  const handleEmail = (e) => {
+    setEmail(e);
     setEmailError(""); // resets error message to empty string; removing the error-related css classes.
   };
 
-  const handleFullName = (event) => {
-    setFullName(event);
+  const handleFullName = (e) => {
+    setFullName(e);
     setFullNameError(""); // resets error message to empty string; removing the error-related css classes.
   };
 
-  const handleMessage = (event) => {
-    setMessage(event);
+  const handleMessage = (e) => {
+    setMessage(e);
     setMessageError(""); // resets error message to empty string; removing the error-related css classes.
   };
 
@@ -69,19 +69,29 @@ function Contact(props) {
     return true;
   };
 
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
   //If Forms are validated, dispatch is made
-  const onSubmit = () => {
+  const handleSubmit = e => {
+    const newMessage = {
+      fullName: fullName,
+      email: email,
+      message: message
+    };
     const isValid = validateForm();
     if (isValid) {
-      dispatch({
-        type: "SEND_MESSAGE",
-        url: "/send-email",
-        payload: {
-            name: fullName,
-            email: email,
-            message: message,
-        },
-      });
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", newMessage })
+      })
+        .then(() => alert("Success!"))
+        .catch(error => alert(error));
+      e.preventDefault();
       setFullName('');
       setEmail('');
       setMessage('');
@@ -89,6 +99,15 @@ function Contact(props) {
     };
   };
 
+  // dispatch({
+  //   type: "SEND_MESSAGE",
+  //   url: "/send-email",
+  //   payload: {
+  //       name: fullName,
+  //       email: email,
+  //       message: message,
+  //   },
+  // });
 
   return (
     <animated.div style={trans} className='contact-container'>
@@ -111,7 +130,35 @@ function Contact(props) {
         </h3>
         </div>
       </div>
-      <form name='contact' method='POST' data-netlify='true' className='contact-form-container' >
+      <form onSubmit={handleSubmit}>
+          <p>
+            <label>
+              Your Name: <input type="text" name="name" value={fullName} onChange={(e)=>handleFullName(e.target.value)} />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your Email: <input type="email" name="email" value={email} onChange={(e)=>handleEmail(e.target.value)} />
+            </label>
+          </p>
+          <p>
+            <label>
+              Message: <textarea name="message" value={message} onChange={(e)=>handleMessage(e.target.value)} />
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
+    </animated.div>
+  );
+}
+
+export default withRouter(Contact);
+
+
+
+{/* <form name='contact' method='POST' data-netlify='true' className='contact-form-container' >
         <div className='contact-name'>
           <label for='for' className='contact-form-container-p'>Name</label>
           <input
@@ -167,65 +214,5 @@ function Contact(props) {
             <p>Thanks for contacting me! I will respond as soon as I can.</p>
             </Modal.Title>
           </Modal.Header>
-        </Modal> */}
-      </form>
-    </animated.div>
-  );
-}
-
-export default withRouter(Contact);
-
-
-
-{/* <div className='contact-form-container'>
-        <div className='contact-name'>
-          <p className='contact-form-container-p'>Name</p>
-          <input
-            className={`contact-name-input ${fullNameError ? "is-invalid" : ""}`}
-            type='text'
-            value={fullName}
-            onChange={(event) => handleFullName(event.target.value)}
-          />
-          <div className="invalid-feedback">{fullNameError}</div>
-        </div>
-        <div className='contact-email'>
-          <p className='contact-form-container-p'>Email</p>
-          <input
-            className={`contact-email-input ${emailError ? "is-invalid" : ""}`}
-            type='email'
-            value={email}
-            onChange={(event) => handleEmail(event.target.value)}
-          />
-          <div className="invalid-feedback">{emailError}</div>
-        </div>
-        <div className='contact-message'>
-          <p className='contact-form-container-p'>Message</p>
-          <textarea
-            className={`contact-message-input ${messageError ? "is-invalid" : ""}`}
-            type='text'
-            rows='10'
-            cols='50'
-            value={message}
-            onChange={(event) => handleMessage(event.target.value)}
-          />
-          <div className="invalid-feedback">{messageError}</div>
-        </div>
-        <div className='contact-button'>
-          <button
-            className='contact-button-send'
-            onClick={onSubmit}
-          >Send</button>
-        </div>
-        <Modal
-        size="lg"
-        show={show}
-        onHide={handleClose}
-        className='contact-modal'
-        >
-          <Modal.Header closeButton id='modalHeader' className='contact-modal-header'>
-            <Modal.Title id='example-modal-sizes-title-lg'>
-            <p>Thanks for contacting me! I will respond as soon as I can.</p>
-            </Modal.Title>
-          </Modal.Header>
         </Modal>
-      </div> */}
+      </form> */}
