@@ -88,7 +88,7 @@ function Contact(props) {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": e.target.getAttribute("name"), newMessage })
+        body: encode({ "form-name": "contact", newMessage })
       })
         .then(() => alert("Success!"))
         .catch(error => alert(error));
@@ -131,6 +131,7 @@ function Contact(props) {
         </h3>
         </div>
       </div>
+      <input type='hidden' name='contact' value='contact' />
       <form name="contact" data-netlify="true" method="post" onSubmit={handleSubmit}>
         <p>
           <label>
