@@ -85,7 +85,7 @@ function Contact(props) {
     const isValid = validateForm();
     console.log('seeing what my e.target.getAttribute is:', e.target.getAttribute("name"));
     if (isValid) {
-      fetch("/send-email", {
+      fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": e.target.getAttribute("name"), newMessage })
