@@ -84,7 +84,7 @@ function Contact(props) {
     };
     const isValid = validateForm();
     if (isValid) {
-      fetch("/", {
+      fetch("/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", newMessage })
