@@ -87,7 +87,7 @@ function Contact(props) {
       fetch("/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", newMessage })
+        body: encode({ "form-name": e.target.getAttribute("name"), newMessage })
       })
         .then(() => alert("Success!"))
         .catch(error => alert(error));
