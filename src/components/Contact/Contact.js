@@ -130,7 +130,7 @@ function Contact(props) {
         </h3>
         </div>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form data-netlify="true" name="form-name" method="post" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
         <p>
           <label>
