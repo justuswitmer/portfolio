@@ -12,6 +12,8 @@ function Contact(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const dispatch = useDispatch();
+  const openingContact = '<contact>';
+  const closingContact = '</contact>';
 
 
   const getEmail = () => {
@@ -112,6 +114,7 @@ function Contact(props) {
 
   return (
     <animated.div style={trans} className='contact-container'>
+      <span className='opening-tag'>{openingContact}</span>
       <div className='contact-intro'>
         <h3 className='contact-intro-h3' tabIndex='0'>I am open for full-time work or projects.</h3>
         <div className='contact-intro2'>
@@ -131,8 +134,8 @@ function Contact(props) {
         </h3>
         </div>
       </div>
-      <input type="hidden" name="contactForm" value="contactForm" />
       <form name="contactForm" data-netlify="true" method="POST" onSubmit={handleSubmit}>
+      <input type="hidden" name="form-name" value="contactForm" />
         <p>
           <label>
             Your Name: <input type="text" name="name" value={fullName} onChange={(e)=>handleFullName(e.target.value)} />
@@ -152,6 +155,7 @@ function Contact(props) {
           <button type="submit">Send</button>
         </p>
       </form>
+      <span className='contact-closing-tag'>{closingContact}</span>
     </animated.div>
   );
 }
