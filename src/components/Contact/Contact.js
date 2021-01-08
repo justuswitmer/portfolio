@@ -134,10 +134,10 @@ function Contact(props) {
         </h3>
         </div>
       </div>
-        <form name="contact" action="/contact" methood="post">
+        <form name="contact" action="/contact" method="post">
           <input type="hidden" name="form-name" value="contact"/>
           <input required type="text" name="name" placeholder="Your name"/>
-          <input required type="email" name="emial" placeholder="Your email" />
+          <input required type="email" name="email" placeholder="Your email" />
           <textarea required name="message" placeholder="Your message" cols="30" rows="10" ></textarea>
           <button type="submit">Send a message</button>
         </form>
