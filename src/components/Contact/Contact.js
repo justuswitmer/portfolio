@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import linkedin from '../images/LI-Logo.png';
 import { useSpring, animated } from "react-spring";
 import { Modal } from "react-bootstrap";
+require('dotenv').config()
 
 function Contact(props) {
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
@@ -91,6 +92,10 @@ function Contact(props) {
     };
   };
 
+  function onSubmit(token) {
+    document.getElementById("demo-form").submit();
+  }
+
   return (
     <animated.div style={trans} className='contact-container'>
       <span className='opening-tag'>{openingContact}</span>
@@ -117,7 +122,6 @@ function Contact(props) {
           name="contact" 
           action="/contact" 
           method="post"
-          data-netlify-recaptcha="true"
           className='contact-form-container'>
           <input type="hidden" name="form-name" value="contact"/>
           <div className='contact-name'>
@@ -155,8 +159,15 @@ function Contact(props) {
             </textarea>
           </div>
           <div className="invalid-feedback">{messageError}</div>
-          <div data-netlify-recaptcha="true"></div>
-          <button type="submit" className='contact-button-send'>Send</button>
+          <form id='demo-form' action='?' method='POST' data-netlify-recaptcha="true" data-netlify="true">
+            <button 
+              type="submit" 
+              className='contact-button-send'
+              data-callback={onSubmit}
+              data-sitekey={process.env.SITE_RECAPTCHA_KEY}
+            >Send
+            </button>
+          </form>
         </form>
       <span className='contact-closing-tag'>{closingContact}</span>
     </animated.div>
