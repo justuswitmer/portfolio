@@ -134,7 +134,22 @@ function Contact(props) {
         </h3>
         </div>
       </div>
-      <form name="contactForm" data-netlify="true" method="POST" onSubmit={handleSubmit}>
+        <form name="contact" action="/contact" methood="post">
+          <input type="hidden" name="form-name" value="contact"/>
+          <input required type="text" name="name" placeholder="Your name"/>
+          <input required type="email" name="emial" placeholder="Your email" />
+          <textarea required name="message" placeholder="Your message" cols="30" rows="10" ></textarea>
+          <button type="submit">Send a message</button>
+        </form>
+      <span className='contact-closing-tag'>{closingContact}</span>
+    </animated.div>
+  );
+}
+
+export default withRouter(Contact);
+
+
+{/* <form name="contactForm" data-netlify="true" method="POST" onSubmit={handleSubmit}>
       <input type="hidden" name="form-name" value="contactForm" />
         <p>
           <label>
@@ -154,13 +169,10 @@ function Contact(props) {
         <p>
           <button type="submit">Send</button>
         </p>
-      </form>
-      <span className='contact-closing-tag'>{closingContact}</span>
-    </animated.div>
-  );
-}
+      </form> */}
 
-export default withRouter(Contact);
+
+
 
 
 
