@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import linkedin from '../images/LI-Logo.png';
 import { useSpring, animated } from "react-spring";
 import { Modal } from "react-bootstrap";
-require('dotenv').config()
 
 function Contact(props) {
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
@@ -92,10 +91,6 @@ function Contact(props) {
     };
   };
 
-  function onSubmit(token) {
-    document.getElementById("demo-form").submit();
-  }
-
   return (
     <animated.div style={trans} className='contact-container'>
       <span className='opening-tag'>{openingContact}</span>
@@ -127,6 +122,7 @@ function Contact(props) {
           <div className='contact-name'>
             <label className='contact-form-container-p'>Name</label>
             <input 
+              required
               type="text" 
               name="name"
               value={fullName}
@@ -138,6 +134,7 @@ function Contact(props) {
           <div className='contact-email'>
             <label className='contact-form-container-p'>Email</label>
             <input 
+              required
               type="email" 
               name="email"
               value={email}
@@ -149,6 +146,7 @@ function Contact(props) {
           <div className='contact-message'>
             <label className='contact-form-container-p'>Message</label>
             <textarea
+              required
               name="message" 
               cols="50" 
               rows="10"
@@ -159,15 +157,11 @@ function Contact(props) {
             </textarea>
           </div>
           <div className="invalid-feedback">{messageError}</div>
-          <form id='demo-form' action='?' method='POST' data-netlify-recaptcha="true" data-netlify="true">
             <button 
               type="submit" 
               className='contact-button-send'
-              data-callback={onSubmit}
-              data-sitekey={process.env.SITE_RECAPTCHA_KEY}
             >Send
             </button>
-          </form>
         </form>
       <span className='contact-closing-tag'>{closingContact}</span>
     </animated.div>
