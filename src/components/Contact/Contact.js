@@ -37,16 +37,25 @@ function Contact(props) {
   const handleEmail = (e) => {
     setEmail(e);
     setEmailError(""); // resets error message to empty string; removing the error-related css classes.
+    if (!email.includes('@')) {
+      setEmailError('Invalid Email Format');
+    }
   };
 
   const handleFullName = (e) => {
     setFullName(e);
     setFullNameError(""); // resets error message to empty string; removing the error-related css classes.
+    if (!fullName) {
+      setFullNameError('Name Cannot Be Blank');
+    }
   };
 
   const handleMessage = (e) => {
     setMessage(e);
     setMessageError(""); // resets error message to empty string; removing the error-related css classes.
+    if (!message) {
+      setMessageError('Please Enter a Mesage');
+    }
   };
 
   // Determines if there are any issues with required fields. If no, it returns true.
@@ -71,46 +80,16 @@ function Contact(props) {
     return true;
   };
 
-  const encode = (data) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-  }
-
-  //If Forms are validated, dispatch is made
+  //If Forms are validated
   const handleSubmit = e => {
-    const newMessage = {
-      fullName: fullName,
-      email: email,
-      message: message
-    };
     const isValid = validateForm();
-    console.log('seeing what my e.target.getAttribute is:', e.target.getAttribute("name"));
     if (isValid) {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contactForm", newMessage })
-      })
-        .then(() => alert("Success!"))
-        .catch(error => alert(error));
-      e.preventDefault();
       setFullName('');
       setEmail('');
       setMessage('');
       handleShow();
     };
   };
-
-  // dispatch({
-  //   type: "SEND_MESSAGE",
-  //   url: "/send-email",
-  //   payload: {
-  //       name: fullName,
-  //       email: email,
-  //       message: message,
-  //   },
-  // });
 
   return (
     <animated.div style={trans} className='contact-container'>
@@ -134,40 +113,49 @@ function Contact(props) {
         </h3>
         </div>
       </div>
-        <form name="contact" action="/contact" method="post" className='contact-form-container'>
+        <form 
+          name="contact" 
+          action="/contact" 
+          method="post"
+          data-netlify-recaptcha="true"
+          className='contact-form-container'>
           <input type="hidden" name="form-name" value="contact"/>
           <div className='contact-name'>
             <label className='contact-form-container-p'>Name</label>
             <input 
-              required 
               type="text" 
               name="name"
+              value={fullName}
               className={`contact-name-input ${fullNameError ? "is-invalid" : ""}`}
+              onChange={(event) => handleFullName(event.target.value)}
             />
             <div className="invalid-feedback">{fullNameError}</div>
           </div>
           <div className='contact-email'>
             <label className='contact-form-container-p'>Email</label>
             <input 
-              required 
               type="email" 
               name="email"
+              value={email}
               className={`contact-email-input ${emailError ? "is-invalid" : ""}`}
+              onChange={(event) => handleEmail(event.target.value)}
             />
             <div className="invalid-feedback">{emailError}</div>
           </div>
           <div className='contact-message'>
             <label className='contact-form-container-p'>Message</label>
-            <textarea 
-              required 
+            <textarea
               name="message" 
               cols="50" 
-              rows="10" 
+              rows="10"
+              value={message}
               className={`contact-message-input ${messageError ? "is-invalid" : ""}`}  
+              onChange={(event) => handleMessage(event.target.value)}
             >
             </textarea>
           </div>
           <div className="invalid-feedback">{messageError}</div>
+          <div data-netlify-recaptcha="true"></div>
           <button type="submit" className='contact-button-send'>Send</button>
         </form>
       <span className='contact-closing-tag'>{closingContact}</span>

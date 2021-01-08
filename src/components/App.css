@@ -527,10 +527,10 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    text-align: start;
   }
 
   .contact-form-container-p {
-    text-align: start;
     margin: 0 0 5px 0;
     font-size: 0.875rem;
   }
@@ -693,7 +693,6 @@
   }
 
   .contact-form-container-p {
-    text-align: start;
     margin: 0 0 5px 0;
     font-size: 0.875rem;
   }
