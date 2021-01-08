@@ -1,5 +1,4 @@
 const setThemeReducer = (state = [], action) => {
-  console.log('in bracketsReducer', action);
   switch (action.type) {
     case 'SET_THEME':
       return action.payload

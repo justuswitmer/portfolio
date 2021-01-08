@@ -134,12 +134,41 @@ function Contact(props) {
         </h3>
         </div>
       </div>
-        <form name="contact" action="/contact" method="post">
+        <form name="contact" action="/contact" method="post" className='contact-form-container'>
           <input type="hidden" name="form-name" value="contact"/>
-          <input required type="text" name="name" placeholder="Your name"/>
-          <input required type="email" name="email" placeholder="Your email" />
-          <textarea required name="message" placeholder="Your message" cols="30" rows="10" ></textarea>
-          <button type="submit">Send a message</button>
+          <div className='contact-name'>
+            <label className='contact-form-container-p'>Name</label>
+            <input 
+              required 
+              type="text" 
+              name="name"
+              className={`contact-name-input ${fullNameError ? "is-invalid" : ""}`}
+            />
+            <div className="invalid-feedback">{fullNameError}</div>
+          </div>
+          <div className='contact-email'>
+            <label className='contact-form-container-p'>Email</label>
+            <input 
+              required 
+              type="email" 
+              name="email"
+              className={`contact-email-input ${emailError ? "is-invalid" : ""}`}
+            />
+            <div className="invalid-feedback">{emailError}</div>
+          </div>
+          <div className='contact-message'>
+            <label className='contact-form-container-p'>Message</label>
+            <textarea 
+              required 
+              name="message" 
+              cols="50" 
+              rows="10" 
+              className={`contact-message-input ${messageError ? "is-invalid" : ""}`}  
+            >
+            </textarea>
+          </div>
+          <div className="invalid-feedback">{messageError}</div>
+          <button type="submit" className='contact-button-send'>Send</button>
         </form>
       <span className='contact-closing-tag'>{closingContact}</span>
     </animated.div>
@@ -147,33 +176,6 @@ function Contact(props) {
 }
 
 export default withRouter(Contact);
-
-
-{/* <form name="contactForm" data-netlify="true" method="POST" onSubmit={handleSubmit}>
-      <input type="hidden" name="form-name" value="contactForm" />
-        <p>
-          <label>
-            Your Name: <input type="text" name="name" value={fullName} onChange={(e)=>handleFullName(e.target.value)} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" value={email} onChange={(e)=>handleEmail(e.target.value)} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message" value={message} onChange={(e)=>handleMessage(e.target.value)} />
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form> */}
-
-
-
-
 
 
 {/* <form name='contact' method='POST' data-netlify='true' className='contact-form-container' >

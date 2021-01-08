@@ -26,7 +26,6 @@ const project = [
 ];
 
 const projectReducer = (state = project, action) => {
-  console.log('in projectReducer', action);
   switch (action.type) {
     case 'LOAD_PROJECT':
       return action.payload

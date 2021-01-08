@@ -27,7 +27,6 @@ const about = [
 
 
 const aboutReducer = (state = about, action) => {
-  console.log('in aboutReducer', action);
   switch (action.type) {
     case 'LOAD_ABOUT':
       return action.payload
