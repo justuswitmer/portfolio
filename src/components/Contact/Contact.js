@@ -131,6 +131,7 @@ function Contact(props) {
         </h3>
         </div>
       </div>
+      <input type="hidden" name="form-name" value="contactForm" />
       <form name="contactForm" data-netlify="true" method="POST" onSubmit={handleSubmit}>
         <p>
           <label>
