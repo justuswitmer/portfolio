@@ -9,6 +9,8 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 function Portfolio(props) {
   const dispatch = useDispatch();
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
+  const openingTag = '<projects>';
+  const closingTag ='</projects>';
 
   useEffect(() => {
     dispatch({
@@ -20,10 +22,11 @@ function Portfolio(props) {
 
     return (
       <animated.div style={trans} className='project-container'>
-        <h2 tabIndex='0'>Here are some projects that show my best work.</h2> 
+        <span className='tag project-opening-tag'>{openingTag}</span>
+        <h2 tabIndex='0' className='project-intro-h2'>Here are some projects that show my best work.</h2> 
         <div className='project-primary'>
           <div className='project-primary-player-div'>
-            <h4 className='project-primary-player-div-h4'>Lake Elmo Aero</h4>
+            <h4 className='project-primary-player-h4'>Lake Elmo Aero</h4>
             <ReactPlayer
               width='100%'
               url="https://vimeo.com/493976119"
@@ -34,7 +37,7 @@ function Portfolio(props) {
             </ul>          
           </div>
           <div className='project-primary-player-div'>
-            <h4 className='project-primary-player-div-h4'>financeIt</h4>
+            <h4 className='project-primary-player-h4'>financeIt</h4>
             <ReactPlayer
               width='100%'
               url="https://vimeo.com/493975723"
@@ -52,12 +55,13 @@ function Portfolio(props) {
           </div>
         </div>
         <div className='project-secondary'>
-        {props.store.project.map(project =>
-        <ProjectItem
-        project={project}
-        />
-        )}
+          {props.store.project.map(project =>
+          <ProjectItem
+          project={project}
+          />
+          )}
         </div>
+        <span className='tag project-closing-tag'>{closingTag}</span>
       </animated.div>
     );
 }

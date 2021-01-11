@@ -7,6 +7,8 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 function About(props) {
   const dispatch = useDispatch();
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
+  const openingTag = '<about>';
+  const closingTag ='</about>';
 
   useEffect(() => {
     dispatch({
@@ -18,8 +20,9 @@ function About(props) {
 
   return (
     <animated.div style={trans} className='about-container'>
-      <h2 tabIndex='0'>Here is a snapshot of who I am as a developer</h2>
-      <div className='about-intro'>
+      <span className='tag about-opening-tag'>{openingTag}</span>
+      <h2 tabIndex='0' className='about-intro-h2'>Here is a snapshot of who I am as a developer</h2>
+      <div>
         <ul className='about-list'>
           <li tabIndex='0'>I am a data-driven, analytical Full Stack Software Engineer with experience in small business and finance</li>
           <li tabIndex='0'>My specialties include compensation analytics, problem-solving, and project management</li>
@@ -28,7 +31,7 @@ function About(props) {
         </ul>
       </div>
       <div className='about-personality'>
-      <h3 tabIndex='0'>In my personal life I am a</h3>
+      <h3 tabIndex='0' className='about-personality-h3'>In my personal life I am a</h3>
       <ul className='about-list'>
         <li tabIndex='0'>Devoted husband and dad</li>
         <li tabIndex='0'>Avid Book Reader (physical and audio)</li>
@@ -36,7 +39,7 @@ function About(props) {
         <li tabIndex='0'>Amateur woodworker</li>
         <li tabIndex='0'>Life-long musician</li>
       </ul>
-      <h3 tabIndex='0'>I also enjoy learning about my personality and how I percieve the world</h3>
+      <h3 tabIndex='0' className='about-personality-h3'>I also enjoy learning about my personality and how I percieve the world</h3>
       {props.store.about.map(about =>
       <AboutItem
         key={about.profile}
@@ -44,6 +47,7 @@ function About(props) {
       />
       )}
       </div>
+      <span className='tag about-closing-tag'>{openingTag}</span>
     </animated.div>
   );
 }

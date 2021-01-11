@@ -1,6 +1,6 @@
 /* Have media qureies be 1312, 992, 688, and 320 */
 
-/* -------------------- GLOBAL ELEMENTS -------------------- */
+/* -------------------- GLOBAL ELEMENTS BEGIN -------------------- */
 @font-face {
   font-family: "Roboto Flex";
   src: url("RobotoFlex-VF.woff2") format("woff2 supports variations"),
@@ -10,25 +10,38 @@
 }
 
 :root {
-  --font_color: #c4c0c0;
+  /* Applies to font color where the eye should be drawn to */
+  --focused_font_color: #f0f0f0;
+  /* Applies to primary text, such as h1 and h2 tags */
+  --primary_font_color: #dadada;
+  /* Applies to any tag that would need to show contrast to the primary font */
+  --secondary_font_color: #ababab;
+  /* Applies to the very root of the website, the furthermost back visible area */
   --background_color: #111111;
+  /* Applies to each main box on each page, the second layer the use sees*/
   --primary_color: #161616;
+  /* Applies to the nav, footer, and contact inputs. Provides contrast to primary color */
   --secondary_color: #222222;
+  /* Applies to buttons, focused inputs, and nav focused route links */
   --accent_color: #295928;
+  /* Applies to the background of the modals in the about page, the furthermost back visible area */
   --about_card_bg: #c4c0c0;
+  /* Applies to each main section of the modal */
   --about_modal_bg: #aa7d7d38;
+  /* Applies to the background that contains the theme buttons */
   --theme_cont_bg: #1d1d1d;
-  --warning: #d43a3a;
+  /* Applies to the divider between routes in the nav bar */
   --nav_link_div_color: #f0f0f0;
-  --h1h2h3_font_color: #dadada;
-  --body_font_color: #ababab;
+  /* Applies to any text link */
   --text_link_color: #449a42;
+  /* Applies to the inputs when there is incorrect value */
+  --warning: #d43a3a;
 }
 
 .App {
   text-align: center;
   background-color: var(--background_color);
-  color: var(--font_color);
+  color: red;
   display: grid;
   padding: 0 50px;
   min-height: -webkit-fill-available;
@@ -45,27 +58,63 @@
     "footer";
 }
 
-/* -------------------- Tag Decorations -------------------- */
-.opening-tag {
+/* -------------------- GLOBAL ELEMENTS END -------------------- */
+
+/* -------------------- TAG DECORATIONS BEGIN-------------------- */
+
+.tag {
   position: absolute;
-  left: 70px;
-  margin-top: 10px;
   opacity: 0.2;
+  color: var(--primary_font_color);
+  left: 70px;
+  font-size: 12px;
+}
+
+.contact-opening-tag {
+  margin-top: 10px;
 }
 
 .contact-closing-tag {
-  position: absolute;
-  left: 70px;
-  margin-top: 342px;
-  opacity: 0.2;
+  margin-top: 350px;
+}
+
+.footer-opening-tag {
+  margin-top: -20px;
 }
 
 .footer-closing-tag {
-  position: absolute;
-  left: 70px;
-  margin-top: -30px;
-  opacity: 0.2;
+  margin-top: 10px;
 }
+
+.footer-break-tag {
+  padding: 13px 0;
+}
+
+.home-opening-tag {
+  margin-top: -150px;
+}
+
+.home-closing-tag {
+  margin-top: 830px;
+}
+
+.project-opening-tag {
+  margin-top: -30px;
+}
+
+.project-closing-tag {
+  margin-top: 12px;
+}
+
+.about-opening-tag {
+  margin-top: -33px;
+}
+
+.about-closing-tag {
+  margin-top: 12px;
+}
+
+/* -------------------- TAG DECORATIONS END-------------------- */
 
 /* -------------------- SPECIFIC ELEMENTS -------------------- */
 
@@ -104,7 +153,7 @@
   .nav-routes-route {
     background-color: inherit;
     border: none;
-    color: var(--nav_link_div_color);
+    color: var(--focused_font_color);
     font-size: 1rem;
     cursor: pointer;
     margin: 30px 0 30px 0;
@@ -123,7 +172,7 @@
     outline: none;
     background-color: inherit;
     border: none;
-    color: var(--nav_link_div_color);
+    color: var(--focused_font_color);
     font-size: 1rem;
     cursor: pointer;
     margin: 30px 0 30px 0;
@@ -254,7 +303,7 @@
   }
 
   .home-intro-h2 {
-    color: var(--h1h2h3_font_color);
+    color: var(--primary_font_color);
     font-weight: 600;
     font-size: 50px;
     letter-spacing: 1.07px;
@@ -262,7 +311,7 @@
   }
 
   .home-intro-p {
-    color: var(--body_font_color);
+    color: var(--secondary_font_color);
     line-height: 33px;
     font-size: 24px;
     letter-spacing: 0.51px;
@@ -286,7 +335,7 @@
     grid-area: viewProjects;
     justify-items: center;
     display: grid;
-    color: var(--h1h2h3_font_color);
+    color: var(--primary_font_color);
   }
 
   .home-viewProjects > p {
@@ -305,7 +354,7 @@
     font-weight: 500;
     letter-spacing: 0.51px;
     line-height: 29px;
-    color: var(--nav_link_div_color);
+    color: var(--focused_font_color);
   }
 
   /* -------------------- HOME END -------------------- */
@@ -318,22 +367,30 @@
     align-items: center;
     padding: 40px 50px 40px 50px;
     background-color: var(--primary_color);
+    color: var(--secondary_font_color);
+  }
+
+  .project-intro-h2 {
+    color: var(--primary_font_color);
   }
 
   .project-primary {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     margin-top: 40px;
     text-align: left;
   }
 
   .project-primary-player-div {
-    width: 50%;
-    margin: 10px;
+    width: 500px;
+    margin: 0 10px;
   }
 
-  .project-primary-player-div-h4 {
+  .project-primary-player-h4 {
     margin-bottom: -40px;
     text-align: center;
+    color: var(--primary_font_color);
   }
 
   .project-secondary {
@@ -423,9 +480,7 @@
     align-items: center;
     padding: 40px 50px 40px 50px;
     background-color: var(--primary_color);
-  }
-
-  .about-intro {
+    color: var(--secondary_font_color);
   }
 
   .about-list {
@@ -451,7 +506,7 @@
   .aboutitem-button {
     background-color: var(--primary_color);
     border-radius: 4px;
-    color: var(--font_color);
+    color: var(--focused_font_color);
     box-sizing: none;
     border: none;
     height: 140px;
@@ -472,6 +527,14 @@
   #aboutitem-modal {
     background-color: var(--about_modal_bg);
     border-radius: 0 0 4px 4px;
+  }
+
+  .about-intro-h2 {
+    color: var(--primary_font_color);
+  }
+
+  .about-personality-h3 {
+    color: var(--secondary_font_color);
   }
 
   /* -------------------- ABOUT BEGIN -------------------- */
@@ -495,7 +558,7 @@
   }
 
   .contact-intro-h3 {
-    color: var(--h1h2h3_font_color);
+    color: var(--primary_font_color);
     font-size: 1.5rem;
     font-weight: 350;
     padding: 40px 0 10px 0;
@@ -506,21 +569,20 @@
   }
 
   .contact-intro2-h3 {
-    color: var(--body_font_color);
+    color: var(--secondary_font_color);
     font-size: 1.125rem;
     font-weight: 100;
     padding-bottom: 40px;
   }
 
   .contact-linkedin-link {
-    height: 20px;
-    margin-top: 17px;
+    margin: 0 2px;
+    color: var(--text_link_color);
+    text-decoration: underline;
   }
 
-  .contact-linkedin-image {
-    width: 5.6rem;
-    margin-left: 4px;
-    margin-bottom: -0.28rem;
+  .contact-linkedin-link:hover {
+    color: var(--secondary_font_color);
   }
 
   .contact-form-container {
@@ -537,7 +599,7 @@
     left: 50%;
     transform: translate(-50%);
     text-align: start;
-    color: var(--nav_link_div_color);
+    color: var(--focused_font_color);
   }
 
   .contact-form-container-p {
@@ -555,7 +617,7 @@
     border-radius: 5px;
     border: none;
     background-color: var(--secondary_color);
-    color: var(--font_color);
+    color: var(--primary_font_color);
   }
 
   .contact-name-input:focus {
@@ -573,7 +635,7 @@
     border-radius: 5px;
     border: none;
     background-color: var(--secondary_color);
-    color: var(--font_color);
+    color: var(--primary_font_color);
   }
 
   .contact-email-input:focus {
@@ -591,7 +653,7 @@
     border-radius: 5px;
     border: none;
     background-color: var(--secondary_color);
-    color: var(--font_color);
+    color: var(--primary_font_color);
   }
 
   .contact-message-input:focus {
@@ -611,7 +673,7 @@
     background-color: var(--accent_color);
     border: none;
     cursor: pointer;
-    color: var(--nav_link_div_color);
+    color: var(--focused_font_color);
   }
 
   /* Class for fields that are not valid */
@@ -642,10 +704,30 @@
   .footer-container {
     grid-area: footer;
     background-color: var(--secondary_color);
+    color: var(--focused_font_color);
+    font-size: 12px;
     margin-left: -50px;
     margin-right: -50px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 30px 50px 30px 50px;
+  }
+
+  .footer-container > p {
+    margin: 0;
+    line-height: 14px;
+  }
+
+  .footer-Ptag {
+    padding-top: 4px;
+  }
+
+  .footer-UX-link {
+    color: var(--text_link_color);
+    text-decoration: underline;
+    margin: 0 2px;
+  }
+
+  .footer-UX-link:hover {
+    color: var(--secondary_font_color);
   }
 
   /* -------------------- FOOTER END -------------------- */

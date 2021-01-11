@@ -93,7 +93,7 @@ function Contact(props) {
 
   return (
     <animated.div style={trans} className='contact-container'>
-      <span className='opening-tag'>{openingContact}</span>
+      <span className='tag contact-opening-tag'>{openingContact}</span>
       <div className='contact-intro'>
         <h3 className='contact-intro-h3' tabIndex='0'>I am open for full-time work or projects.</h3>
         <div className='contact-intro2'>
@@ -102,12 +102,7 @@ function Contact(props) {
           <a
             href="https://www.linkedin.com/in/justus-witmer"
             className='contact-linkedin-link'
-          >
-            <img
-              src={linkedin}
-              className='contact-linkedin-image'
-              alt='LinkedIn Logo'
-            />
+          >LinkedIn
           </a>
           or through filling out the form below.
         </h3>
@@ -163,7 +158,7 @@ function Contact(props) {
             >Send
             </button>
         </form>
-      <span className='contact-closing-tag'>{closingContact}</span>
+      <span className='tag contact-closing-tag'>{closingContact}</span>
     </animated.div>
   );
 }

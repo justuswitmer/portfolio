@@ -7,6 +7,8 @@ import { withRouter } from 'react-router-dom';
 function Home(props) {
   const dispatch = useDispatch();
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
+  const openingTag = '<home>';
+  const closingTag = '</home>';
 
   useEffect(() => {
     dispatch({
@@ -18,6 +20,7 @@ function Home(props) {
 
   return (
     <animated.div style={trans} className='home-container'>
+      <span className='tag home-opening-tag'>{openingTag}</span>
       <div className='home-intro'>
           <h2 className='home-intro-h2' tabIndex='0'>Hi, I'm Justus.</h2>
           <h2 className='home-intro-h2' tabIndex='0'>I am a software developer.</h2>
@@ -39,6 +42,7 @@ function Home(props) {
         >View my projects
         </button>
       </div>
+      <span className='tag home-closing-tag'>{closingTag}</span>
     </animated.div>
   );
 }
