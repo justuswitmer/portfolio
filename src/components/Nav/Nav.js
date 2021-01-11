@@ -44,12 +44,20 @@ function Nav(props) {
     setTheme(true);
     // Set the value of the variables to another value (either light or dark theme)
     // Inspiration from here: https://www.w3schools.com/css/css3_variables_javascript.asp
-    r.style.setProperty('--font_color', '#c4c0c0')
-    r.style.setProperty('--background_color', '#0e0e0e')
+    r.style.setProperty('--focused_font_color', '#f0f0f0')
+    r.style.setProperty('--primary_font_color', '#dadada')
+    r.style.setProperty('--secondary_font_color', '#ababab')
+    r.style.setProperty('--background_color', '#111111')
     r.style.setProperty('--primary_color', '#161616')
-    r.style.setProperty('--secondary_color', '#252525')
-    r.style.setProperty('--accent_color', '#2c5f2d')
-    console.log('r.style', r.style);
+    r.style.setProperty('--secondary_color', '#222222')
+    r.style.setProperty('--accent_color', '#295928')
+    r.style.setProperty('--about_card_bg', '#c4c0c0')
+    r.style.setProperty('--about_modal_bg', '#aa7d7d38')
+    r.style.setProperty('--theme_cont_bg', '#1d1d1d')
+    r.style.setProperty('--nav_link_div_color', '#f0f0f0')
+    r.style.setProperty('--text_link_color', '#449a42')
+    r.style.setProperty('--warning', '#d43a3a')
+    r.style.setProperty('--notes', '#222222')
   }
 
   function setLightThemeColor() {
@@ -57,12 +65,20 @@ function Nav(props) {
     setTheme(false);
     // Set the value of the variables to another value (either light or dark theme)
     // Inspiration from here: https://www.w3schools.com/css/css3_variables_javascript.asp
-    r.style.setProperty('--font_color', '#082621')
-    r.style.setProperty('--background_color', '#c6d3d2')
-    r.style.setProperty('--primary_color', '#b7d1cf')
-    r.style.setProperty('--secondary_color', '#d8f2f0e0')
-    r.style.setProperty('--accent_color', '#3e9e40b6')
-    console.log('r.style', r.style);
+    r.style.setProperty('--focused_font_color', '#1b1b1b')
+    r.style.setProperty('--primary_font_color', '#2b2b2b')
+    r.style.setProperty('--secondary_font_color', '#575757')
+    r.style.setProperty('--background_color', '#ebe9e9')
+    r.style.setProperty('--primary_color', '#d8d8d8')
+    r.style.setProperty('--secondary_color', '#c4c4c4')
+    r.style.setProperty('--accent_color', '#295928')
+    r.style.setProperty('--about_card_bg', '#383838')
+    r.style.setProperty('--about_modal_bg', '#aa7d7d38')
+    r.style.setProperty('--theme_cont_bg', '#a3a3a3')
+    r.style.setProperty('--nav_link_div_color', '#181818')
+    r.style.setProperty('--text_link_color', '#449a42')
+    r.style.setProperty('--warning', '#d43a3a')
+    r.style.setProperty('--notes', '#d43a3a')
   }
 
     return (
@@ -82,6 +98,8 @@ function Nav(props) {
             />
           )}
         </div>
+
+        <div className='nav-theme-note'>Light Theme is currently under construction</div>
         {/* The div below is to help its child div maintain vertical alignment */}
         <div className='nav-theme-wrapper'>
           <div className='nav-theme'>
