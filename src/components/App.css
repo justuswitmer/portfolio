@@ -80,15 +80,27 @@
 }
 
 .footer-opening-tag {
+  position: absolute;
+  opacity: 0.2;
+  color: var(--primary_font_color);
+  left: 20px;
+  font-size: 12px;
   margin-top: -20px;
 }
 
 .footer-closing-tag {
+  position: absolute;
+  opacity: 0.2;
+  color: var(--primary_font_color);
+  left: 20px;
+  font-size: 12px;
   margin-top: 10px;
 }
 
 .footer-break-tag {
   padding: 13px 0;
+  opacity: 0.2;
+  color: var(--primary_font_color);
 }
 
 .home-opening-tag {
@@ -297,7 +309,7 @@
     padding: 160px 0 90px 120px;
     text-align: left;
     border-radius: 4px;
-    background-image: url("./images/BackgroundDark.svg");
+    /* background-image: url("./images/BackgroundDark.svg"); */
     background-position: center;
     background-color: var(--primary_color);
     background-repeat: no-repeat;
@@ -395,7 +407,7 @@
   }
 
   .project-primary-player-h4 {
-    margin-bottom: -40px;
+    margin-bottom: -20px;
     text-align: center;
     color: var(--primary_font_color);
   }
@@ -553,7 +565,7 @@
     border-radius: 4px;
     align-items: center;
     padding-bottom: 40px;
-    background-image: url("./images/BackgroundDark.svg");
+    /* background-image: url("./images/BackgroundDark.svg"); */
     background-position: center;
     background-color: var(--primary_color);
     background-repeat: no-repeat;
@@ -603,6 +615,7 @@
       "message message"
       "button .";
     position: absolute;
+    width: auto;
     left: 50%;
     transform: translate(-50%);
     text-align: start;
@@ -745,14 +758,10 @@
     text-align: center;
     display: grid;
     min-height: -webkit-fill-available;
-
-    /* defining how many columns I want */
+    width: fit-content;
     grid-template-columns: repeat(1, 1fr [col-start]);
-
-    /* defining how many rows I want */
     grid-template-rows: 80px auto 640px 150px;
     gap: 30px;
-
     grid-template-areas:
       "nav"
       "body"
@@ -817,8 +826,31 @@
 }
 
 @media screen and (max-width: 688px) {
-  .app {
-    /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
+  .App {
+    text-align: center;
+    display: grid;
+    min-height: -webkit-fill-available;
+    width: fit-content;
+    grid-template-columns: repeat(1, 1fr [col-start]);
+    grid-template-rows: 80px auto 690px 150px;
+    gap: 30px;
+    grid-template-areas:
+      "nav"
+      "body"
+      "contact"
+      "footer";
+  }
+
+  .nav-hamburger {
+    line-height: 80px;
+    margin-right: -16px;
+  }
+
+  .nav-hamburger-btn:focus {
+    outline: none;
+  }
+
+  .nav-theme-wrapper {
+    margin: 25px 19.5px;
   }
 }

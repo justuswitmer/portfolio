@@ -23,7 +23,7 @@ function AboutItem(props) {
         <Modal.Body id='aboutitem-modal'>
           <div className='card'>
             {props.about.type.map(type =>
-              <p tabIndex='0'>{type}</p>
+              <p key={type} tabIndex='0'>{type}</p>
             )}
           </div>
           <div className='card'>
@@ -31,7 +31,7 @@ function AboutItem(props) {
           </div>
           <div className='card'>
           {props.about.sources.map(source =>
-            <ul>
+            <ul key={source}>
               <li tabIndex='0'>{source}</li>
             </ul>
             )}

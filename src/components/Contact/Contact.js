@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import linkedin from '../images/LI-Logo.png';
 import { useSpring, animated } from "react-spring";
 import { Modal } from "react-bootstrap";
 
