@@ -34,6 +34,10 @@ function Nav(props) {
   // runs function that calls an event listener that listens for a window resize
   // also calls debounce which only rerenders every 0.5 seconds
   useEffect(() => {
+    dispatch({
+      type: 'SET_THEME',
+      payload: true
+    });
     console.log('finding my dimensions', dimensions.width);
     const debouncedhandleResize = debounce(function handleResize(){
       setDimensions({ width: window.innerWidth})
