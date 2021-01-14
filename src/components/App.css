@@ -36,6 +36,9 @@
   --text_link_color: #449a42;
   /* Applies to the inputs when there is incorrect value */
   --warning: #d43a3a;
+  /* Applies to nav and footer tags */
+  --tags: #323232;
+  /* --tags: red; */
   --notes: #222222;
 }
 
@@ -44,13 +47,13 @@
   background-color: var(--background_color);
   color: red;
   display: grid;
-  padding: 0 50px;
+  padding: 0 40px;
   min-height: -webkit-fill-available;
   font-family: "Roboto Flex";
   /* defining how many columns I want */
   grid-template-columns: repeat(1, 1fr [col-start]);
   /* defining how many rows I want */
-  grid-template-rows: 80px auto 530px 150px;
+  grid-template-rows: 80px auto 505px 150px;
   gap: 30px;
   grid-template-areas:
     "nav"
@@ -61,14 +64,29 @@
 
 /* -------------------- GLOBAL ELEMENTS END -------------------- */
 
-/* -------------------- TAG DECORATIONS BEGIN-------------------- */
+/* -------------------- TAG DECORATIONS BEGIN -------------------- */
 
 .tag {
   position: absolute;
-  opacity: 0.2;
-  color: var(--primary_font_color);
+  color: var(--tags);
   left: 70px;
   font-size: 12px;
+}
+
+.nav-opening-tag {
+  position: absolute;
+  color: var(--tags);
+  left: 10px;
+  font-size: 12px;
+  margin-top: 0;
+}
+
+.nav-closing-tag {
+  position: absolute;
+  color: var(--tags);
+  left: 10px;
+  font-size: 12px;
+  margin-top: 62px;
 }
 
 .contact-opening-tag {
@@ -76,31 +94,28 @@
 }
 
 .contact-closing-tag {
-  margin-top: 350px;
+  margin-top: 340px;
 }
 
 .footer-opening-tag {
   position: absolute;
-  opacity: 0.2;
-  color: var(--primary_font_color);
-  left: 20px;
+  color: var(--tags);
+  left: 10px;
   font-size: 12px;
   margin-top: -20px;
 }
 
 .footer-closing-tag {
   position: absolute;
-  opacity: 0.2;
-  color: var(--primary_font_color);
-  left: 20px;
+  color: var(--tags);
+  left: 10px;
   font-size: 12px;
   margin-top: 10px;
 }
 
 .footer-break-tag {
   padding: 13px 0;
-  opacity: 0.2;
-  color: var(--primary_font_color);
+  color: var(--tags);
 }
 
 .home-opening-tag {
@@ -108,7 +123,7 @@
 }
 
 .home-closing-tag {
-  margin-top: 830px;
+  margin-top: 410px;
 }
 
 .project-opening-tag {
@@ -127,703 +142,740 @@
   margin-top: 12px;
 }
 
-/* -------------------- TAG DECORATIONS END-------------------- */
-
-/* -------------------- SPECIFIC ELEMENTS -------------------- */
-
-@media screen and (max-width: 9999px) {
-  /* -------------------- NAV BAR BEGIN -------------------- */
-
-  .nav-container {
-    justify-content: space-between;
-    grid-area: nav;
-    background-color: var(--secondary_color);
-    display: inline-flex;
-    margin-left: -50px;
-    margin-right: -50px;
-    padding-left: 50px;
-    padding-right: 50px;
-    position: sticky;
-    top: 0;
-    opacity: 0.98;
-    z-index: 999;
-  }
-
-  .nav-routes {
-    display: inline-flex;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-  }
-
-  .nav-routes-buttonWrapper {
-    display: inline-flex;
-    width: 82px;
-    justify-content: center;
-    outline: none;
-  }
-
-  .nav-routes-route {
-    background-color: inherit;
-    border: none;
-    color: var(--focused_font_color);
-    font-size: 1rem;
-    cursor: pointer;
-    margin: 30px 0 30px 0;
-  }
-
-  .nav-routes-route:hover {
-    text-decoration: underline;
-  }
-
-  .nav-routes-route:focus {
-    outline: none;
-  }
-
-  .nav-routes-focus {
-    font-weight: 600;
-    outline: none;
-    background-color: inherit;
-    border: none;
-    color: var(--focused_font_color);
-    font-size: 1rem;
-    cursor: pointer;
-    margin: 30px 0 30px 0;
-  }
-
-  .nav-routes-focus:hover {
-    text-decoration: underline;
-  }
-
-  /* code taken from here: https://jaspreetchahal.org/pure-css-square-brackets/ */
-  .squarebrackets {
-    position: relative;
-    z-index: 999;
-  }
-  .squarebrackets:before {
-    content: " ";
-    position: absolute;
-    border-left: 2px solid #3e833c;
-    border-top: 2px solid #3e833c;
-    border-bottom: 2px solid #3e833c;
-    padding-top: 20px;
-    padding-left: 4px;
-    top: -1px;
-    left: -15px;
-    z-index: 999;
-  }
-  .squarebrackets:after {
-    content: " ";
-    position: absolute;
-    border-right: 2px solid #3e833c;
-    border-top: 2px solid #3e833c;
-    border-bottom: 2px solid #3e833c;
-    padding-top: 20px;
-    padding-left: 4px;
-    top: -1px;
-    right: -15px;
-    z-index: 999;
-  }
-
-  .nav-routes-divider {
-    background-color: var(--nav_link_div_color);
-    width: 1px;
-    height: 20px;
-    margin: 30px 40px 30px 40px;
-  }
-
-  .nav-logo {
-    height: 100%;
-    outline: none;
-    cursor: pointer;
-  }
-
-  .nav-theme-wrapper {
-    margin: 25px 0 25px 0;
-  }
-
-  .nav-theme {
-    display: inline-flex;
-    width: 61px;
-    height: 30px;
-    border-radius: 5px;
-    background-color: var(--theme_cont_bg);
-    outline: none;
-  }
-
-  .nav-theme-divider {
-    width: 1px;
-    height: 20px;
-    margin: 5px 0 5px 0;
-    background-color: #272727;
-  }
-
-  .nav-theme-svg {
-    margin: 0 7px;
-    outline: none;
-  }
-
-  /* Show tooltips https://www.w3schools.com/css/css_tooltip.asp */
-  .nav-theme-img {
-    line-height: 30px;
-    cursor: pointer;
-  }
-
-  .nav-theme-img .nav-theme-img-text {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 4px;
-    padding: 0 5px;
-    top: 60px;
-    left: 91%;
-    position: absolute;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 1s;
-  }
-
-  .nav-theme-img:hover .nav-theme-img-text {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .nav-theme-note {
-    color: var(--notes);
-    font-weight: 900;
-  }
-
-  /* -------------------- NAV BAR END -------------------- */
-
-  /* -------------------- HOME BEGIN -------------------- */
-
-  .home-container {
-    grid-area: body;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "intro profile"
-      "viewProjects viewProjects";
-    padding: 160px 0 90px 120px;
-    text-align: left;
-    border-radius: 4px;
-    /* background-image: url("./images/BackgroundDark.svg"); */
-    background-position: center;
-    background-color: var(--primary_color);
-    background-repeat: no-repeat;
-    background-size: 95%;
-  }
-
-  .home-intro {
-    grid-area: intro;
-    padding-top: 35px;
-  }
-
-  .home-intro-h2 {
-    color: var(--primary_font_color);
-    font-weight: 600;
-    font-size: 50px;
-    letter-spacing: 1.07px;
-    margin: 10px 184px 10px 0;
-  }
-
-  .home-intro-p {
-    color: var(--secondary_font_color);
-    line-height: 33px;
-    font-size: 24px;
-    letter-spacing: 0.51px;
-    max-width: 550px;
-    margin-top: 40px;
-  }
-
-  .home-profile {
-    grid-area: profile;
-  }
-
-  .home-profile-img {
-    max-width: 340px;
-    width: 70%;
-    border-radius: 50%;
-    float: right;
-    margin-right: 120px;
-  }
-
-  .home-viewProjects {
-    grid-area: viewProjects;
-    justify-items: center;
-    display: grid;
-    color: var(--primary_font_color);
-  }
-
-  .home-viewProjects > p {
-    margin: 210px 0 40px 0;
-    font-size: 24px;
-  }
-
-  .home-viewProjects-button {
-    height: 60px;
-    width: 265px;
-    border-radius: 5px;
-    background-color: var(--accent_color);
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 0.51px;
-    line-height: 29px;
-    color: var(--focused_font_color);
-  }
-
-  /* -------------------- HOME END -------------------- */
-
-  /* -------------------- PROJECT BEGIN -------------------- */
-
-  .project-container {
-    grid-area: body;
-    border-radius: 4px;
-    align-items: center;
-    padding: 40px 50px 40px 50px;
-    background-color: var(--primary_color);
-    color: var(--secondary_font_color);
-  }
-
-  .project-intro-h2 {
-    color: var(--primary_font_color);
-  }
-
-  .project-primary {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 40px;
-    text-align: left;
-  }
-
-  .project-primary-player-div {
-    width: 500px;
-    margin: 0 10px;
-  }
-
-  .project-primary-player-h4 {
-    margin-bottom: -20px;
-    text-align: center;
-    color: var(--primary_font_color);
-  }
-
-  .project-secondary {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .project-item {
-    min-width: 200px;
-    margin: 10px;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr [col-start]);
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "title"
-      "description";
-  }
-
-  .project-item-title {
-    grid-area: title;
-    margin-top: 30px;
-  }
-
-  .project-item-image {
-    height: 200px;
-    margin: 0;
-  }
-
-  .project-item-image:hover .project-description {
-    opacity: 1;
-    visibility: visible;
-    z-index: 998;
-  }
-
-  .project-imgElement {
-    border-radius: 10px;
-  }
-
-  .project-description {
-    position: absolute;
-    display: table-cell;
-    vertical-align: middle;
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
-    padding: 5px;
-    margin: -200px 0 0 0;
-    background: #1d6a9aea;
-    color: #fff;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.2s, visibility 0.2s;
-    cursor: pointer;
-  }
-
-  .project-description-divElement {
-    position: absolute;
-    top: 50%;
-    left: 15%;
-    transform: translate(-10%, -50%);
-  }
-
-  .project-item-description {
-    grid-area: description;
-    width: 200px;
-    justify-self: center;
-    z-index: 999;
-  }
-
-  .project-item-accordian {
-    border-radius: 10px;
-    margin: 0;
-  }
-
-  .project-item-accordianSummary {
-    margin: 0;
-  }
-
-  /* -------------------- PROJECT END -------------------- */
-
-  /* -------------------- ABOUT BEGIN -------------------- */
-
-  .about-container {
-    grid-area: body;
-    border-radius: 4px;
-    align-items: center;
-    padding: 40px 50px 40px 50px;
-    background-color: var(--primary_color);
-    color: var(--secondary_font_color);
-  }
-
-  .about-list {
-    list-style-type: none;
-  }
-
-  .about-modal-title {
-    display: block;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-  }
-
-  .card {
-    background-color: var(--about_card_bg);
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin: 10px;
-    /* overflow: hidden; */
-  }
-
-  .aboutitem-button {
-    background-color: var(--primary_color);
-    border-radius: 4px;
-    color: var(--focused_font_color);
-    box-sizing: none;
-    border: none;
-    height: 140px;
-    width: 140px;
-    margin: 0 10px 0 10px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
-  }
-
-  .aboutitem-button:focus {
-    outline: none;
-  }
-
-  #modalHeader {
-    height: 100px;
-    background-color: var(--about_modal_bg);
-  }
-
-  #aboutitem-modal {
-    background-color: var(--about_modal_bg);
-    border-radius: 0 0 4px 4px;
-  }
-
-  .about-intro-h2 {
-    color: var(--primary_font_color);
-  }
-
-  .about-personality-h3 {
-    color: var(--secondary_font_color);
-  }
-
-  /* -------------------- ABOUT BEGIN -------------------- */
-
-  /* -------------------- CONTACT BEGIN -------------------- */
-
-  .contact-container {
-    grid-area: contact;
-    border-radius: 4px;
-    align-items: center;
-    padding-bottom: 40px;
-    /* background-image: url("./images/BackgroundDark.svg"); */
-    background-position: center;
-    background-color: var(--primary_color);
-    background-repeat: no-repeat;
-    background-size: 95%;
-  }
-
-  .contact-intro {
-    display: block;
-  }
-
-  .contact-intro-h3 {
-    color: var(--primary_font_color);
-    font-size: 1.5rem;
-    font-weight: 350;
-    padding: 40px 0 10px 0;
-  }
-
-  .contact-intro2 {
-    display: inline-flex;
-  }
-
-  .contact-intro2-h3 {
-    color: var(--secondary_font_color);
-    font-size: 1.125rem;
-    font-weight: 100;
-    padding-bottom: 40px;
-  }
-
-  .contact-linkedin-link {
-    margin: 0 2px;
-    color: var(--text_link_color);
-    text-decoration: underline;
-  }
-
-  .contact-linkedin-link:hover {
-    color: var(--secondary_font_color);
-  }
-
-  .contact-form-container {
-    width: 820px;
-    display: grid;
-    gap: 30px 10px;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "name  email"
-      "message message"
-      "button .";
-    position: absolute;
-    width: auto;
-    left: 50%;
-    transform: translate(-50%);
-    text-align: start;
-    color: var(--focused_font_color);
-  }
-
-  .contact-form-container-p {
-    margin: 0 0 5px 0;
-    font-size: 0.875rem;
-  }
-
-  .contact-name {
-    grid-area: name;
-  }
-
-  .contact-name-input {
-    height: 50px;
-    width: 400px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--secondary_color);
-    color: var(--primary_font_color);
-  }
-
-  .contact-name-input:focus {
-    border: 1px solid var(--accent_color);
-    outline: none;
-  }
-
-  .contact-email {
-    grid-area: email;
-  }
-
-  .contact-email-input {
-    height: 50px;
-    width: 400px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--secondary_color);
-    color: var(--primary_font_color);
-  }
-
-  .contact-email-input:focus {
-    border: 1px solid var(--accent_color);
-    outline: none;
-  }
-
-  .contact-message {
-    grid-area: message;
-  }
-
-  .contact-message-input {
-    max-height: 150px;
-    width: 820px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--secondary_color);
-    color: var(--primary_font_color);
-  }
-
-  .contact-message-input:focus {
-    border: 1px solid var(--accent_color);
-    outline: none;
-  }
-
-  .contact-button {
-    grid-area: button;
-    text-align: start;
-  }
-
-  .contact-button-send {
-    height: 40px;
-    width: 97px;
-    border-radius: 5px;
-    background-color: var(--accent_color);
-    border: none;
-    cursor: pointer;
-    color: var(--focused_font_color);
-  }
-
-  /* Class for fields that are not valid */
-  .is-invalid {
-    border: 1px solid var(--warning);
-  }
-
-  .invalid-feedback {
-    color: var(--warning);
-  }
-
-  .contact-modal {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -15%);
-  }
-
-  .contact-modal-header {
-    display: block;
-    text-align: center;
-    border-radius: 4px;
-  }
-
-  /* -------------------- CONTACT END -------------------- */
-
-  /* -------------------- FOOTER BEGIN -------------------- */
-
-  .footer-container {
-    grid-area: footer;
-    background-color: var(--secondary_color);
-    color: var(--focused_font_color);
-    font-size: 12px;
-    margin-left: -50px;
-    margin-right: -50px;
-    padding: 30px 50px 30px 50px;
-  }
-
-  .footer-container > p {
-    margin: 0;
-    line-height: 14px;
-  }
-
-  .footer-Ptag {
-    padding-top: 4px;
-  }
-
-  .footer-UX-link {
-    color: var(--text_link_color);
-    text-decoration: underline;
-    margin: 0 2px;
-  }
-
-  .footer-UX-link:hover {
-    color: var(--secondary_font_color);
-  }
-
-  /* -------------------- FOOTER END -------------------- */
+/* -------------------- TAG DECORATIONS END -------------------- */
+
+/* -------------------- NAV BAR BEGIN -------------------- */
+
+.nav-container {
+  justify-content: space-between;
+  grid-area: nav;
+  background-color: var(--secondary_color);
+  display: inline-flex;
+  margin: 0 -40px;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  opacity: 0.98;
+  z-index: 999;
 }
 
-@media screen and (max-width: 992px) {
-  .App {
-    text-align: center;
-    display: grid;
-    min-height: -webkit-fill-available;
-    width: fit-content;
-    grid-template-columns: repeat(1, 1fr [col-start]);
-    grid-template-rows: 80px auto 640px 150px;
-    gap: 30px;
-    grid-template-areas:
-      "nav"
-      "body"
-      "contact"
-      "footer";
-  }
+.nav-routes {
+  display: inline-flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
 
-  /* -------------------- HOME BEGIN 992 -------------------- */
+.nav-routes-buttonWrapper {
+  display: inline-flex;
+  width: 82px;
+  justify-content: center;
+  outline: none;
+}
 
-  .home-intro-h2 {
-    font-size: 30px;
-    margin: 10px 14px 10px 0;
-  }
+.nav-routes-route {
+  background-color: inherit;
+  border: none;
+  color: var(--focused_font_color);
+  font-size: 16px;
+  cursor: pointer;
+  margin: 30px 0 30px 0;
+}
 
-  .home-intro-p {
-    font-size: 20px;
+.nav-routes-route:hover {
+  text-decoration: underline;
+}
+
+.nav-routes-route:focus {
+  outline: none;
+}
+
+.nav-routes-focus {
+  font-weight: 600;
+  outline: none;
+  background-color: inherit;
+  border: none;
+  color: var(--focused_font_color);
+  font-size: 16px;
+  cursor: pointer;
+  margin: 30px 0 30px 0;
+}
+
+.nav-routes-focus:hover {
+  text-decoration: underline;
+}
+
+/* code taken from here: https://jaspreetchahal.org/pure-css-square-brackets/ */
+.squarebrackets {
+  position: relative;
+  z-index: 999;
+}
+.squarebrackets:before {
+  content: " ";
+  position: absolute;
+  border-left: 2px solid #3e833c;
+  border-top: 2px solid #3e833c;
+  border-bottom: 2px solid #3e833c;
+  padding-top: 20px;
+  padding-left: 4px;
+  top: -1px;
+  left: -15px;
+  z-index: 999;
+}
+.squarebrackets:after {
+  content: " ";
+  position: absolute;
+  border-right: 2px solid #3e833c;
+  border-top: 2px solid #3e833c;
+  border-bottom: 2px solid #3e833c;
+  padding-top: 20px;
+  padding-left: 4px;
+  top: -1px;
+  right: -15px;
+  z-index: 999;
+}
+
+.nav-routes-divider {
+  background-color: var(--nav_link_div_color);
+  width: 1px;
+  height: 20px;
+  margin: 30px 40px 30px 40px;
+}
+
+.nav-logo {
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+.nav-theme-wrapper {
+  margin: 25px 0 25px 0;
+}
+
+.nav-theme {
+  display: inline-flex;
+  width: 61px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: var(--theme_cont_bg);
+  outline: none;
+}
+
+.nav-theme-divider {
+  width: 1px;
+  height: 20px;
+  margin: 5px 0 5px 0;
+  background-color: #272727;
+}
+
+.nav-theme-svg {
+  margin: 0 7px;
+  outline: none;
+}
+
+/* Show tooltips https://www.w3schools.com/css/css_tooltip.asp */
+.nav-theme-img {
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.nav-theme-img .nav-theme-img-text {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 0 5px;
+  top: 60px;
+  left: 91%;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.nav-theme-img:hover .nav-theme-img-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav-theme-note {
+  color: var(--notes);
+  font-weight: 900;
+}
+
+/* -------------------- NAV BAR END -------------------- */
+
+/* -------------------- HOME BEGIN -------------------- */
+
+.home-container {
+  grid-area: body;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "intro profile"
+    "viewProjects viewProjects";
+  padding-top: 160px;
+  text-align: left;
+  border-radius: 4px;
+  /* background-image: url("./images/BackgroundDark.svg"); */
+  background-position: center;
+  background-color: var(--primary_color);
+  background-repeat: no-repeat;
+  background-size: 95%;
+}
+
+.home-intro {
+  grid-area: intro;
+  padding-top: 35px;
+  margin-left: 120px;
+  width: 596px;
+}
+
+.home-intro-h2 {
+  color: var(--primary_font_color);
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 60px;
+  letter-spacing: 1.07px;
+}
+
+.home-intro-p {
+  color: var(--secondary_font_color);
+  line-height: 30px;
+  font-size: 24px;
+  letter-spacing: 0.51px;
+  max-width: 550px;
+  margin-top: 40px;
+}
+
+.home-profile {
+  grid-area: profile;
+}
+
+.home-profile-img {
+  max-width: 339px;
+  border-radius: 50%;
+  float: right;
+  margin-right: 120px;
+}
+
+.home-viewProjects {
+  grid-area: viewProjects;
+  justify-items: center;
+  display: grid;
+  color: var(--primary_font_color);
+  padding-bottom: 120px;
+}
+
+.home-viewProjects > p {
+  margin: 210px 0 40px 0;
+  font-size: 24px;
+}
+
+.home-viewProjects-button {
+  height: 60px;
+  width: 265px;
+  border-radius: 5px;
+  background-color: var(--accent_color);
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.51px;
+  line-height: 29px;
+  color: var(--focused_font_color);
+}
+
+/* -------------------- HOME END -------------------- */
+
+/* -------------------- PROJECT BEGIN -------------------- */
+
+.project-container {
+  grid-area: body;
+  border-radius: 4px;
+  align-items: center;
+  padding: 40px 50px 40px 50px;
+  background-color: var(--primary_color);
+  color: var(--secondary_font_color);
+}
+
+.project-intro-h2 {
+  color: var(--primary_font_color);
+}
+
+.project-primary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.project-primary-player-div {
+  width: 500px;
+  margin: 0 10px;
+}
+
+.project-primary-player-h4 {
+  margin-bottom: -20px;
+  text-align: center;
+  color: var(--primary_font_color);
+}
+
+.project-secondary {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.project-item {
+  min-width: 200px;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr [col-start]);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "title"
+    "description";
+}
+
+.project-item-title {
+  grid-area: title;
+  margin-top: 30px;
+}
+
+.project-item-image {
+  height: 200px;
+  margin: 0;
+}
+
+.project-item-image:hover .project-description {
+  opacity: 1;
+  visibility: visible;
+  z-index: 998;
+}
+
+.project-imgElement {
+  border-radius: 10px;
+}
+
+.project-description {
+  position: absolute;
+  display: table-cell;
+  vertical-align: middle;
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  padding: 5px;
+  margin: -200px 0 0 0;
+  background: #1d6a9aea;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  cursor: pointer;
+}
+
+.project-description-divElement {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-10%, -50%);
+}
+
+.project-item-description {
+  grid-area: description;
+  width: 200px;
+  justify-self: center;
+  z-index: 999;
+}
+
+.project-item-accordian {
+  border-radius: 10px;
+  margin: 0;
+}
+
+.project-item-accordianSummary {
+  margin: 0;
+}
+
+/* -------------------- PROJECT END -------------------- */
+
+/* -------------------- ABOUT BEGIN -------------------- */
+
+.about-container {
+  grid-area: body;
+  border-radius: 4px;
+  align-items: center;
+  padding: 40px 50px 40px 50px;
+  background-color: var(--primary_color);
+  color: var(--secondary_font_color);
+}
+
+.about-list {
+  list-style-type: none;
+}
+
+.about-modal-title {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.card {
+  background-color: var(--about_card_bg);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 10px;
+  /* overflow: hidden; */
+}
+
+.aboutitem-button {
+  background-color: var(--primary_color);
+  border-radius: 4px;
+  color: var(--focused_font_color);
+  box-sizing: none;
+  border: none;
+  height: 140px;
+  width: 140px;
+  margin: 0 10px 0 10px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.aboutitem-button:focus {
+  outline: none;
+}
+
+#modalHeader {
+  height: 100px;
+  background-color: var(--about_modal_bg);
+}
+
+#aboutitem-modal {
+  background-color: var(--about_modal_bg);
+  border-radius: 0 0 4px 4px;
+}
+
+.about-intro-h2 {
+  color: var(--primary_font_color);
+}
+
+.about-personality-h3 {
+  color: var(--secondary_font_color);
+}
+
+/* -------------------- ABOUT BEGIN -------------------- */
+
+/* -------------------- CONTACT BEGIN -------------------- */
+
+.contact-container {
+  grid-area: contact;
+  border-radius: 4px;
+  align-items: center;
+  padding-bottom: 40px;
+  background-color: var(--primary_color);
+}
+
+.contact-intro {
+  display: block;
+}
+
+.contact-intro-h3 {
+  color: var(--primary_font_color);
+  font-size: 24px;
+  font-weight: 350;
+  padding: 40px 0 10px 0;
+  margin: 0;
+  line-height: 28px;
+}
+
+.contact-intro2 {
+  display: inline-flex;
+}
+
+.contact-intro2-h3 {
+  color: var(--secondary_font_color);
+  font-size: 18px;
+  font-weight: 100;
+  padding-bottom: 40px;
+  margin: 0;
+  line-height: 21px;
+}
+
+.contact-linkedin-link {
+  margin: 0 2px;
+  color: var(--text_link_color);
+  text-decoration: underline;
+}
+
+.contact-linkedin-link:hover {
+  color: var(--secondary_font_color);
+}
+
+.contact-form-container {
+  max-width: 820px;
+  width: 100%;
+  display: grid;
+  gap: 30px 10px;
+  grid-template-columns: auto auto;
+  grid-template-rows: 68px 168px auto;
+  grid-template-areas:
+    "name  email"
+    "message message"
+    "button .";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: start;
+  color: var(--focused_font_color);
+}
+
+.contact-form-container-p {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.contact-name {
+  grid-area: name;
+}
+
+.contact-name-input {
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--secondary_color);
+  color: var(--primary_font_color);
+}
+
+.contact-name-input:focus {
+  border: 1px solid var(--accent_color);
+  outline: none;
+}
+
+.contact-email {
+  grid-area: email;
+}
+
+.contact-email-input {
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--secondary_color);
+  color: var(--primary_font_color);
+}
+
+.contact-email-input:focus {
+  border: 1px solid var(--accent_color);
+  outline: none;
+}
+
+.contact-message {
+  grid-area: message;
+}
+
+.contact-message-input {
+  max-height: 150px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--secondary_color);
+  color: var(--primary_font_color);
+}
+
+.contact-message-input:focus {
+  border: 1px solid var(--accent_color);
+  outline: none;
+}
+
+.contact-button {
+  grid-area: button;
+  text-align: start;
+}
+
+.contact-button-send {
+  height: 40px;
+  width: 97px;
+  border-radius: 5px;
+  margin-top: -10px;
+  background-color: var(--accent_color);
+  border: none;
+  cursor: pointer;
+  color: var(--focused_font_color);
+}
+
+/* Class for fields that are not valid */
+.is-invalid {
+  border: 1px solid var(--warning);
+}
+
+.invalid-feedback {
+  color: var(--warning);
+}
+
+.contact-modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+}
+
+.contact-modal-header {
+  display: block;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* -------------------- CONTACT END -------------------- */
+
+/* -------------------- FOOTER BEGIN -------------------- */
+
+.footer-container {
+  grid-area: footer;
+  background-color: var(--secondary_color);
+  color: var(--focused_font_color);
+  font-size: 12px;
+  margin: 0 -40px;
+  padding: 30px 40px;
+}
+
+.footer-container > p {
+  margin: 0;
+  line-height: 14px;
+}
+
+.footer-Ptag {
+  padding-top: 4px;
+}
+
+.footer-UX-link {
+  color: var(--text_link_color);
+  text-decoration: underline;
+  margin: 0 2px;
+}
+
+.footer-UX-link:hover {
+  color: var(--secondary_font_color);
+}
+
+/* -------------------- FOOTER END -------------------- */
+
+/* ---------------------------------------- BREAKPOINT 1310 ---------------------------------------- */
+
+/* max-width means "if screen is less than or equal to specified size then do {...}" */
+/* min-width means "if screen is greater than or equal to specified size then do {...}" */
+
+@media screen and (max-width: 1310px) {
+  .home-intro {
+    margin-left: 40px;
   }
 
   .home-profile-img {
     margin-right: 40px;
+    width: 70%;
+  }
+
+  .home-intro-h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .home-intro-p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+/* ---------------------------------------- BREAKPOINT 992 ---------------------------------------- */
+
+@media screen and (max-width: 992px) {
+  .App {
+    padding: 0 20px;
+    grid-template-rows: 80px auto 495px 150px;
+  }
+
+  /* -------------------- TAG DECORATIONS BEGIN 992 -------------------- */
+
+  .tag {
+    left: 30px;
+  }
+
+  .home-closing-tag {
+    margin-top: 440px;
+  }
+
+  .contact-closing-tag {
+    margin-top: 5px;
+  }
+
+  /* -------------------- TAG DECORATIONS END 992 -------------------- */
+
+  /* -------------------- NAV BEGIN 992 -------------------- */
+
+  .nav-container {
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+
+  /* -------------------- NAV END 992 -------------------- */
+
+  /* -------------------- HOME BEGIN 992 -------------------- */
+
+  .home-intro {
+    width: 455px;
+    margin-left: 20px;
+  }
+
+  .home-intro-h2 {
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  .home-intro-p {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 455px;
+  }
+
+  .home-profile-img {
+    min-width: 130px;
+    margin-right: 20px;
   }
 
   /* -------------------- HOME END 992 -------------------- */
 
   /* -------------------- CONTACT BEGIN 992 -------------------- */
+
+  .contact-container {
+    padding: 0 40px 40px 40px;
+  }
+
   .contact-form-container {
-    justify-content: center;
-    display: grid;
-    gap: 30px 10px;
-    grid-template-columns: 400px;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "name"
-      "email"
-      "message"
-      "button";
-  }
-
-  .contact-form-container-p {
-    margin: 0 0 5px 0;
-    font-size: 0.875rem;
-  }
-
-  .contact-intro {
-    display: block;
-    padding: 0 10px 0 10px;
-  }
-
-  .contact-name-input {
-    width: 390px;
-  }
-
-  .contact-email-input {
-    width: 390px;
-  }
-
-  .contact-message-input {
-    width: 390px;
+    position: inherit;
+    left: 0;
+    transform: translate(0);
+    max-width: 100%;
   }
 
   /* -------------------- CONTACT END 992 -------------------- */
+
+  /* -------------------- FOOTER BEGIN 992 -------------------- */
+
+  .footer-container {
+    margin: 0 -20px;
+    padding: 30px 20px;
+  }
+
+  /* -------------------- FOOTER END 992 -------------------- */
 }
+
+/* ---------------------------------------- BREAKPOINT 688 ---------------------------------------- */
 
 @media screen and (max-width: 688px) {
   .App {
@@ -832,7 +884,7 @@
     min-height: -webkit-fill-available;
     width: fit-content;
     grid-template-columns: repeat(1, 1fr [col-start]);
-    grid-template-rows: 80px auto 690px 150px;
+    grid-template-rows: 80px auto 495px 150px;
     gap: 30px;
     grid-template-areas:
       "nav"

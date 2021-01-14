@@ -25,8 +25,8 @@ function debounce(fn, ms) {
 
 function Nav(props) {
   const dispatch = useDispatch();
-  // hook that set width into local state
-  const [dimensions, setDimensions] = useState({ width: window.innerWidth })
+  const openingTag = '<Nav>';
+  const closingTag = '</Nav>';
 
   // followed this tutorial on how to resize javascript: 
   // https://www.pluralsight.com/guides/re-render-react-component-on-window-resize
@@ -38,9 +38,15 @@ function Nav(props) {
       type: 'SET_THEME',
       payload: true
     });
-    console.log('finding my dimensions', dimensions.width);
+    dispatch({
+      type: 'UPDATE_DIMENSIONS',
+      payload: window.innerWidth
+    });
     const debouncedhandleResize = debounce(function handleResize(){
-      setDimensions({ width: window.innerWidth})
+      dispatch({
+        type: 'UPDATE_DIMENSIONS',
+        payload: window.innerWidth
+      });
     }, 500)
 
     window.addEventListener('resize', debouncedhandleResize);
@@ -49,10 +55,9 @@ function Nav(props) {
     }
   }, [dispatch]);
 
-  let windowSize = dimensions.width;
-
     return (
       <div className='nav-container'>
+        <span className='nav-opening-tag'>{openingTag}</span>
         <div
         className='nav-logo'
         tabIndex='0'
@@ -83,7 +88,7 @@ function Nav(props) {
           </svg>
         </div>
         <div className='nav-theme-note'>Light Theme is currently under construction</div>
-        {windowSize <= 688 ? 
+        {props.store.dimensions <= 688 ? 
           <NavMobileMenu/>
         :
           <>
@@ -98,6 +103,7 @@ function Nav(props) {
             <NavTheme/>
           </>
         }
+        <span className='nav-closing-tag'>{closingTag}</span>
       </div>
     );
 }

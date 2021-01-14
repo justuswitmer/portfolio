@@ -41,8 +41,9 @@ function Home(props) {
           onClick={()=>props.history.push('/project')}
         >View my projects
         </button>
+        <span className='tag home-closing-tag'>{closingTag}</span>
       </div>
-      <span className='tag home-closing-tag'>{closingTag}</span>
+      
     </animated.div>
   );
 }
