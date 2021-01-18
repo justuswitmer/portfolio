@@ -8,7 +8,15 @@ function AboutItem(props) {
 
   return (
     <>
-      <button onClick={handleShow} className='aboutitem-button'>{props.about.profile}</button>
+      <button 
+        onClick={handleShow} 
+        className='aboutitem-button'
+      ><img 
+          className='aboutitem-button-img' 
+          src={props.about.logo}
+          alt={props.about.profile}
+        />
+      </button>
       <Modal
         size="lg"
         show={show}

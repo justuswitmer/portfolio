@@ -14,6 +14,10 @@ function Footer() {
       <p tabIndex='0' className='footer-Ptag'>Designed by <a className='footer-UX-link' href='https://www.austinbalken.design'>AB UXD</a> & developed by Justus Witmer</p>
       <p className='footer-break-tag'>{breakTag}</p>
       <p tabIndex='0'>Copyright &copy; 2021 Justus Witmer</p>
+      <div className='footer-social-links'>
+        <div className='footer-social-linkedin'></div>
+        <div className='footer-social-github'></div>
+      </div>
       <span className='footer-closing-tag'>{closingFooter}</span>
     </animated.div>
   );

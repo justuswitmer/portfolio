@@ -319,11 +319,7 @@
   padding-top: 160px;
   text-align: left;
   border-radius: 4px;
-  /* background-image: url("./images/BackgroundDark.svg"); */
-  background-position: center;
   background-color: var(--primary_color);
-  background-repeat: no-repeat;
-  background-size: 95%;
 }
 
 .home-intro {
@@ -475,7 +471,6 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s, visibility 0.2s;
-  cursor: pointer;
 }
 
 .project-description-divElement {
@@ -483,6 +478,30 @@
   top: 50%;
   left: 15%;
   transform: translate(-10%, -50%);
+}
+
+.project-description-link {
+  cursor: pointer;
+  padding: 10px;
+  margin: -10px;
+  z-index: 999;
+  opacity: 0.5;
+}
+
+.project-description-link:hover {
+  transition: 0.3s ease;
+  transform: scale(1.3, 1.3);
+  opacity: 1;
+}
+
+.project-description-link:focus {
+  outline: none;
+}
+
+.project-description-underlineImg:hover {
+  height: 1px;
+  width: 20px;
+  background-color: black;
 }
 
 .project-item-description {
@@ -542,12 +561,16 @@
   border: none;
   height: 140px;
   width: 140px;
-  margin: 0 10px 0 10px;
+  margin: 0 10px 20px 10px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 .aboutitem-button:focus {
   outline: none;
+}
+
+.aboutitem-button-img {
+  width: 140px;
 }
 
 #modalHeader {
@@ -565,7 +588,7 @@
 }
 
 .about-personality-h3 {
-  color: var(--secondary_font_color);
+  color: var(--primary_font_color);
 }
 
 /* -------------------- ABOUT BEGIN -------------------- */
@@ -762,6 +785,39 @@
 
 .footer-UX-link:hover {
   color: var(--secondary_font_color);
+}
+
+.footer-social-links {
+  display: flex;
+  float: right;
+  margin-top: -59px;
+  gap: 22px;
+}
+
+.footer-social-linkedin {
+  background-image: url("./images/SocialLinks/LinkedInGray.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.footer-social-linkedin:hover {
+  background-image: url("./images/SocialLinks/LinkedInGreen.svg");
+}
+
+.footer-social-github {
+  background-image: url("./images/SocialLinks/GitHubGray.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.footer-social-github:hover {
+  background-image: url("./images/SocialLinks/GitHubGreen.svg");
 }
 
 /* -------------------- FOOTER END -------------------- */

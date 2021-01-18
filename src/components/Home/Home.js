@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import profilePic from '../images/BWProfile.jpg';
+import profilePic from '../images/Miscellaneous/BWProfile.jpg';
 import { useSpring, animated } from "react-spring";
 import { connect, useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';

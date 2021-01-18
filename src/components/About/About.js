@@ -4,6 +4,19 @@ import { useSpring, animated } from "react-spring";
 import AboutItem from './AboutItem';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
+
+// ProfileLogos
+import MyersBriggs from '../images/ProfileLogos/MyersBriggs.svg';
+import StrengthsFinders from '../images/ProfileLogos/StrengthsFinders.svg';
+
+
+const profileLogos = [
+  {logo: "MyersBriggs", count: 1},
+  {logo: "StrengthsFers", count: 2},
+  {logo: 'StrengthsFinders', count: 3},
+  {logo: 'StrengthsFinder', count: 4},
+];
+
 function About(props) {
   const dispatch = useDispatch();
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
@@ -41,13 +54,13 @@ function About(props) {
       </ul>
       <h3 tabIndex='0' className='about-personality-h3'>I also enjoy learning about my personality and how I percieve the world</h3>
       {props.store.about.map(about =>
-      <AboutItem
-        key={about.profile}
-        about={about}
-      />
+        <AboutItem
+          key={about.profile}
+          about={about}
+        />
       )}
       </div>
-      <span className='tag about-closing-tag'>{openingTag}</span>
+      <span className='tag about-closing-tag'>{closingTag}</span>
     </animated.div>
   );
 }

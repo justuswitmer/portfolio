@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 // SVG imports
-import DarkActive from '../images/DarkActive.svg';
-import DarkInactive from '../images/DarkInactive.svg';
-import LightActive from '../images/LightActive.svg';
-import LightInactive from '../images/LightInactive.svg';
+import DarkActive from '../images/ThemeImages/DarkActive.svg';
+import DarkInactive from '../images/ThemeImages/DarkInactive.svg';
+import LightActive from '../images/ThemeImages/LightActive.svg';
+import LightInactive from '../images/ThemeImages/LightInactive.svg';
 
 function NavTheme(props) {
   const dispatch = useDispatch();
