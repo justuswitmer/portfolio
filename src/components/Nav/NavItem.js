@@ -19,7 +19,7 @@ class NavItem extends Component {
 
   render() {
     return (
-      <>
+       <div className='nav-routes-divWrapper'>
         <div tabIndex='0' className='nav-routes-buttonWrapper'>
           <div
             className={this.props.store.hasBrackets === this.props.route.route ?
@@ -29,11 +29,12 @@ class NavItem extends Component {
             {this.props.route.name}
           </div>
         </div>
-        {this.props.route.hasDivider === true ?
+        {this.props.store.dimensions <= 688 ? '' :
+        this.props.route.hasDivider === true ?
           <div className='nav-routes-divider' />
           :
           ''}
-      </>
+      </div>
     );
   }
 }
