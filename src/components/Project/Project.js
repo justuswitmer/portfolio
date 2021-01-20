@@ -22,7 +22,7 @@ function Portfolio(props) {
 
     return (
       <animated.div style={trans} className='project-container'>
-        <span className='tag project-opening-tag'>{openingTag}</span>
+        {props.store.dimensions <= 499 ? '' : <span className='tag project-opening-tag'>{openingTag}</span>}
         <h2 tabIndex='0' className='project-intro-h2'>Here are some projects that show my best work.</h2> 
         <div className='project-primary'>
           <div className='project-primary-player-div'>
@@ -61,7 +61,7 @@ function Portfolio(props) {
           />
           )}
         </div>
-        <span className='tag project-closing-tag'>{closingTag}</span>
+        {props.store.dimensions <= 499 ? '' : <span className='tag project-closing-tag'>{closingTag}</span>}
       </animated.div>
     );
 }

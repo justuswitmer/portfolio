@@ -51,7 +51,7 @@ function Nav(props) {
 
     return (
       <div className='nav-container'>
-        <span className='nav-opening-tag'>{openingTag}</span>
+        {props.store.dimensions <= 499 ? '' : <span className='nav-opening-tag'>{openingTag}</span>}
         {props.store.dimensions <= 688 ? 
           <NavMobileMenu/>
         :
@@ -100,7 +100,7 @@ function Nav(props) {
             <NavTheme/>
           </>
         }
-        <span className='nav-closing-tag'>{closingTag}</span>
+        {props.store.dimensions <= 499 ? '' : <span className='nav-closing-tag'>{closingTag}</span>}
       </div>
     );
 }

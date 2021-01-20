@@ -20,7 +20,7 @@ function Home(props) {
 
   return (
     <animated.div style={trans} className='home-container'>
-      <span className='tag home-opening-tag'>{openingTag}</span>
+      {props.store.dimensions <= 499 ? '' : <span className='tag home-opening-tag'>{openingTag}</span>}
       <div className='home-intro'>
           <h2 className='home-intro-h2' tabIndex='0'>Hi, I'm Justus.</h2>
           <h2 className='home-intro-h2' tabIndex='0'>I am a software developer.</h2>
@@ -41,7 +41,7 @@ function Home(props) {
           onClick={()=>props.history.push('/project')}
         >View my projects
         </button>
-        <span className='tag home-closing-tag'>{closingTag}</span>
+        {props.store.dimensions <= 499 ? '' : <span className='tag home-closing-tag'>{closingTag}</span>}
       </div>
       
     </animated.div>

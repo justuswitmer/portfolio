@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { useSpring, animated } from "react-spring";
+import mapStoreToProps from '../../redux/mapStoreToProps';
 
-function Footer() {
+function Footer(props) {
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
   const openingFooter = '<footer>';
   const closingFooter = '</footer>';
@@ -9,7 +11,7 @@ function Footer() {
 
   return (
     <animated.div style={trans} className='footer-container'>
-      <span className='footer-opening-tag'>{openingFooter}</span>
+      {props.store.dimensions <= 499 ? '' : <span className='footer-opening-tag'>{openingFooter}</span>}
       <p tabIndex='0'>This website was built with the following tools: react, javascript, and webflow.</p>
       <p tabIndex='0' className='footer-Ptag'>Designed by <a className='footer-UX-link' href='https://www.austinbalken.design'>AB UXD</a> & developed by Justus Witmer</p>
       <p className='footer-break-tag'>{breakTag}</p>
@@ -18,9 +20,9 @@ function Footer() {
         <div className='footer-social-linkedin'></div>
         <div className='footer-social-github'></div>
       </div>
-      <span className='footer-closing-tag'>{closingFooter}</span>
+      {props.store.dimensions <= 499 ? '' : <span className='footer-closing-tag'>{closingFooter}</span>}
     </animated.div>
   );
 }
 
-export default Footer;
+export default connect(mapStoreToProps)(Footer);

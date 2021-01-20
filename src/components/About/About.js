@@ -33,7 +33,7 @@ function About(props) {
 
   return (
     <animated.div style={trans} className='about-container'>
-      <span className='tag about-opening-tag'>{openingTag}</span>
+      {props.store.dimensions <= 499 ? '' : <span className='tag about-opening-tag'>{openingTag}</span>}
       <h2 tabIndex='0' className='about-intro-h2'>Here is a snapshot of who I am as a developer</h2>
       <div>
         <ul className='about-list'>
@@ -60,7 +60,7 @@ function About(props) {
         />
       )}
       </div>
-      <span className='tag about-closing-tag'>{closingTag}</span>
+      {props.store.dimensions <= 499 ? '' : <span className='tag about-closing-tag'>{closingTag}</span>}
     </animated.div>
   );
 }
