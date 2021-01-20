@@ -86,7 +86,7 @@ function NavTheme(props) {
               alt='Dark Theme'
               tabIndex='0'
             />
-            <span className='nav-theme-img-text'>Dark theme</span>
+            {props.store.dimensions <= 688 ? '' : <span className='nav-theme-img-text'>Dark theme</span>}
           </div>
           <div className='nav-theme-divider'></div>
             <div 
@@ -99,7 +99,7 @@ function NavTheme(props) {
                 alt='Light Theme'
                 tabIndex='0'
               />
-              <span className='nav-theme-img-text'>Light theme</span>
+              {props.store.dimensions <= 688 ? '' : <span className='nav-theme-img-text'>Light theme</span>}
             </div>
         </div>
       </div>

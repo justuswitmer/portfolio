@@ -66,6 +66,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
             <Divider
               onClick={(event) => event.stopPropagation()}
             />
+            <div className='nav-theme-note'>Light Theme is currently under construction</div>
             <div className='nav-mobileMenu' >
               <img 
                 src={MenuIcon} 
