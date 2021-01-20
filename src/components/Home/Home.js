@@ -3,6 +3,7 @@ import profilePic from '../images/Miscellaneous/BWProfile.jpg';
 import { useSpring, animated } from "react-spring";
 import { connect, useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import mapStoreToProps from '../../redux/mapStoreToProps';
 
 function Home(props) {
   const dispatch = useDispatch();
@@ -48,4 +49,4 @@ function Home(props) {
   );
 }
 
-export default connect()(withRouter(Home));
+export default connect(mapStoreToProps)(withRouter(Home));

@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter } from "react-router-dom";
-import { connect, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { useSpring, animated } from "react-spring";
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 function Contact(props) {
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
 
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const dispatch = useDispatch();
+  // const [show, setShow] = useState(false);
+  // const handleShow = () => setShow(true);
   const openingContact = '<contact>';
   const closingContact = '</contact>';
 
@@ -57,38 +55,38 @@ function Contact(props) {
     }
   };
 
-  // Determines if there are any issues with required fields. If no, it returns true.
-  const validateForm = () => {
-    if (!email.includes('@')) {
-      setEmailError('Invalid Email Format');
-    }
-    if (!fullName) {
-      setFullNameError('Name Cannot Be Blank');
-    }
-    if (!message) {
-      setMessageError('Please Enter a Mesage');
-    }
-    if (
-      !email.includes('@') ||
-      !fullName ||
-      !message
-    ) {
-      console.log('Message Error');
-      return false;
-    }
-    return true;
-  };
+  // // Determines if there are any issues with required fields. If no, it returns true.
+  // const validateForm = () => {
+  //   if (!email.includes('@')) {
+  //     setEmailError('Invalid Email Format');
+  //   }
+  //   if (!fullName) {
+  //     setFullNameError('Name Cannot Be Blank');
+  //   }
+  //   if (!message) {
+  //     setMessageError('Please Enter a Mesage');
+  //   }
+  //   if (
+  //     !email.includes('@') ||
+  //     !fullName ||
+  //     !message
+  //   ) {
+  //     console.log('Message Error');
+  //     return false;
+  //   }
+  //   return true;
+  // };
 
-  //If Forms are validated
-  const handleSubmit = e => {
-    const isValid = validateForm();
-    if (isValid) {
-      setFullName('');
-      setEmail('');
-      setMessage('');
-      handleShow();
-    };
-  };
+  // //If Forms are validated
+  // const handleSubmit = e => {
+  //   const isValid = validateForm();
+  //   if (isValid) {
+  //     setFullName('');
+  //     setEmail('');
+  //     setMessage('');
+  //     handleShow();
+  //   };
+  // };
 
   return (
     <animated.div style={trans} className='contact-container'>

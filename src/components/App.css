@@ -966,11 +966,19 @@
   }
 
   .footer-closing-tag {
-    margin-top: 0;
+    margin-top: 90px;
   }
 
   .footer-break-tag {
     padding: 12px 0;
+  }
+
+  .home-opening-tag {
+    margin-top: -20px;
+  }
+
+  .home-closing-tag {
+    margin-top: 245px;
   }
 
   /* -------------------- TAGS END 688 -------------------- */
