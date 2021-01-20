@@ -67,6 +67,7 @@
 /* -------------------- TAG DECORATIONS BEGIN -------------------- */
 
 .tag {
+  font-family: "Bad Script", cursive;
   position: absolute;
   color: var(--tags);
   left: 70px;
@@ -74,6 +75,7 @@
 }
 
 .nav-opening-tag {
+  font-family: "Bad Script", cursive;
   position: absolute;
   color: var(--tags);
   left: 10px;
@@ -82,6 +84,7 @@
 }
 
 .nav-closing-tag {
+  font-family: "Bad Script", cursive;
   position: absolute;
   color: var(--tags);
   left: 10px;
@@ -98,6 +101,7 @@
 }
 
 .footer-opening-tag {
+  font-family: "Bad Script", cursive;
   position: absolute;
   color: var(--tags);
   left: 10px;
@@ -106,6 +110,7 @@
 }
 
 .footer-closing-tag {
+  font-family: "Bad Script", cursive;
   position: absolute;
   color: var(--tags);
   left: 10px;
