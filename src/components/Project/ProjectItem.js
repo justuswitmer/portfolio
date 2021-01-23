@@ -5,10 +5,6 @@ import arrow from '../images/Miscellaneous/up_right_arrow.svg';
 
 function PortfolioItem(props) {
 
-  const gitHub = () => {
-    window.open(props.project.link, '_blank')
-  }
-
     return (
       <div className='project-item'>
         <div className='project-item-title'>
@@ -29,7 +25,7 @@ function PortfolioItem(props) {
                 src={arrow} 
                 alt='arrow to external link'
                 tabIndex='0'
-                onClick={gitHub}
+                onClick={() =>  window.open(props.project.link, '_blank')}
                 className='project-description-link'
               />
             </div>

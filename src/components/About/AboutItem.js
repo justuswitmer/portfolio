@@ -25,6 +25,7 @@ function AboutItem(props) {
       >
         <Modal.Header closeButton id='modalHeader' tabIndex='0'>
           <Modal.Title id='example-modal-sizes-title-lg' className='about-modal-title' tabIndex='0'>
+          <p className='construction-note'>Modal is currently under construction</p>
           <p>{props.about.profile}</p>
           </Modal.Title>
         </Modal.Header>

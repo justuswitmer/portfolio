@@ -64,7 +64,8 @@ function Nav(props) {
               <svg 
                 width={props.store.dimensions <= 688 ? "50px" : props.store.dimensions <= 992 ? "60px" : "80px"} 
                 height={props.store.dimensions <= 688 ? "50px" : props.store.dimensions <= 992 ? "60px" : "80px"} 
-                viewBox="0 0 60 60">
+                viewBox="0 0 60 60"
+                tabIndex='0'>
                 <g id="Site-Pages-" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                     <g id="Landing-Page---DM" transform="translate(-2730.000000, -105.000000)">
                         <g id="Annotations" transform="translate(1444.000000, 0.000000)">

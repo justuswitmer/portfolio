@@ -92,9 +92,9 @@ function Contact(props) {
     <animated.div style={trans} className='contact-container'>
       {props.store.dimensions <= 499 ? '' : <span className='tag contact-opening-tag'>{openingContact}</span>}
       <div className='contact-intro'>
-        <h3 className='contact-intro-h3' tabIndex='0'>I am open for full-time work or projects.</h3>
+        <h3 className='contact-intro-h3'>I am open for full-time work or projects.</h3>
         <div className='contact-intro2'>
-        <h3 className='contact-intro2-h3' tabIndex='0'>
+        <h3 className='contact-intro2-h3'>
           You can reach me on
           <a
             href="https://www.linkedin.com/in/justus-witmer"

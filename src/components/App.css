@@ -42,6 +42,11 @@
   --notes: #222222;
 }
 
+.construction-note {
+  color: var(--warning);
+  font-weight: 900;
+}
+
 .App {
   text-align: center;
   background-color: var(--background_color);
@@ -121,6 +126,7 @@
 .footer-break-tag {
   padding: 13px 0;
   color: var(--tags);
+  font-family: "Bad Script", cursive;
 }
 
 .home-opening-tag {
@@ -412,21 +418,87 @@
 
 .project-primary {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-around;
   margin-top: 40px;
   text-align: left;
 }
 
 .project-primary-player-div {
-  width: 500px;
+  width: 620px;
+  height: 657px;
+  border-radius: 4px;
+  background-color: var(--secondary_color);
   margin: 0 10px;
 }
 
-.project-primary-player-h4 {
-  margin-bottom: -20px;
+.project-primary-player-h3 {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 26px 0 4px 0;
   text-align: center;
   color: var(--primary_font_color);
+}
+
+.project-primary-player-h4 {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 21px;
+  margin: 0;
+  text-align: center;
+  color: var(--primary_font_color);
+}
+
+.project-primary-player-descrip-title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--secondary_font_color);
+  margin: 0 20px 12px 20px;
+}
+
+.project-primary-player-descrip-body {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 100;
+  color: var(--secondary_font_color);
+  margin: 0 20px;
+}
+
+.project-primary-lakeElmoAero {
+  background-image: url("./images/Miscellaneous/LakeElmo.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 580px;
+  height: 330px;
+  border-radius: 5px;
+  margin: 24px 20px;
+}
+
+.project-primary-financeIt {
+  background-image: url("./images/Miscellaneous/financeIt.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 580px;
+  height: 330px;
+  border-radius: 5px;
+  margin: 24px 20px;
+}
+
+.project-primary-modalBtn {
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 50px solid #222222;
+  border-bottom: 26px solid transparent;
+  border-right: 0;
+  margin: 131px 250px 129px 260px;
+}
+
+.project-primary-modalBtn:focus {
+  outline: none;
 }
 
 .project-secondary {
@@ -788,9 +860,10 @@
 }
 
 .footer-UX-link {
-  color: var(--text_link_color);
+  color: var(--focused_font_color);
   text-decoration: underline;
   margin: 0 2px;
+  cursor: pointer;
 }
 
 .footer-UX-link:hover {
@@ -1044,15 +1117,45 @@
     z-index: 999;
   }
 
-  .nav-mobileMenu {
+  .nav-mobileMenu-closed {
     display: flex;
     z-index: 999;
+    background-image: url("./images/MenuIcons/MenuIconActive.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-mobileMenu-closed:hover {
+    background-image: url("./images/MenuIcons/MenuIconHover.svg");
+  }
+
+  .nav-mobileMenu-open {
+    display: flex;
+    z-index: 999;
+    background-image: url("./images/MenuIcons/CloseIconActive.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-mobileMenu-open:hover {
+    background-image: url("./images/MenuIcons/CloseIconHover.svg");
   }
 
   .nav-routes-mobile {
     background-color: var(--secondary_color);
     display: block;
     justify-content: center;
+  }
+
+  .nav-routes-mobile-divider {
+    height: 1px;
+    width: 100vw;
+    background-color: var(--tags);
+    margin: 0 -10px 4.5px -10px;
   }
 
   .nav-routes-divWrapper {

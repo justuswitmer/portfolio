@@ -5,6 +5,7 @@ import about from './about.reducer';
 import project from './project.reducer';
 import dimensions from './dimensions.reducer';
 import routes from './routes.reducer';
+import setMenu from './menuState.reducer';
 
 const rootReducer = combineReducers({
   hasBrackets,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   project,
   dimensions,
   routes,
+  setMenu,
 });
 
 export default rootReducer;
