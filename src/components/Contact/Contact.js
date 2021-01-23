@@ -97,7 +97,8 @@ function Contact(props) {
         <h3 className='contact-intro2-h3'>
           You can reach me on
           <a
-            href="https://www.linkedin.com/in/justus-witmer"
+            tabIndex='0'
+            onClick={() => window.open('https://www.linkedin.com/in/justus-witmer', '_blank')}
             className='contact-linkedin-link'
           >LinkedIn
           </a>
