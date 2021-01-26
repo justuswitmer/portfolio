@@ -34,6 +34,12 @@ function Portfolio(props) {
             </div>
             <p className='project-primary-player-descrip-title'>A service where Airplane Pilots schedule requests for fuel, oil, or other maintenance prior to landing</p>
             <p className='project-primary-player-descrip-body'>The web app captures all the essential information and then alerts the pilots, either by email or text, upon completion.</p>       
+            <button 
+              id='project-primary-player-LEABtn'
+              className='project-primary-player-linkBtn'
+              onClick={() =>  window.open('https://github.com/justuswitmer/lake_elmo_aero', '_blank')}
+            >View code
+            </button>
           </div>
           <div className='project-primary-player-div'>
             <h3 className='project-primary-player-h3'>financeIt</h3>
@@ -43,11 +49,16 @@ function Portfolio(props) {
             </div>
               <p className='project-primary-player-descrip-title'>An app that helps a user budget and categorize their money, and track spending habits and trends</p>
               <p className='project-primary-player-descrip-body'>Future updates will include:</p>
-              <ul>
+              <ul className='project-primary-player-descrip-list'>
                 <li>Automatic transaction importing from the user's financial institution</li>
                 <li>Charts to help the user visually see where they are spending money</li>
                 <li>Intellegent tips that will help the user in saving and planning for the future</li>
               </ul>
+              <button
+                className='project-primary-player-linkBtn'
+                onClick={() =>  window.open('https://github.com/justuswitmer/financeIt', '_blank')}
+              >View code
+              </button>
           </div>
         </div>
         <div className='project-secondary'>
