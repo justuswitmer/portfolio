@@ -25,9 +25,9 @@
   /* Applies to buttons, focused inputs, and nav focused route links */
   --accent_color: #295928;
   /* Applies to the background of the modals in the about page, the furthermost back visible area */
-  --about_card_bg: #c4c0c0;
+  --about_card_bg: #222222;
   /* Applies to each main section of the modal */
-  --about_modal_bg: #aa7d7d38;
+  --about_modal_bg: #1d1d1d;
   /* Applies to the background that contains the theme buttons */
   --theme_cont_bg: #1d1d1d;
   /* Applies to the divider between routes in the nav bar */
@@ -40,6 +40,10 @@
   --tags: #323232;
   /* --tags: red; */
   --notes: #222222;
+}
+
+img {
+  max-width: 100%;
 }
 
 .construction-note {
@@ -576,6 +580,10 @@
   z-index: 998;
 }
 
+.project-imgElement:focus {
+  outline: none;
+}
+
 .project-imgElement {
   border-radius: 10px;
 }
@@ -659,6 +667,8 @@
 .about-list {
   list-style-type: none;
   padding: 0;
+  line-height: 30px;
+  font-size: 24px;
 }
 
 .about-modal-title {
@@ -670,6 +680,7 @@
 
 .card {
   background-color: var(--about_card_bg);
+  color: var(--secondary_font_color);
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -677,15 +688,22 @@
   /* overflow: hidden; */
 }
 
+.aboutitem-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .aboutitem-button {
+  display: flex;
   background-color: var(--primary_color);
   border-radius: 4px;
   color: var(--focused_font_color);
   box-sizing: none;
   border: none;
-  height: 140px;
   width: 140px;
   margin: 0 10px 20px 10px;
+  padding: 0;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -694,12 +712,16 @@
 }
 
 .aboutitem-button-img {
-  width: 140px;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 4px;
 }
 
 #modalHeader {
   height: 100px;
+  padding-top: 30px;
   background-color: var(--about_modal_bg);
+  color: var(--primary_font_color);
 }
 
 #aboutitem-modal {
@@ -709,10 +731,14 @@
 
 .about-intro-h2 {
   color: var(--primary_font_color);
+  font-size: 34px;
+  line-height: 60px;
 }
 
 .about-personality-h3 {
   color: var(--primary_font_color);
+  font-size: 34px;
+  line-height: 60px;
 }
 
 /* -------------------- ABOUT BEGIN -------------------- */
@@ -1054,6 +1080,25 @@
 
   /* -------------------- HOME END 992 -------------------- */
 
+  /* -------------------- ABOUT BEGIN 992 -------------------- */
+
+  .about-intro-h2 {
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  .about-intro-h3 {
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  .about-list {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  /* -------------------- ABOUT END 992 -------------------- */
+
   /* -------------------- CONTACT BEGIN 992 -------------------- */
 
   .contact-container {
@@ -1290,6 +1335,27 @@
   }
 
   /* -------------------- PROJECTS END 688 -------------------- */
+
+  /* -------------------- ABOUT BEGIN 688 -------------------- */
+
+  .about-intro-h2 {
+    font-size: 23px;
+    line-height: 29px;
+    font-weight: 493;
+  }
+
+  .about-personality-h3 {
+    font-size: 23px;
+    line-height: 29px;
+    font-weight: 493;
+  }
+
+  .about-list {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  /* -------------------- ABOUT END 688 -------------------- */
 
   /* -------------------- CONTACT BEGIN 688 -------------------- */
 

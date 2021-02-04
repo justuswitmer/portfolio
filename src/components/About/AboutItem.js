@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from "react-bootstrap";
+import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
 
 function AboutItem(props) {
   const [show, setShow] = useState(false);
@@ -13,7 +15,7 @@ function AboutItem(props) {
         className='aboutitem-button'
       ><img 
           className='aboutitem-button-img' 
-          src={props.about.logo}
+          src={props.store.setTheme === true ? props.about.darkLogo : props.about.lightLogo}
           alt={props.about.profile}
         />
       </button>
@@ -23,25 +25,28 @@ function AboutItem(props) {
         onHide={handleClose}
         tabIndex='0'
       >
-        <Modal.Header closeButton id='modalHeader' tabIndex='0'>
-          <Modal.Title id='example-modal-sizes-title-lg' className='about-modal-title' tabIndex='0'>
-          <p className='construction-note'>Modal is currently under construction</p>
+        <Modal.Header closeButton id='modalHeader'>
+          <Modal.Title id='example-modal-sizes-title-lg' className='about-modal-title'>
+          {/* <p className='construction-note'>Modal under construction</p> */}
           <p>{props.about.profile}</p>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body id='aboutitem-modal'>
           <div className='card'>
+            <h3>Type</h3>
             {props.about.type.map(type =>
-              <p key={type} tabIndex='0'>{type}</p>
+              <p key={type}>{type}</p>
             )}
           </div>
           <div className='card'>
-            <p tabIndex='0'>{props.about.description}</p>
+            <h3>Description</h3>
+            <p>{props.about.description}</p>
           </div>
           <div className='card'>
+            <h3>Sources</h3>
           {props.about.sources.map(source =>
             <ul key={source}>
-              <li tabIndex='0'>{source}</li>
+              <li>{source}</li>
             </ul>
             )}
           </div>
@@ -51,4 +56,4 @@ function AboutItem(props) {
   );
 }
 
-export default AboutItem;
+export default connect(mapStoreToProps)(AboutItem);
