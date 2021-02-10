@@ -1,4 +1,5 @@
-import StrengthsFinders from '../../components/images/ProfileLogos/StrengthsFinders.png';
+import StrengthsFinders_Dark from '../../components/images/ProfileLogos/StrengthsFinders_Dark.png';
+import StrengthsFinders_Light from '../../components/images/ProfileLogos/StrengthsFinders_Light.png';
 import MyersBriggs_Dark from '../../components/images/ProfileLogos/MyersBriggs_Dark.png';
 import MyersBriggs_Light from '../../components/images/ProfileLogos/MyersBriggs_Light.png';
 import Enneagram_Dark from '../../components/images/ProfileLogos/Enneagram_Dark.png';
@@ -9,8 +10,8 @@ import Superpowers_Light from '../../components/images/ProfileLogos/Superpowers_
 const about = [
   {
     profile:'Strengths Finders',
-    darkLogo: StrengthsFinders,
-    lightLogo: StrengthsFinders,
+    darkLogo: StrengthsFinders_Dark,
+    lightLogo: StrengthsFinders_Light,
     type: ['Responsibility', 'Restorative', 'Analytical', 'Intellection', 'Consistency'], 
     description: 'The basic philosophy behind StrengthsFinder is that everyone has natural talents and that we’ll get the farthest in life if we focus on elevating our personal strengths, rather than trying to balance out our weaknesses. StrengthsFinder lists 34 potential strengths, and after taking the assessment, you’ll get to see and learn about your top five with in-depth information and suggestions for using your strengths in your life and work.', 
     sources: ['https://www.melyssagriffin.com/strengthsfinder/', 'https://www.gallup.com/cliftonstrengths/en/strengthsfinder.aspx'],
