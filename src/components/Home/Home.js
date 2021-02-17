@@ -10,6 +10,7 @@ function Home(props) {
   const trans = useSpring({ opacity: 1, from: { opacity: 0 } });
   const openingTag = '<home>';
   const closingTag = '</home>';
+  const homeTag = '<or/>';
 
   useEffect(() => {
     dispatch({
@@ -35,12 +36,25 @@ function Home(props) {
         />
       </div>
       <div className='home-viewProjects'>
-        <p>Here are some of the tools I have built</p>
-        <button 
-          className='home-viewProjects-button'
-          onClick={()=>props.history.push('/project')}
-        >View my projects
-        </button>
+        <div className='home-viewProjects-div-btn'>
+          <p>See the projects I have built</p>
+          <button 
+            className='home-viewProjects-button'
+            onClick={()=>props.history.push('/project')}
+          >View my projects
+          </button>
+        </div>
+        <div>
+          <h4 className='home-button-tag'>{homeTag}</h4>
+        </div>
+        <div className='home-viewProjects-div-btn'>
+          <p>See the tools I use</p>
+          <button 
+            className='home-viewProjects-button'
+            onClick={()=>props.history.push('/toolkit')}
+          >View my toolkit
+          </button>
+        </div>
         {props.store.dimensions <= 499 ? '' : <span className='tag home-closing-tag'>{closingTag}</span>}
       </div>
       

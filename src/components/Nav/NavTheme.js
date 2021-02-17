@@ -42,12 +42,13 @@ function NavTheme(props) {
     r.style.setProperty('--primary_color', '#161616')
     r.style.setProperty('--secondary_color', '#222222')
     r.style.setProperty('--accent_color', '#295928')
-    r.style.setProperty('--about_card_bg', '#c4c0c0')
-    r.style.setProperty('--about_modal_bg', '#aa7d7d38')
+    r.style.setProperty('--about_card_bg', '#222222')
+    r.style.setProperty('--about_modal_bg', '#1d1d1d')
     r.style.setProperty('--theme_cont_bg', '#1d1d1d')
     r.style.setProperty('--nav_link_div_color', '#f0f0f0')
     r.style.setProperty('--text_link_color', '#449a42')
     r.style.setProperty('--warning', '#d43a3a')
+    r.style.setProperty('--tags', '#323232')
     r.style.setProperty('--notes', '#222222')
   }
 
@@ -69,6 +70,7 @@ function NavTheme(props) {
     r.style.setProperty('--nav_link_div_color', '#181818')
     r.style.setProperty('--text_link_color', '#449a42')
     r.style.setProperty('--warning', '#d43a3a')
+    r.style.setProperty('--tags', '#323232')
     r.style.setProperty('--notes', '#d43a3a')
   }
 
