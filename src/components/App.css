@@ -40,6 +40,11 @@
   --tags: #474545;
   /* --tags: red; */
   --notes: #222222;
+
+  /* Light theme */
+  /* --primary_color: #b8c1c9;
+  --background_color: #ebe9e9;
+  --secondary_color: #9aa5aa; */
 }
 
 img {
@@ -517,7 +522,7 @@ img {
 }
 
 #project-primary-player-LEABtn {
-  margin-top: 140px;
+  margin-top: 92px;
 }
 
 .project-primary-lakeElmoAero {
@@ -567,7 +572,7 @@ img {
 
 .project-item {
   min-width: 200px;
-  width: 290px;
+  width: 260px;
   height: 375px;
   background-color: var(--secondary_color);
   border-radius: 4px;
@@ -622,22 +627,19 @@ img {
   position: absolute;
   display: table-cell;
   vertical-align: middle;
-  height: 250px;
-  width: 250px;
+  height: 230px;
+  width: 230px;
   border-radius: 4px;
   padding: 5px;
-  margin: -250px 0 0 20px;
-  /* background: #1d6a9a; */
+  margin: -230px 0 0 15px;
   color: #fff;
   visibility: hidden;
   opacity: 0;
-  z-index: auto;
-  transition: opacity 0.2s, visibility 0.2s;
 }
 
 .project-description-bg {
-  height: 250px;
-  width: 250px;
+  height: 230px;
+  width: 230px;
   filter: blur(4px);
   -webkit-filter: blur(4px);
   position: absolute;
@@ -649,8 +651,8 @@ img {
 }
 
 .project-description-divElement {
-  height: 250px;
-  width: 250px;
+  height: 230px;
+  width: 230px;
   position: absolute;
   top: 50%;
   left: 10%;

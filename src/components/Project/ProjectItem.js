@@ -14,7 +14,7 @@ function PortfolioItem(props) {
         <div className='project-item-image'>
           <img
             src={props.project.image}
-            width='250px'
+            width='230px'
             className='project-imgElement'
             alt={props.project.description}
           />
