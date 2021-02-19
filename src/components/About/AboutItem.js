@@ -3,6 +3,7 @@ import { Modal } from "react-bootstrap";
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
+
 function AboutItem(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
