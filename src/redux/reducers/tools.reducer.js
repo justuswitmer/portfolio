@@ -16,17 +16,12 @@ const toolkit = [
   {
     name: 'Databases', 
     items: ['PostgreSQL'], 
-    learning: [''],
+    learning: ['Zoho'],
   },
   {
     name: 'Other Tools', 
     items: ['NPM', 'Redux', 'jQuery', 'Git', 'GitHub', 'Authorization', 'Authentication'], 
     learning: ['Webpack', 'Jest', 'Performace Metrics', 'Lighthouse'],
-  },
-  {
-    name: 'Areas of Focus', 
-    items: ['Mobile Development', 'User Accessibility'], 
-    learning: [''],
   },
 ];
 

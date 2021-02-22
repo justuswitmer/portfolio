@@ -709,6 +709,38 @@ img {
 
 /* -------------------- PROJECT END -------------------- */
 
+/* -------------------- TOOLKIT BEGIN -------------------- */
+
+.toolkit-container > div > div > p {
+  list-style-type: none;
+  margin: 5px;
+}
+
+.toolkit-container > div {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.toolkit-container {
+  grid-area: body;
+  border-radius: 4px;
+  align-items: center;
+  padding: 40px 50px 40px 50px;
+  background-color: var(--primary_color);
+  color: var(--primary_font_color);
+}
+
+.tki-div {
+  background-color: var(--secondary_color);
+  color: var(--secondary_font_color);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  height: fit-content;
+}
+
+/* -------------------- TOOLKIT END -------------------- */
+
 /* -------------------- ABOUT BEGIN -------------------- */
 
 .about-container {

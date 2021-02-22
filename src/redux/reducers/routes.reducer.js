@@ -1,8 +1,8 @@
 const routes = [
   { name: 'Home', route: '/', hasDivider: true },
   { name: 'Projects', route: '/project', hasDivider: true },
-  { name: 'About', route: '/about', hasDivider: true },
-  { name: 'Toolkit', route: '/toolkit', hasDivider: false },
+  { name: 'Toolkit', route: '/toolkit', hasDivider: true },
+  { name: 'About', route: '/about', hasDivider: false },
 ];
 
 

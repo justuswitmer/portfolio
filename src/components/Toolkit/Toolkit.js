@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { connect, useDispatch } from "react-redux";
 import { withRouter } from "react-router-dom";
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import ToolkitItem from './ToolkitItem';
 
 function Toolkit(props) {
   const dispatch = useDispatch();
@@ -14,8 +15,15 @@ function Toolkit(props) {
   }, [dispatch, props.history.location.pathname]);
 
   return(
-    <div>
-      Page coming soon!
+    <div className='toolkit-container'>
+      <h1>Here are the tools I use</h1>
+        <div>
+        {props.store.toolkit.map( tool => 
+          <ToolkitItem
+            toolkit={tool}
+          />  
+        )}
+      </div>
     </div>
   );
 }

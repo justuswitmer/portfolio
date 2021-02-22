@@ -34,9 +34,6 @@ function AboutItem(props) {
         </Modal.Header>
         <Modal.Body id='aboutitem-modal'>
           <div className='card'>
-            <img src={props.about.lightLogo} width='400px'/>
-          </div>
-          <div className='card'>
             <h3>Type</h3>
             {props.about.type.map(type =>
               <p key={type}>{type}</p>
