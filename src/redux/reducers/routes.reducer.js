@@ -5,7 +5,6 @@ const routes = [
   { name: 'About', route: '/about', hasDivider: false },
 ];
 
-
 const routesReducer = (state = routes, action) => {
   switch (action.type) {
     case 'SET_ROUTES':
