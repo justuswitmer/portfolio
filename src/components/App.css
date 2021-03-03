@@ -91,7 +91,7 @@ img {
 .nav-opening-tag {
   font-family: "Bad Script", cursive;
   position: absolute;
-  color: var(--tags);
+  color: #474545;
   left: 10px;
   font-size: 14px;
   margin-top: 0;
@@ -100,7 +100,7 @@ img {
 .nav-closing-tag {
   font-family: "Bad Script", cursive;
   position: absolute;
-  color: var(--tags);
+  color: #474545;
   left: 10px;
   font-size: 14px;
   margin-top: 55px;
@@ -177,7 +177,7 @@ img {
 .nav-container {
   justify-content: space-between;
   grid-area: nav;
-  background-color: var(--secondary_color);
+  background-color: #222222;
   display: inline-flex;
   margin: 0 -40px;
   padding: 0 40px;
@@ -208,7 +208,7 @@ img {
 .nav-routes-route {
   background-color: inherit;
   border: none;
-  color: var(--focused_font_color);
+  color: #f0f0f0;
   font-size: 16px;
   cursor: pointer;
   margin: 30px 0 30px 0;
@@ -227,7 +227,7 @@ img {
   outline: none;
   background-color: inherit;
   border: none;
-  color: var(--focused_font_color);
+  color: #f0f0f0;
   font-size: 16px;
   cursor: pointer;
   margin: 30px 0 30px 0;
@@ -268,7 +268,7 @@ img {
 }
 
 .nav-routes-divider {
-  background-color: var(--nav_link_div_color);
+  background-color: #f0f0f0;
   width: 1px;
   height: 20px;
   margin: 30px 50px;
@@ -289,7 +289,7 @@ img {
   width: 61px;
   height: 30px;
   border-radius: 5px;
-  background-color: var(--theme_cont_bg);
+  background-color: #1d1d1d;
   outline: none;
 }
 
