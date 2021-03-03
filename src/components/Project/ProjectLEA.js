@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from "react-bootstrap";
 import ReactPlayer from "react-player"
+import playBtn from '../images/Miscellaneous/playBtn.png';
 
 function ProjectLEA(props) {
   const [show, setShow] = useState(false);
@@ -12,27 +13,28 @@ function ProjectLEA(props) {
       <button 
         className='project-primary-modalBtn'
         onClick={handleShow} 
-      />
+      > <img src={playBtn} />
+      </button>
       <Modal
         size="lg"
         show={show}
         onHide={handleClose}
-        tabIndex='0'
       >
-        <Modal.Header closeButton id='modalHeader' tabIndex='0'>
-          <Modal.Title id='example-modal-sizes-title-lg' tabIndex='0'>
-          <p className='construction-note'>Modal is currently under construction</p>
-          <p>Lake Elmo Aero</p>
+        <Modal.Header closeButton id='modalHeader'>
+          <Modal.Title id='example-modal-sizes-title-lg'>
+          <p className='project-primary-modal-title'>Lake Elmo Aero</p>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className='card'>
-          <ReactPlayer
-            className='project-primary-vidPlayer'
-            width='100%'
-            url="https://vimeo.com/493976119"
-            playing={true}
-          />
+          <div className='project-modal-body'>
+            <div className='card'>
+            <ReactPlayer
+              className='project-primary-vidPlayer'
+              width='100%'
+              url="https://vimeo.com/493976119"
+              playing={true}
+            />
+            </div>
           </div>
         </Modal.Body>
       </Modal>
