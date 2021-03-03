@@ -62,7 +62,7 @@ function NavTheme(props) {
     r.style.setProperty('--secondary_font_color', '#575757')
     r.style.setProperty('--background_color', '#f2f2f2')
     r.style.setProperty('--primary_color', '#bfbfbf')
-    r.style.setProperty('--secondary_color', '#737373')
+    r.style.setProperty('--secondary_color', '#acb9ad')
     r.style.setProperty('--accent_color', '#295928')
     r.style.setProperty('--about_card_bg', '#383838')
     r.style.setProperty('--about_modal_bg', '#aa7d7d38')

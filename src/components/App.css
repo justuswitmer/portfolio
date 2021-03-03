@@ -17,6 +17,8 @@
   /* Applies to any tag that would need to show contrast to the primary font */
   --secondary_font_color: #ababab;
   /* Applies to the very root of the website, the furthermost back visible area */
+  --btn_color: #f0f0f0;
+  /* Applies to buttons with green background */
   --background_color: #111111;
   /* Applies to each main box on each page, the second layer the use sees*/
   --primary_color: #161616;
@@ -417,7 +419,7 @@ img {
   font-weight: 500;
   letter-spacing: 0.51px;
   line-height: 29px;
-  color: var(--focused_font_color);
+  color: var(--btn_color);
 }
 
 /* -------------------- HOME END -------------------- */
@@ -976,7 +978,7 @@ img {
   background-color: var(--accent_color);
   border: none;
   cursor: pointer;
-  color: var(--focused_font_color);
+  color: var(--btn_color);
 }
 
 /* Class for fields that are not valid */
