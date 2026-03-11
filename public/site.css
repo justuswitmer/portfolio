@@ -598,7 +598,7 @@ button.btn {
 .page-shell .panel,
 .site-footer {
   opacity: 0;
-  animation: subtle-rise-in 520ms var(--ease-emphasized) forwards;
+  animation: subtle-rise-in 520ms var(--ease-emphasized, ease-out) forwards;
 }
 
 .site-nav-wrap {
