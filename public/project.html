@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="description" content="Project details for Justus Witmer portfolio." />
+  <link rel="icon" href="profile.png" type="image/png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Roboto+Flex:opsz,wght@8..144,300..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/brand/rebuild-tokens.css" />
+  <link rel="stylesheet" href="site.css" />
+  <title>Project Details | Justus Witmer</title>
+</head>
+
+<body>
+  <div class="bg-orb bg-orb-a" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-b" aria-hidden="true"></div>
+
+  <header class="site-nav-wrap" id="top">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="index.html#home" aria-label="Go to home">
+        <img src="logo.png" alt="JW logo" height="48" />
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html#projects" class="nav-link">Back to projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="panel project-detail" id="project-detail">
+      <span class="tag">&lt;project&gt;</span>
+      <a class="project-back-link" href="index.html#projects">Back to all projects</a>
+      <h1 id="projectTitle">Project</h1>
+      <p id="projectSummary"></p>
+      <img id="projectImage" class="project-detail-image" src="images/project-placeholder.svg" alt="Project image" />
+
+      <section class="project-detail-block">
+        <h2>Overview</h2>
+        <p id="projectOverview"></p>
+      </section>
+
+      <section class="project-detail-block">
+        <h2>Highlights</h2>
+        <ul id="projectHighlights"></ul>
+      </section>
+
+      <section class="project-detail-block">
+        <h2>Technology</h2>
+        <p id="projectTechnology"></p>
+      </section>
+
+      <a id="projectLink" class="project-link" href="" target="_blank" rel="noopener noreferrer">View live project</a>
+
+      <span class="tag tag-end">&lt;/project&gt;</span>
+    </section>
+  </main>
+
+  <script src="project.js"></script>
+</body>
+
+</html>

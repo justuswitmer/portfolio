@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111111" />
+  <title>Thank You | Justus Witmer</title>
+  <link rel="stylesheet" href="../brand/rebuild-tokens.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--color-canvas);
+      color: var(--color-text-primary);
+      font-family: var(--font-family-sans);
+      padding: var(--space-5);
+    }
+
+    .card {
+      width: min(42rem, 100%);
+      border-radius: var(--panel-radius);
+      border: var(--panel-border);
+      background: var(--panel-glass-bg);
+      box-shadow: var(--panel-glass-shadow);
+      backdrop-filter: var(--panel-glass-backdrop);
+      padding: var(--space-7);
+    }
+
+    h1 {
+      margin: 0 0 var(--space-3);
+      color: var(--color-text-strong);
+      font-size: var(--font-size-6);
+      line-height: var(--line-height-snug);
+    }
+
+    p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-2);
+    }
+
+    a {
+      display: inline-flex;
+      margin-top: var(--space-5);
+      min-height: var(--button-height-md);
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: var(--button-radius);
+      padding: 0 var(--button-padding-inline);
+      background: var(--button-primary-bg);
+      color: var(--button-primary-text);
+      box-shadow: var(--button-primary-shadow);
+      font-weight: var(--font-weight-semibold);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <h1>Thanks for reaching out.</h1>
+    <p>Your message has been sent. I will get back to you soon.</p>
+    <a href="index.html">Back to homepage</a>
+  </main>
+</body>
+
+</html>

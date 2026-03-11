@@ -3,30 +3,230 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#000000" />
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-  <link rel="icon" href="RoundProfile.png" type="image/gif" sizes="16x16 32x32 48x48 64x64 128x128 256x256">
-  <link rel="preconnect" href="https://fonts.gstatic.com"> 
-  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="description" content="Justus Witmer portfolio." />
+  <link rel="icon" href="profile.png" type="image/png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Roboto+Flex:opsz,wght@8..144,300..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/brand/rebuild-tokens.css" />
+  <link rel="stylesheet" href="site.css" />
   <title>Justus Witmer</title>
 </head>
 
-<body style="margin: 0">
+<body>
+  <div class="bg-orb bg-orb-a" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-b" aria-hidden="true"></div>
 
-  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-    <input type="text" name="name"/>
-    <input type="email" name="email"/>
-    <textarea name="message"></textarea>
-  </form>
+  <header class="site-nav-wrap" id="top">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <img src="logo.png" alt="JW logo" height="48" />
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-controls="navMenu" aria-expanded="false">
+        Menu
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link is-active">Home</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#toolkit" class="nav-link">Toolkit</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main class="page-shell">
+    <section class="panel hero" id="home" data-section>
+      <span class="tag">&lt;home&gt;</span>
+      <div class="hero-copy">
+        <h1>Hi, I'm Justus.</h1>
+        <p>
+          I build product-focused full-stack software and AI workflows that help teams move faster and make better
+          decisions.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="#projects">View my projects</a>
+          <a class="btn btn-secondary" href="#toolkit">View my toolkit</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="profile.png" alt="Portrait of Justus Witmer" class="profile-image" />
+      </div>
+      <span class="tag tag-end">&lt;/home&gt;</span>
+    </section>
 
-  <div id="root"></div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <section class="panel panel-glass projects" id="projects" data-section>
+      <span class="tag">&lt;projects&gt;</span>
+      <h2>Projects that show my best work</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <img src="images/tasso.webp" alt="Tasso placeholder" />
+          <h3>Tasso</h3>
+          <p>Turns Google Sheets into API endpoints; built with an agentic AI-assisted development workflow.</p>
+          <a href="project.html?id=tasso" class="project-link">View project details</a>
+        </article>
+        <article class="project-card">
+          <img src="images/anywhere.webp" alt="Anywhere Real Estate Inc. project placeholder" />
+          <h3>Anywhere Real Estate Inc.</h3>
+          <p>Ordering platform improvements focused on reliability, backend performance, and reduced agent task
+            friction.</p>
+          <a href="project.html?id=anywhere" class="project-link">View project details</a>
+        </article>
+        <article class="project-card">
+          <img src="images/sonnys.webp" alt="Sonny's Enterprises Inc. project placeholder" />
+          <h3>Sonny's Enterprises Inc.</h3>
+          <p>IoT control software and cloud data pipeline work connecting hardware behavior with Azure-backed
+            diagnostics.</p>
+          <a href="project.html?id=sonnys" class="project-link">View project details</a>
+        </article>
+        <article class="project-card">
+          <img src="images/cardigan.webp" alt="Cardigan Donuts project placeholder" />
+          <h3>Cardigan Donuts</h3>
+          <p>End-to-end e-commerce platform project featuring multi-location ordering, delivery routing, and payment
+            integration.</p>
+          <a href="project.html?id=cardigan" class="project-link">View project details</a>
+        </article>
+        <article class="project-card">
+          <img src="images/hailscale.webp" alt="Hailscale project placeholder" />
+          <h3>Hailscale</h3>
+          <p>Lead full-stack project work for claims workflows, intake tooling, and automated inspection data handling.
+          </p>
+          <a href="project.html?id=hailscale" class="project-link">View project details</a>
+        </article>
+        <article class="project-card">
+          <img src="images/ice_docks.webp" alt="ICE Docks project placeholder" />
+          <h3>ICE Docks</h3>
+          <p>Innovative freeze-in docks and boardwalks engineered to remain in water year-round without seasonal
+            removal.</p>
+          <a href="project.html?id=ice-docks" class="project-link">View project details</a>
+        </article>
+      </div>
+      <span class="tag tag-end">&lt;/projects&gt;</span>
+    </section>
+
+    <section class="panel toolkit" id="toolkit" data-section>
+      <span class="tag">&lt;toolkit&gt;</span>
+      <h2>Tools I use</h2>
+      <div class="tool-grid">
+        <article class="tool-card">
+          <h3>Top Skills</h3>
+          <p>Full-stack development, frontend engineering, API integration, e-commerce platforms, IoT software,
+            agile delivery, end-to-end product ownership.</p>
+        </article>
+        <article class="tool-card">
+          <h3>Frontend Stack</h3>
+          <p>React, TypeScript, JavaScript (ES6+), HTML5, CSS3, responsive design.</p>
+        </article>
+        <article class="tool-card">
+          <h3>Backend + APIs</h3>
+          <p>Node.js, Express, REST APIs, webhook integrations, IoT device communication.</p>
+        </article>
+        <article class="tool-card">
+          <h3>Data + Cloud</h3>
+          <p>PostgreSQL, MongoDB, SQL, AWS (Lambda, S3, EC2), Microsoft Azure (Functions, Blob Storage), Azure DevOps,
+            CI/CD pipelines.</p>
+        </article>
+        <article class="tool-card">
+          <h3>AI + Developer Workflow</h3>
+          <p>GitHub Copilot, Claude, Git, GitHub, VS Code, Postman, Scrum collaboration practices.</p>
+        </article>
+        <article class="tool-card">
+          <h3>Integrations</h3>
+          <p>Google Maps API, Square API, third-party service integrations, production-ready interface development.</p>
+        </article>
+      </div>
+      <span class="tag tag-end">&lt;/toolkit&gt;</span>
+    </section>
+
+    <section class="panel about" id="about" data-section>
+      <span class="tag">&lt;about&gt;</span>
+      <h2>As a full stack developer</h2>
+      <ul>
+        <li>I am a product-focused full stack developer who cares about building useful, thoughtful products people
+          genuinely want to use.</li>
+        <li>I build with React, Node.js, and JavaScript, and increasingly design AI-driven workflows using agentic
+          systems, model integrations, and MCP servers.</li>
+        <li>I helped grow online revenue by 25% for a $2M business and delivered an IoT solution that connected hardware
+          controls with an Azure cloud backend to improve car wash operations.</li>
+        <li>I am especially energized by applying AI to web development, internal tools, and SaaS products to improve
+          speed, decision-making, and user outcomes.</li>
+        <li>If you are building something useful and ambitious, I would love to collaborate.</li>
+      </ul>
+      <h3>Outside of work</h3>
+      <ul>
+        <li>I am a husband and dad first, and I value being fully present with my family.</li>
+        <li>Outside of work, I spend a lot of time mountain biking, playing music, reading, and staying active through
+          fitness.</li>
+        <li>Those interests keep me grounded, creative, and curious.</li>
+        <li>I bring that same discipline and energy into the products I build.</li>
+      </ul>
+      <span class="tag tag-end">&lt;/about&gt;</span>
+    </section>
+
+    <section class="panel panel-glass contact" id="contact" data-section>
+      <span class="tag">&lt;contact&gt;</span>
+      <h2>I am open for full-time work or projects.</h2>
+      <p>
+        Reach me on
+        <a href="https://www.linkedin.com/in/justus-witmer" target="_blank" rel="noreferrer">LinkedIn</a>
+        or through the form below.
+      </p>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html"
+        class="contact-form">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden-field">
+          <label>Do not fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <label>
+          Name
+          <input type="text" name="name" required />
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+
+        <label class="full-width">
+          Message
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+
+        <button class="btn btn-primary" type="submit">Send</button>
+      </form>
+      <span class="tag tag-end">&lt;/contact&gt;</span>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Designed and developed by Justus Witmer.</p>
+    <p>&copy; <span id="year"></span> Justus Witmer</p>
+    <div class="footer-links" aria-label="Social links">
+      <span class="footer-links-label">Find me on</span>
+      <a href="https://www.linkedin.com/in/justus-witmer" target="_blank" rel="noreferrer"
+        aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <path fill="currentColor"
+            d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3V9Zm7 0h3.82v1.64h.05c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.79 2.66 4.79 6.11V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21h-4V9Z" />
+        </svg>
+      </a>
+      <a href="https://github.com/justuswitmer" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <path fill="currentColor"
+            d="M12 .5A11.5 11.5 0 0 0 .5 12.16c0 5.17 3.29 9.56 7.86 11.1.58.11.79-.26.79-.57v-2c-3.2.71-3.88-1.57-3.88-1.57-.52-1.36-1.27-1.72-1.27-1.72-1.04-.73.08-.72.08-.72 1.16.08 1.76 1.2 1.76 1.2 1.02 1.78 2.68 1.27 3.34.97.1-.76.4-1.27.73-1.56-2.55-.3-5.23-1.3-5.23-5.8 0-1.28.45-2.32 1.18-3.14-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.17 1.2a10.82 10.82 0 0 1 5.78 0c2.2-1.51 3.17-1.2 3.17-1.2.63 1.65.23 2.87.11 3.17.74.82 1.18 1.86 1.18 3.14 0 4.52-2.69 5.49-5.26 5.78.41.36.78 1.07.78 2.16v3.2c0 .31.21.68.8.57 4.56-1.55 7.85-5.93 7.85-11.1A11.5 11.5 0 0 0 12 .5Z" />
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
 </body>
 
 </html>
