@@ -684,7 +684,9 @@ button.btn {
     gap: var(--space-2);
     padding: var(--space-2);
     border-radius: 0;
-    background: rgba(8, 16, 11, 0.9);
+    background: rgba(8, 16, 11, 0.56);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
     border: 0;
     border-top: var(--border-subtle);
     box-shadow: none;
@@ -700,6 +702,11 @@ button.btn {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
+  }
+
+  body.menu-open .page-shell,
+  body.menu-open .site-footer {
+    filter: blur(3px);
   }
 
   .panel {

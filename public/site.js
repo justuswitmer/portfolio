@@ -14,12 +14,14 @@
     navToggle.addEventListener("click", function () {
       const isOpen = navMenu.classList.toggle("is-open");
       navToggle.setAttribute("aria-expanded", String(isOpen));
+      document.body.classList.toggle("menu-open", isOpen);
     });
 
     navLinks.forEach(function (link) {
       link.addEventListener("click", function () {
         navMenu.classList.remove("is-open");
         navToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
       });
     });
   }
