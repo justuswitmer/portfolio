@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#111111" />
   <title>Thank You | Justus Witmer</title>
   <link rel="stylesheet" href="rebuild-tokens.css" />
+  <link rel="stylesheet" href="site.css" />
   <style>
     * {
       box-sizing: border-box;
@@ -46,19 +47,8 @@
       font-size: var(--font-size-2);
     }
 
-    a {
-      display: inline-flex;
+    .card .btn {
       margin-top: var(--space-5);
-      min-height: var(--button-height-md);
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      border-radius: var(--button-radius);
-      padding: 0 var(--button-padding-inline);
-      background: var(--button-primary-bg);
-      color: var(--button-primary-text);
-      box-shadow: var(--button-primary-shadow);
-      font-weight: var(--font-weight-semibold);
     }
   </style>
 </head>
@@ -67,7 +57,7 @@
   <main class="card">
     <h1>Thanks for reaching out.</h1>
     <p>Your message has been sent. I will get back to you soon.</p>
-    <a href="index.html">Back to homepage</a>
+    <a class="btn btn-primary" href="index.html">Back to homepage</a>
   </main>
 </body>
 
