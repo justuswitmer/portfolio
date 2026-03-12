@@ -287,7 +287,7 @@ button.btn {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-3);
+  gap: var(--space-5);
 }
 
 .project-card {
@@ -296,7 +296,7 @@ button.btn {
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-  padding: var(--space-3) 0;
+  padding: var(--space-5) 0;
   display: flex;
   flex-direction: column;
 }
@@ -304,7 +304,7 @@ button.btn {
 .project-card img {
   width: 100%;
   object-fit: contain;
-  height: 200px;
+  height: 210px;
   border-radius: var(--radius-sm);
   padding: var(--space-2);
   background: linear-gradient(
@@ -364,19 +364,21 @@ button.btn {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
+  color: var(--color-link);
   transition:
     transform var(--duration-fast) var(--ease-standard),
     color var(--duration-fast) var(--ease-standard);
 }
 
 .project-link::after {
-  content: "->";
+  content: "→";
   color: var(--color-text-muted);
   transition: transform var(--duration-fast) var(--ease-standard);
 }
 
 .project-link:hover,
 .project-link:focus {
+  color: var(--color-text-strong);
   text-decoration: underline;
   transform: translateY(-1px);
 }
@@ -405,13 +407,14 @@ button.btn {
 }
 
 .project-back-link::before {
-  content: "<-";
+  content: "←";
   color: var(--color-text-muted);
   transition: transform var(--duration-fast) var(--ease-standard);
 }
 
 .project-back-link:hover,
 .project-back-link:focus {
+  color: var(--color-text-strong);
   text-decoration: underline;
   transform: translateX(-1px);
 }
@@ -448,7 +451,7 @@ button.btn {
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .tool-card {
@@ -456,7 +459,7 @@ button.btn {
   border-left: 2px solid rgba(68, 154, 66, 0.45);
   border-radius: 0;
   background: transparent;
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-5) var(--space-5);
 }
 
 .about ul {
@@ -470,6 +473,10 @@ button.btn {
 
 .contact a {
   color: var(--color-link);
+}
+
+.contact a:hover {
+  color: var(--color-text-strong);
 }
 
 .contact-form {
@@ -541,7 +548,14 @@ button.btn {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   gap: var(--space-3);
+}
+
+.site-footer p {
+  font-size: var(--font-size-0);
+  color: var(--color-text-muted);
+  margin: 0;
 }
 
 .footer-links {
@@ -551,13 +565,16 @@ button.btn {
 }
 
 .footer-links-label {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
   color: var(--color-text-secondary);
   font-size: var(--font-size-0);
 }
 
 .footer-links a {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
   color: var(--color-text-primary);
   text-decoration: none;
   display: inline-flex;
@@ -659,7 +676,10 @@ button.btn {
     margin: 0;
   }
 
-  .project-grid,
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .tool-grid {
     grid-template-columns: 1fr;
   }
@@ -675,6 +695,17 @@ button.btn {
     align-items: center;
   }
 
+  .nav-toggle[aria-expanded="true"] {
+    font-size: 0;
+    justify-content: center;
+  }
+
+  .nav-toggle[aria-expanded="true"]::after {
+    content: "\00D7";
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
   .nav-menu {
     position: absolute;
     top: calc(100% + var(--space-2));
@@ -684,7 +715,7 @@ button.btn {
     gap: var(--space-2);
     padding: var(--space-2);
     border-radius: 0;
-    background: rgba(8, 16, 11, 0.56);
+    background: rgba(8, 16, 11, 0.78);
     backdrop-filter: blur(8px) saturate(120%);
     -webkit-backdrop-filter: blur(8px) saturate(120%);
     border: 0;
@@ -709,8 +740,27 @@ button.btn {
     filter: blur(3px);
   }
 
+  body.menu-open {
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
+  }
+
   .panel {
     padding: var(--space-5) 0;
+  }
+
+  .hero-cta-row {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-cta-row .btn {
+    flex: 0 1 calc(50% - (var(--space-3) / 2));
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 
   .profile-image {
@@ -725,6 +775,16 @@ button.btn {
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .footer-links {
+    gap: var(--space-1);
+  }
+
+  .footer-links a {
+    width: 2rem;
+    height: 2rem;
   }
 }
 

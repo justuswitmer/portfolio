@@ -168,7 +168,7 @@
   --input-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 
   --tag-font-family: var(--font-family-annotation);
-  --tag-font-size: 0.95rem;
+  --tag-font-size: 1rem;
   --tag-color: var(--color-annotation);
 
   --nav-bg: rgba(24, 24, 24, 0.7);
