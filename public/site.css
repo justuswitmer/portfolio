@@ -429,10 +429,6 @@ button.btn {
   margin: var(--space-4) 0 var(--space-5);
   height: 370px;
   object-fit: contain;
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.11) 0%,
-    rgba(255, 255, 255, 0.04) 100%
-  );
 }
 
 .project-detail-block {
@@ -766,6 +762,10 @@ button.btn {
   .profile-image {
     width: min(100%, 11rem);
     margin: 0 auto;
+  }
+
+  .project-detail-image {
+    height: 200px;
   }
 
   .contact-form {
